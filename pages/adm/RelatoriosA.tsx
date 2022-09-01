@@ -10,7 +10,7 @@ export default function RelatoriosA() {
     <>
       <div className=" h-screen bg-gray-100 pl-60 pt-16 pr-4">
         <div className="flex items-center py-4">
-          <Link href="/">
+          <Link href="/app">
             <a>
               <AiFillHome className=" hover:text-sky-600 text-gray-500 w-5 h-5" />
             </a>

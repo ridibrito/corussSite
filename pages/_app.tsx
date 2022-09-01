@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Navtop from '../components/navtop'
 import Navbar from '../components/navbar'
 import type { AppProps } from 'next/app'
-
+import { ThemeProvider } from "next-themes";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   
   return (
     <>
+    <ThemeProvider>
       <Head>
         <title>Coruss - Bem vindo a liberdade!</title>
         <meta
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Navbar />
 
       <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

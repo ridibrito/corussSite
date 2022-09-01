@@ -38,7 +38,7 @@ export default function Navbar() {
           </div>
 
           <ul className="w-52">
-            <Link href="/">
+            <Link href="/app">
               <li className="pt-2 pl-2 pb-2 text-gray-500  hover:text-sky-600 hover:cursor-pointer hover:bg-blue-100 rounded-md m-2">
                 <a className="flex items-center">
                   <RiDashboardFill className="w-7 h-7 mr-2" />Dashboard

@@ -1,4 +1,8 @@
+
+
 export function loadLists() {
+
+
     
     return [
       { 
@@ -7,7 +11,7 @@ export function loadLists() {
           {
             id: 1,
             nomelead: 'Ricardo Brito',
-            PlanoLead: 'Amil',
+            planoLead: 'Amil',
             tipoplanoLead:'Adesão',
             valorLead:365.45,
             rating: 4,
@@ -15,21 +19,21 @@ export function loadLists() {
           {
             id: 2,
             nomelead: 'Lilian Carvalho',
-            PlanoLead: 'Bradesco',
+            planoLead: 'Bradesco',
             tipoplanoLead:'PME',
             valorLead:365.45,
           },
           {
             id: 3,
             nomelead: 'João Miguel',
-            PlanoLead: 'Unimed',
+            planoLead: 'Unimed',
             tipoplanoLead:'Adesão',
             valorLead:163.45,
           },
           {
             id: 4,
             nomelead: 'Maria Oliveria',
-            PlanoLead: 'Medsenior',
+            planoLead: 'Medsenior',
             tipoplanoLead:'Familiar',
             valorLead:1365.45,
           },
@@ -42,7 +46,7 @@ export function loadLists() {
             {
                 id: 5,
                 nomelead: 'Vitor Hugo',
-                PlanoLead: 'Smile',
+                planoLead: 'Smile',
                 tipoplanoLead:'Familiar',
                 valorLead:298.45,
               }
@@ -55,7 +59,7 @@ export function loadLists() {
             {
                 id: 1,
                 nomelead: 'Ricardo Brito',
-                PlanoLead: 'Amil',
+                planoLead: 'Amil',
                 tipoplanoLead:'Adesão',
                 valorLead:365.45,
                 rating: 4,
@@ -63,14 +67,14 @@ export function loadLists() {
               {
                 id: 2,
                 nomelead: 'Lilian Carvalho',
-                PlanoLead: 'Bradesco',
+                planoLead: 'Bradesco',
                 tipoplanoLead:'PME',
                 valorLead:365.45,
               },
               {
                 id: 3,
                 nomelead: 'João Miguel',
-                PlanoLead: 'Unimed',
+                planoLead: 'Unimed',
                 tipoplanoLead:'Adesão',
                 valorLead:163.45,
               },
@@ -84,7 +88,7 @@ export function loadLists() {
             {
                 id: 1,
                 nomelead: 'Ricardo Brito',
-                PlanoLead: 'Amil',
+                planoLead: 'Amil',
                 tipoplanoLead:'Adesão',
                 valorLead:365.45,
                 rating: 4,
@@ -92,14 +96,14 @@ export function loadLists() {
               {
                 id: 2,
                 nomelead: 'Lilian Carvalho',
-                PlanoLead: 'Bradesco',
+                planoLead: 'Bradesco',
                 tipoplanoLead:'PME',
                 valorLead:365.45,
               },
               {
                 id: 3,
                 nomelead: 'João Miguel',
-                PlanoLead: 'Unimed',
+                planoLead: 'Unimed',
                 tipoplanoLead:'Adesão',
                 valorLead:163.45,
               },
@@ -113,7 +117,7 @@ export function loadLists() {
             {
                 id: 1,
                 nomelead: 'Ricardo Brito',
-                PlanoLead: 'Amil',
+                planoLead: 'Amil',
                 tipoplanoLead:'Adesão',
                 valorLead:365.45,
                 rating: 4,
@@ -121,14 +125,14 @@ export function loadLists() {
               {
                 id: 2,
                 nomelead: 'Lilian Carvalho',
-                PlanoLead: 'Bradesco',
+                planoLead: 'Bradesco',
                 tipoplanoLead:'PME',
                 valorLead:365.45,
               },
               {
                 id: 3,
                 nomelead: 'João Miguel',
-                PlanoLead: 'Unimed',
+                planoLead: 'Unimed',
                 tipoplanoLead:'Adesão',
                 valorLead:163.45,
               },

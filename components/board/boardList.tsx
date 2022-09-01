@@ -1,6 +1,6 @@
 import ListList from "../list/listList";
 import { loadLists } from "../../pages/services/api";
-import { useState } from "react";
+import { Provider, useState } from "react";
 import BoardContext from "./context";
 
 const data = loadLists();
@@ -10,7 +10,7 @@ export default function Board() {
 
  
   return (
-    <BoardContext.Provider >
+    <BoardContext.Provider value={{}} >
       <div className="py-8 block">
         {lists.map(list => (
           <ListList key={ListList.title}  data={list} />

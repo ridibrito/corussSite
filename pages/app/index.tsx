@@ -9,19 +9,21 @@ import Chartbar from "../../components/charts/chartbar";
 import ChartVendedores from "../../components/charts/chartVendedores";
 import ChartValor from "../../components/charts/chartValor";
 
+
 export default function Dashboard() {
   return (
     <>
       <div className="h-full bg-gray-100 pl-60 pt-16 pr-4">
+        
         <div className="flex justify-between">
           <div className="flex items-center  py-4">
-            <Link href="/">
+            <Link href="/app">
               <a>
                 <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5" />
               </a>
             </Link>
             <h3 className="ml-3  font-normal text-gray-500">-</h3>
-            <h1 className=" ml-3 font-normal text-gray-500 ">Dashboard</h1>
+            <h1 className=" ml-3 font-normal text-gray-500 dark:text-white">Dashboard</h1>
           </div>
           <div className="flex items-center p-2 text-gray-500 font-normal">
             <label>De</label>
