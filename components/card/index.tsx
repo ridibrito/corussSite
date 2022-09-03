@@ -53,7 +53,7 @@ export default function Card({ data, index, listIndex }) {
       <div
         isDragging={isDragging}
         ref={ref}
-        className="bg-white border-l-4 border-t-2 border-t-gray-100 border-sky-600 border-opacity-80 rounded mb-3 p-5 shadow-md h-28 mr-3 hover:bg-gray-200"
+        className="bg-white  dark:bg-gray-700 dark:text-gray-200 border-l-4 border-t-2 border-t-gray-100 dark:border-t-gray-700 border-sky-600 border-opacity-80 rounded mb-3 p-5 shadow-md h-28 mr-3 hover:bg-gray-200"
       >
         <p className="font-normal text-lg leading-5 cursor-grab">
           {data.nomelead}

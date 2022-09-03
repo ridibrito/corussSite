@@ -1,32 +1,38 @@
-import '../styles/globals.css'
-import Head from 'next/head'
-import Navtop from '../components/navtop'
-import Navbar from '../components/navbar'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import { useRouter } from "next/router";
+import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
+import { SessionProvider } from "next-auth/react";
+import LayoutApp from "../components/layout/LayoutApp";
+import Layoutpublic from "../components/layout/LayoutPublic";
+import LayoutTenant from "../components/layout/LayoutTenant";
 
 
-function MyApp({ Component, pageProps }: AppProps) {
-   
-  
+
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+
+
+  const router = useRouter()
+  const { pathname }  = router
+  let Layout = Layoutpublic
+  if(pathname.indexOf('/app') === 0) {
+    Layout = LayoutApp
+  }
+  if(pathname.indexOf('/[slug]') === 0) {
+    Layout = LayoutTenant
+  }
   return (
     <>
-    <ThemeProvider>
-      <Head>
-        <title>Coruss - Bem vindo a liberdade!</title>
-        <meta
-          name="description"
-          content="Gestão completa para o corretor de planos de saúde"
-        ></meta>
-        <link rel="shortcut icon" href="/icone2.png" />
-      </Head>
-      <Navtop />
-      <Navbar />
-
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class">
+        <SessionProvider>
+          <Layout>
+            
+            <Component {...pageProps} />
+          </Layout>
+        </SessionProvider>
       </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

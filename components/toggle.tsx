@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 
 import { BiMoon, BiSun } from "react-icons/bi";
 
-export default function Toggle() {
+export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 

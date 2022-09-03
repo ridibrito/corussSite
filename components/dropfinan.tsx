@@ -33,7 +33,7 @@ export default function DropFinan() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href="/financeiro">
+                <Link href="/app/financeiro">
                   <a
                     className={classNames(
                       active
@@ -49,7 +49,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/financeiro/ContasaPagar">
+                <Link href="/app/financeiro/ContasaPagar">
                   <a
                     className={classNames(
                       active
@@ -66,7 +66,7 @@ export default function DropFinan() {
             
             <Menu.Item>
               {({ active }) => (
-                <Link href="/financeiro/ContasaReceber">
+                <Link href="/app/financeiro/ContasaReceber">
                   <a
                     className={classNames(
                       active
@@ -82,7 +82,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/financeiro/Comissoes">
+                <Link href="/app/financeiro/Comissoes">
                   <a
                     className={classNames(
                       active
@@ -98,7 +98,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/financeiro/Bonificacoes">
+                <Link href="/app/financeiro/Bonificacoes">
                   <a
                     className={classNames(
                       active
@@ -114,7 +114,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/financeiro/RelatoriosFinanceiro">
+                <Link href="/app/financeiro/RelatoriosFinanceiro">
                   <a
                     className={classNames(
                       active

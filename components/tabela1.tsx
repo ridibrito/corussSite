@@ -5,7 +5,7 @@ import { FiTrash2 } from 'react-icons/fi'
 
 
 
-export default function Tabela1({ data }) {    
+export default function Tabela1() {    
   return (
     <>
    
@@ -96,7 +96,7 @@ export default function Tabela1({ data }) {
                   href="#"
                   className=" font-medium text-blue-600 dark:text-sky-600 hover:underline"
                 >
-                  <BsPencilSquare classNameName="ml-4" />
+                  <BsPencilSquare className ="ml-4" />
                 </a>
               </td>
               <td className="py-4 px-6">
@@ -104,7 +104,7 @@ export default function Tabela1({ data }) {
                   href="#"
                   className="font-medium text-blue-600 dark:text-sky-600 hover:underline"
                 >
-                  <FiTrash2 classNameName="ml-4" />
+                  <FiTrash2 className ="ml-4" />
                 </a>
               </td>
             </tr>

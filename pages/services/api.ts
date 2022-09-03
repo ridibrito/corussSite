@@ -1,9 +1,6 @@
 
-
 export function loadLists() {
 
-
-    
     return [
       { 
         title: 'Leads', 

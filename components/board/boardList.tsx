@@ -10,7 +10,7 @@ export default function Board() {
 
  
   return (
-    <BoardContext.Provider value={{}} >
+    <BoardContext.Provider value={{lists}}>
       <div className="py-8 block">
         {lists.map(list => (
           <ListList key={ListList.title}  data={list} />

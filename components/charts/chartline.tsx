@@ -33,6 +33,7 @@ export const data = [
   export default function Chartline() {
     return (
       <Chart
+      
         chartType="Line"
         width="100%"
         height="400px"

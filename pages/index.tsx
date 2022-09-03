@@ -1,17 +1,23 @@
 import Link from "next/link"
+import { NextPage } from "next"
+import { useSession, signIn, signOut } from "next-auth/react"
+import Seo from "../components/Seo"
+
+const Home: NextPage = () => {
+  return(<><div>
+   <Seo title="Coruss" description="Bem vindo a liberdade"/>
+ 
+    <ul>
+      <li>
+      <Link href="/app"><a>App</a></Link>
+      </li>
+      <li>
+      <Link href="/ricardo"><a>Tenant Home</a></Link>
+      </li>
+    </ul>
+    
+    </div></>)
+}
+export default Home
 
 
-export default function Home() {
-  return (<>
-    <div className="pl-60 pt-60">
-
-      <h1 className="">Site</h1>
-      <Link href="/app"><a><h1 className="">App</h1></a></Link>
-      
-      
-      </div>
-      
-      
-      
-      
-      </>)}
