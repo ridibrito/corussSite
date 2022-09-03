@@ -37,8 +37,8 @@ export default function DropAdm() {
                   <a
                     className={classNames(
                       active
-                        ? ' text-sky-600'
-                        : 'text-gray-600 hover:text-sky-600',
+                      ?   ' text-sky-600 dark:text-gray-400 '
+                      : 'text-gray-600 dark:text-gray-200 dark:hover:text-gray-500 hover:text-sky-600',
                       'block px-4 py-2 text-md'
                     )}
                   >
@@ -54,8 +54,8 @@ export default function DropAdm() {
                   <a
                     className={classNames(
                       active
-                        ? ' text-sky-600'
-                        : 'text-gray-600 hover:text-sky-600',
+                        ?   ' text-sky-600 dark:text-gray-400 '
+                        : 'text-gray-600 dark:text-gray-200 dark:hover:text-gray-500 hover:text-sky-600',
                       'block px-4 py-2 text-md'
                     )}
                   >
@@ -72,8 +72,8 @@ export default function DropAdm() {
                   <a
                     className={classNames(
                       active
-                        ? ' text-sky-600'
-                        : 'text-gray-600 hover:text-sky-600',
+                      ?   ' text-sky-600 dark:text-gray-400 '
+                      : 'text-gray-600 dark:text-gray-200 dark:hover:text-gray-500 hover:text-sky-600',
                       'block px-4 py-2 text-md'
                     )}
                   >
@@ -89,8 +89,8 @@ export default function DropAdm() {
                   <a
                     className={classNames(
                       active
-                        ? ' text-sky-600'
-                        : 'text-gray-600 hover:text-sky-600',
+                      ?   ' text-sky-600 dark:text-gray-400 '
+                      : 'text-gray-600 dark:text-gray-200 dark:hover:text-gray-500 hover:text-sky-600',
                       'block px-4 py-2 text-md'
                     )}
                   >

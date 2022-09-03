@@ -17,16 +17,16 @@ import { BsEraser } from "react-icons/bs";
 export default function simulador() {
   return (
     <>
-      <div className="h-screen bg-gray-100 pl-60 pt-16 pr-4">
+      <div className="h-screen bg-gray-100 dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 pr-4">
         <div className="flex justify-between">
           <div className="flex items-center py-4">
             <Link href="/app">
               <a>
-                <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5" />
+                <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5 dark:bg-gray-600 dark:text-gray-400" />
               </a>
             </Link>
-            <h3 className="ml-3 text-xl font-normal text-gray-500">-</h3>
-            <h1 className=" ml-3 pt-1 font-normal text-gray-500 ">Simulador</h1>
+            <h3 className="ml-3 text-xl font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-400">-</h3>
+            <h1 className=" ml-3 pt-1 font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-400 ">Simulador</h1>
           </div>
           <div className="flex items-center p-2 text-gray-500 font-normal">
             <label>Filtro por data</label>
@@ -38,8 +38,8 @@ export default function simulador() {
         </div>
         <hr></hr>
 
-        <div className="bg-white w-full max-w-7xl rounded-md shadow-md flex-col p-4 mt-3 ">
-          <div className="ml-2 flex-1">
+        <div className="bg-white dark:bg-gray-700 dark:text-gray-400 w-full max-w-7xl rounded-md shadow-lg flex-col p-4 mt-3 ">
+          <div className="ml-2 flex-1 ">
             <div className="flex justify-between">
               <h2 className="text-lg pb-2 ">Selecione</h2>
               <h2 className="mr-2">
@@ -55,7 +55,7 @@ export default function simulador() {
             </div>
           </div>
         </div>
-        <div className="bg-white w-full max-w-7xl rounded-md shadow-md flex-col p-4 mt-3 ">
+        <div className="bg-white dark:bg-gray-700 dark:text-gray-400 w-full max-w-7xl rounded-md shadow-md flex-col p-4 mt-3 ">
           <div className="ml-2 flex-1">
             <div className="flex justify-between">
               <h2 className="text-lg pb-2 ">Filtros Adesão</h2>
@@ -72,7 +72,7 @@ export default function simulador() {
             </div>
           </div>
         </div>
-        <div className="bg-white w-full max-w-7xl rounded-md shadow-md flex-col p-4 mt-3 ">
+        <div className="bg-white dark:bg-gray-700 dark:text-gray-400 w-full max-w-7xl rounded-md shadow-md flex-col p-4 mt-3 ">
           <div className="ml-2 flex-1">
             <div className="flex justify-between">
               <h2 className="text-lg pb-2 ">Filtros</h2>
@@ -90,7 +90,7 @@ export default function simulador() {
             </div>
           </div>
         </div>
-        <div className="bg-white w-full max-w-7xl rounded-md shadow-md flex-col p-4 mt-3 ">
+        <div className="bg-white w-full dark:bg-gray-700 dark:text-gray-400 max-w-7xl rounded-md shadow-md flex-col p-4 mt-3 ">
           <div className="ml-2 flex-1">
             <div className="flex justify-between">
               <h2 className="text-lg pb-2 ">Faixas (por quantidade)</h2>

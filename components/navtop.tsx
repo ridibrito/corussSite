@@ -10,11 +10,13 @@ export default function Navtop() {
         <div className="justify-between shadow-lg fixed bg-white dark:bg-gray-700 w-full h-16  flex items-center px-4 duration-300">
           <div>
             <label className="relative block pl-56">
+              
               <input
                 type="search"
                 id="search"
                 className="block p-2 pl-10 w-80 text-sm  bg-gray-50 rounded-xl border border-gray-300 focus:ring-sky-600 focus:border-sky-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-600 dark:focus:border-sky-600"
                 placeholder="Buscar"
+                
               />
             </label>
             

@@ -4,58 +4,61 @@ import NavCadastros from '../../../../components/NavCadastros'
 import Filtro from '../../../../components/filtro'
 import Tabela1 from '../../../../components/tabela1'
 
-import { useState } from 'react'
 import AddAdministradora from '../../../../components/forms/form+Administradora'
+import { useState } from 'react'
 
 
 
 export default function Adm() {
-  const [showPopUpAdministradora,setShowPopUpAdministradora ] = useState(false)
+  const [showPopUpCliente,setShowPopUpCliente ] = useState(false)
 
-const handleNewAdministradora = () => {
-  setShowPopUpAdministradora(true);
+const handleNewCliente = () => {
+  setShowPopUpCliente(true);
 }
 
   return (
     <>
     
-      <div className=" h-screen overflow-y-scroll  bg-gray-100 pl-60 pt-16 pr-4">
+      <div className=" h-screen overflow-y-scroll dark:text-gray-400 dark:bg-gray-600 bg-gray-100 pl-60 pt-16 pr-4">
         <div className='flex justify-between mt-1 items-center'>
         <div className="flex items-center py-4">
           <Link href="/app">
             <a>
-              <AiFillHome className=" hover:text-sky-600 text-gray-500 w-5 h-5" />
+              <AiFillHome className="dark:text-gray-400 dark:bg-gray-600 hover:text-sky-600 text-gray-500 w-5 h-5" />
             </a>
           </Link>
-          <h3 className="ml-3 text-xl font-normal text-gray-500">-</h3>
-          <h1 className=" ml-3 font-normal text-gray-500 ">
+          <h3 className="ml-3 text-xl font-normal text-gray-500 dark:text-gray-400 dark:bg-gray-600">-</h3>
+          <h3 className=" ml-3 pt-1 font-normal text-gray-500 ">
             <Link href="/app/adm">
-              <a className="hover:text-sky-600 cursor-pointer">Administrativo</a>
+              <a className="hover:text-sky-600 cursor-pointer dark:text-gray-400 dark:bg-gray-600">Administrativo</a>
             </Link>
-          </h1>
-
-          <h1 className=" ml-3 font-normal text-gray-500 ">
+          </h3>
+          
+          <h3 className=" ml-3 pt-1 font-normal text-gray-500 ">
             <Link href="/app/adm">
-              <a className="hover:text-sky-600 cursor-pointer">/ Cadastros</a>
+              <a className="hover:text-sky-600 cursor-pointer dark:text-gray-400 dark:bg-gray-600">/ Cadastros</a>
             </Link>
-          </h1>
-          <h1 className=" ml-3 font-normal text-gray-500 ">
+          </h3>
+          <h3 className=" ml-3 pt-1 font-normal text-gray-500 dark:text-gray-400 dark:bg-gray-600">
            / Administradoras
-          </h1>
+          </h3>
 
   
         </div>
         <div>
-        <button onClick={handleNewAdministradora} className='flex items-center ml-60 bg-sky-600 text-white px-6 py-2 font-normal mr-3 rounded shadow'>Incluir cadastro +</button>
+        <button onClick={handleNewCliente} className='flex items-center ml-60 bg-sky-600 text-white px-6 py-2 font-normal mr-3 rounded shadow'>Incluir cadastro +</button>
 
         </div>
         </div>
         <hr></hr>
         <div >
           <NavCadastros />
-          
+          <AddAdministradora  
+            show ={showPopUpCliente}
+            setShow={setShowPopUpCliente}
+          />
           <Filtro />
-          <Tabela1 />
+          
         </div>
       </div>
     </>

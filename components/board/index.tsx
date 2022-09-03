@@ -15,7 +15,7 @@ export default function Board() {
   }
   return (
     <BoardContext.Provider value={{ lists, move }}>
-      <div className="flex py-8">
+      <div className="flex ">
         {lists.map((list, index) => (
           <List key={list.title} index={index}  data={list} />
         ))}

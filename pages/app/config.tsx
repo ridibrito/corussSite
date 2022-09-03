@@ -58,22 +58,22 @@ export default function Config() {
             <h1 className="p-4 font-normal text-lg ">Informações gerais</h1>
             <form>
             <div className="grid">
-            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nome</label>
+            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Nome</label>
             <input type="text" id="first_name" className="mb-2 ml-2 mr-2 flex-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-600 focus:border-sky-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-600 dark:focus:border-sky-600" placeholder="John" required/>
-            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sobrenome</label>
+            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Sobrenome</label>
             <input type="text" id="first_name" className="mb-2 ml-2 mr-2 flex-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-600 focus:border-sky-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-600 dark:focus:border-sky-600" placeholder="Albuquerque" required/>
             
             <div className="flex">
             <div className="flex-col">
-            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">CPF</label>
+            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">CPF</label>
             <input type="text" id="first_name" className="mb-2 ml-2 mr-2 w-32 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-600 focus:border-sky-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-600 dark:focus:border-sky-600" placeholder="000.000.000-00" required/>
             </div>
             <div className="flex-col">
-            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">E-mail</label>
+            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">E-mail</label>
             <input type="text" id="first_name" className="mb-2 ml-2 mr-2 flex-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-600 focus:border-sky-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-600 dark:focus:border-sky-600" placeholder="John@betoven.com.br" required/>
             </div>
             <div className="flex-col">
-            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Telefone</label>
+            <label htmlFor="first_name" className="ml-2 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Telefone</label>
             <input type="text" id="first_name" className="mb-2 ml-2 mr-2  w-32 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-600 focus:border-sky-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-600 dark:focus:border-sky-600" placeholder="(xx) xxxx-xxxxx" required/>
             </div>
             </div>

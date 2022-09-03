@@ -14,7 +14,7 @@ export default function CardList({ data }) {
     <>
       <div
         
-        className="bg-white border-l-4 max-w-6xl border-t-2 border-t-gray-100 border-sky-600 border-opacity-80 rounded mb-3 p-5 shadow-md h-28 mr-3 hover:bg-gray-200"
+        className="bg-white border-l-4 max-w-6xl border-t-2 border-t-gray-100 border-sky-600 border-opacity-80 rounded mb-3 p-5 dark:border-t-gray-700 shadow-md h-28 mr-3 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-200"
       >
        
         <div className="flex items-center justify-start space-x-12">

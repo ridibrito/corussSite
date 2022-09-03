@@ -4,7 +4,7 @@ import Image from "next/image"
 export default function EmailComp() {
   return (
     <>
-    <div className="flex items-center justify-between bg-white p-4 border-b border-x">
+    <div className="flex items-center justify-between bg-white p-4 border-b border-x dark:bg-gray-600 dark:border-gray-700">
       <div>
       <input className="form-check-input appearance-none h-5 w-5 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-white  transition duration-200  align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault"/>   
         <svg

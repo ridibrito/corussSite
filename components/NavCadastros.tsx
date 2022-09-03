@@ -1,46 +1,22 @@
-import Link from "next/link";
+import LinkMenu2 from "./LinkMenu2";
 
 export default function NavCadastros() {
   return (
     <>
-      <div className="bg-white rounded shadow mt-2">
-        <nav>
+      <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg mt-2">
+        <nav className="font-semibold">
           <ul className="flex items-center justify-around">
-            <Link href="/app/adm">
-              <li className="p-2 text-sky-600  hover:text-sky-600 hover:cursor-pointer hover:bg-blue-100 rounded-md m-2 ">
-                <a className="flex items-center font-semibold">
-                  Clientes e Fornecedores
-                </a>
-              </li>
-            </Link>
-            <Link href="/app/adm/cadastro/CadastroOperadoras">
-              <li className="p-2 text-sky-600  hover:text-sky-600 hover:cursor-pointer hover:bg-blue-100 rounded-md m-2 ">
-                <a className="flex items-center font-semibold">
-                  Operadoras
-                </a>
-              </li>
-            </Link>
-            <Link href="/app/adm/cadastro/CadastroAdministradoras">
-              <li className="p-2 text-sky-600  hover:text-sky-600 hover:cursor-pointer hover:bg-blue-100 rounded-md m-2 ">
-                <a className="flex items-center font-semibold">
-                  Adm
-                </a>
-              </li>
-            </Link>
-            <Link href="/app/adm/cadastro/CadastroPlano">
-              <li className="p-2 text-sky-600  hover:text-sky-600 hover:cursor-pointer hover:bg-blue-100 rounded-md m-2 ">
-                <a className="flex items-center font-semibold">
-                  Planos
-                </a>
-              </li>
-            </Link>
-            <Link href="/app/adm/cadastro/CadastroLocal">
-              <li className="p-2 text-sky-600  hover:text-sky-600 hover:cursor-pointer hover:bg-blue-100 rounded-md m-2 ">
-                <a className="flex items-center font-semibold">
-                  Locais de entrega
-                </a>
-              </li>
-            </Link>
+            <LinkMenu2 href="/app/adm">Clientes e Fornecedores</LinkMenu2>
+            <LinkMenu2 href="/app/adm/cadastro/CadastroOperadoras">
+              Operadoras
+            </LinkMenu2>
+            <LinkMenu2 href="/app/adm/cadastro/CadastroAdministradoras">
+              Adm
+            </LinkMenu2>
+            <LinkMenu2 href="/app/adm/cadastro/CadastroPlano">Planos</LinkMenu2>
+            <LinkMenu2 href="/app/adm/cadastro/CadastroLocal">
+              Locais de entrega
+            </LinkMenu2>
           </ul>
         </nav>
       </div>

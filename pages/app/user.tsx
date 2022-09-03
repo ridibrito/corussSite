@@ -8,22 +8,22 @@ export default function User() {
   return (
     <>
   
-      <div className=" h-screen bg-gray-100 pl-60 pt-16 pr-4">
+      <div className=" h-screen bg-gray-100  dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 pr-4">
         <div className="flex items-center py-4">
           <Link href="/app">
             <a>
-              <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5" />
+              <AiFillHome className="text-gray-500 dark:bg-gray-600 dark:text-gray-400 hover:text-sky-600 w-5 h-5" />
             </a>
           </Link>
-          <h3 className="ml-3 text-xl font-normal text-gray-500">-</h3>
-          <h1 className=" ml-3 pt-1 font-normal text-gray-500 ">Usuário</h1>
+          <h3 className="ml-3 text-xl font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-400">-</h3>
+          <h1 className=" ml-3 pt-1 font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-400">Usuário</h1>
         </div>
         <hr></hr>
 
         <div>
           <div className='flex mt-4'>
-            <div className='bg-white shadow-sm rounded-lg p-8 w-1/3'>
-              <Image className='rounded-lg shadow-md' src="/foto capa.png"  alt="foto perfil" width="100" height="100" />
+            <div className='bg-white dark:bg-gray-700 dark:text-gray-400 shadow-lg rounded-lg p-8 w-1/3'>
+              <Image className='rounded-full shadow-md' src="/foto capa.png"  alt="foto perfil" width="100" height="100" />
               <h2 className='font-normal text-lg '>Ricardo de Brito</h2>
               <br></br>
                 <div className='flex-cols'>
@@ -46,7 +46,7 @@ export default function User() {
               </div>
              
            </div>
-            <div className='bg-white w-2/3 ml-3 p-8 rounded-lg shadow-sm '>
+            <div className='bg-white dark:bg-gray-700 dark:text-gray-400 w-2/3 ml-3 p-8 rounded-lg shadow-lg '>
                  <h2 className='font-normal text-lg'>Informações gerais</h2>
                  <h3 className='font-seminormal'>Sobre mim</h3>
                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In hendrerit gravida rutrum quisque. Sed egestas egestas fringilla phasellus faucibus scelerisque. Proin libero nunc consequat interdum varius sit amet. Magnis dis parturient montes nascetur ridiculus. A pellentesque sit amet porttitor. Ac auctor augue mauris augue. Condimentum lacinia quis vel eros donec ac. Cras sed felis eget velit aliquet sagittis id consectetur. Volutpat blandit aliquam etiam erat velit scelerisque in dictum non. Fermentum dui faucibus in ornare quam viverra .</p>
