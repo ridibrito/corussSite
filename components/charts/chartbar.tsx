@@ -23,6 +23,7 @@ export default function Chartbar() {
       height="400px"
       data={data}
       options={options}
+     
     />
   );
 }

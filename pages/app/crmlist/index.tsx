@@ -1,9 +1,15 @@
 import Link from "next/link"
-import { AiFillHome } from 'react-icons/ai'
+import { useState } from "react"
+import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
 import BoardList from "../../../components/board/boardList"
+import AddLead from "../../../components/forms/AddLead"
 
 export default function Crm() {
- 
+  const [showPopUpLead,setShowPopUpLead ] = useState(false)
+
+  const handleNewCliente = () => {
+    setShowPopUpLead(true);
+  }
   return (
     <>
     
@@ -18,9 +24,18 @@ export default function Crm() {
           <h3 className="ml-3 text-xl font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-200">-</h3>
           <h1 className=" ml-3 pt-1 font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-200">CRM Lista</h1>
         </div>
-        
+        <div>
+        <button onClick={handleNewCliente} className='flex items-center ml-60 bg-sky-600 text-white px-6 py-2 font-normal mr-3 rounded shadow'><AiOutlinePlus/></button>
+
+        </div>
         </div>
         <hr></hr>
+        <AddLead  
+        //@ts-ignore
+            show ={showPopUpLead}
+            //@ts-ignore
+            setShow={setShowPopUpLead}
+          />
         
         <div className='flex justify-between pt-2  '>
           <h2 className='items-center text-lg text-gray-500 ml-3 pt-1 dark:bg-gray-600 dark:text-gray-200'>Oportunidades</h2>

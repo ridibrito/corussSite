@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <>
       <ThemeProvider attribute="class">
-        <SessionProvider>
+        <SessionProvider session={session}>
           <Layout>
             
             <Component {...pageProps} />

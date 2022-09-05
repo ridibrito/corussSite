@@ -30,19 +30,19 @@ export default function Navtop() {
             />
              <span className="flex -ml-7 mt-7 py-1 px-2 leading-none text-center text-sm whitespace-nowrap align-baseline font-bold bg-red-600 text-white rounded">3</span>
 
-            <Link href="/app/user">
+           
               <div className="flex items-center">
                 <div className="flex items-center">
                   <Image
-                    className="rounded-full cursor-pointer"
+                    className="rounded-full"
                     src="/foto  capa.png"
                     alt="User"
-                    width="40"
-                    height="40"
+                    width="50"
+                    height="50"
                   />
                 </div>
               </div>
-            </Link>
+           
           </div>
         </div>
       </nav>

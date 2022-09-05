@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-
+import ConectWhatsApp from '../../components/forms/conectWhatsApp'
 
 import { useState } from 'react'
 
@@ -33,12 +33,16 @@ return (
 
       </div>
       <div>
-      <button onClick={handleNewCliente} className='flex items-center ml-60 bg-sky-600 text-white px-6 py-2 font-normal mr-3 rounded shadow'><AiOutlinePlus/></button>
+      <button onClick={handleNewCliente} className='flex items-center ml-60 bg-sky-600 text-white px-6 py-2 font-normal mr-3 rounded shadow'>Conectar</button>
+      <ConectWhatsApp  
+            show ={showPopUpCliente}
+            setShow={setShowPopUpCliente}
+          />
 
       </div>
       </div>
       <hr></hr>
-      <div >
+      <div>
         
       
         

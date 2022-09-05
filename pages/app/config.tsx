@@ -9,27 +9,27 @@ import { MdOutlineLeaderboard } from "react-icons/md";
 export default function Config() {
   return (
     <>
-      <div className=" h-screen bg-gray-100 pl-60 pt-16 pr-4">
+      <div className=" h-screen bg-gray-100 dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 pr-4">
         <div className="flex items-center py-4">
           <Link href="/app">
             <a>
-              <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5" />
+              <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5 dark:bg-gray-600 dark:text-gray-400" />
             </a>
           </Link>
-          <h3 className="ml-3 text-xl font-normal text-gray-500">-</h3>
-          <h1 className=" ml-3 pt-1 font-normal text-gray-500 ">
+          <h3 className="ml-3 text-xl font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-400">-</h3>
+          <h1 className=" ml-3 pt-1 font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-400">
             Configurações
           </h1>
         </div>
         <hr></hr>
 
-        <div className="flex w-full mt-3">
+        <div className="flex w-full mt-3 ">
           <div className="w-2/4">
             <div className="flex h-30">
-              <div className="bg-white w-full rounded-md shadow-md ">
+              <div className="bg-white w-full rounded-lg shadow-lg dark:bg-gray-700 dark:text-gray-400">
                 <div className="flex items-center p-4">
                   <Image
-                    className="rounded-lg shadow-md"
+                    className="rounded-lg shadow-lg"
                     src="/foto capa.png"
                     alt="foto perfil"
                     width="100"
@@ -40,7 +40,7 @@ export default function Config() {
                       Ricardo de Brito
                     </h2>
                     <h3 className="flex mx-6">Assistente financeiro</h3>
-                    <button className="bg-sky-600 text-white px-8 py-1 mt-2 rounded-md mx-6">
+                    <button className="bg-sky-600  text-white px-8 py-1 mt-2 rounded-lg mx-6">
                       Upload foto
                     </button>
                   </div>
@@ -48,13 +48,13 @@ export default function Config() {
               </div>
             </div>
             <div className="flex pt-3">
-              <div className="bg-white w-full h-40 rounded-md shadow-md">
+              <div className="bg-white dark:bg-gray-700 dark:text-gray-400 w-full h-40 rounded-lg shadow-lg">
                 <div className="flex"></div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white w-2/4 ml-3 rounded-md shadow-md ">
+          <div className="bg-white dark:bg-gray-700 dark:text-gray-400 w-2/4 ml-3 rounded-lg shadow-lg ">
             <h1 className="p-4 font-normal text-lg ">Informações gerais</h1>
             <form>
             <div className="grid">
@@ -81,7 +81,7 @@ export default function Config() {
             </form>
           </div>
         </div>
-        <div className="bg-white w-full h-80 mt-3 rounded-md shadow-md">
+        <div className="bg-white dark:bg-gray-700 dark:text-gray-400 w-full h-80 mt-3 rounded-lg shadow-lg">
           <h1>donuts charts</h1>
         </div>
       </div>

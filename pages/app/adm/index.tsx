@@ -2,10 +2,11 @@ import Link from 'next/link'
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
 import NavCadastros from '../../../components/NavCadastros'
 import Filtro from '../../../components/filtro'
-import Tabela1 from '../../../components/tabela1'
 
 import AddCliente from '../../../components/forms/form+Cliente'
 import { useState } from 'react'
+import TabelaClientes from '../../../components/tabelas/tabelaClientes'
+
 
 
 
@@ -51,14 +52,17 @@ const handleNewCliente = () => {
         </div>
         </div>
         <hr></hr>
-        <div >
-          <NavCadastros />
-          <AddCliente  
+        <AddCliente  
+        //@ts-ignore
             show ={showPopUpCliente}
+            //@ts-ignore
             setShow={setShowPopUpCliente}
           />
+        <div >
+          <NavCadastros />
+         
           <Filtro />
-          <Tabela1 />
+          <TabelaClientes/>
         </div>
       </div>
     </>

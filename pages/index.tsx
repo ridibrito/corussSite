@@ -1,22 +1,27 @@
-import Link from "next/link"
 import { NextPage } from "next"
 import { useSession, signIn, signOut } from "next-auth/react"
 import Seo from "../components/Seo"
 
 const Home: NextPage = () => {
-  return(<><div>
-   <Seo title="Coruss" description="Bem vindo a liberdade"/>
- 
-    <ul>
-      <li>
-      <Link href="/app"><a>App</a></Link>
-      </li>
-      <li>
-      <Link href="/ricardo"><a>Tenant Home</a></Link>
-      </li>
-    </ul>
-    
-    </div></>)
+
+  <Seo title="Coruss" description="Bem vindo a liberdade"/>
+  
+  const { data: session } = useSession()
+  if (session) {
+    return (
+      <>
+        Signed in as {session?.user?.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    )
+  }
+  return (
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn('auth0')}>Sign in</button>
+  
+  </>
+  )
 }
 export default Home
 

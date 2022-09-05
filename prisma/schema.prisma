@@ -61,5 +61,41 @@ model Tenant {
   image     String   @db.VarChar(255)
   createdAt DateTime @default(now()) @db.Timestamp(6)
   
- 
+}
+
+model Client {
+  id        Int      @id @default(autoincrement())
+  name     String   @db.VarChar(255)
+  cpf     String   @db.VarChar(255)
+  telefone     String   @db.VarChar(255)
+  email     String   @db.VarChar(255)
+  dataNascimento DateTime @default(now()) @db.Timestamp(6)
+  sexo String 
+  Nproposta Int
+  dataVenda DateTime @default(now()) @db.Timestamp(6)
+  dataVigencia DateTime @default(now()) @db.Timestamp(6)
+  valor Int 
+  tipoPlano String @db.VarChar(255)
+  administradora String @db.VarChar(255)
+  operadora String @db.VarChar(255)
+  qtsVidas Int
+  comissao String @db.VarChar(255)
+  taxaAdesao String @db.VarChar(255)
+  valorTaxa Int
+  bonificacao String @db.VarChar(255)
+  valorBonificacao Int
+
+}
+
+model Lead {
+  id        Int      @id @default(autoincrement())
+  name     String   @db.VarChar(255)
+  telefone     String   @db.VarChar(255)
+  email     String   @db.VarChar(255)
+  tipoPlano String @db.VarChar(255)
+  operadora String @db.VarChar(255)
+  valor Int 
+
+
+
 }

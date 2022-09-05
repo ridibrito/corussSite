@@ -26,19 +26,20 @@ const AppHome = () => (
             <h1 className=" ml-3 font-normal text-gray-500  dark:bg-gray-600 dark:text-gray-400">Dashboard</h1>
           </div>
           <div className="flex items-center p-2 text-gray-500 font-normal">
-            <label className="dark:text-gray-200">De</label>
+            <label className="dark:text-gray-400">De</label>
             <input
-              className="ml-4 dark:bg-gray-700 rounded border border-gray-500 pl-3"
+              className="ml-4 dark:bg-gray-700 rounded border dark:text-gray-400 px-4 border-gray-500 pl-3"
               type="date"
             />
-            <label className="ml-3 dark:text-gray-200">a</label>
+            <label className="ml-3 dark:text-gray-400">a</label>
             <input
-              className="ml-4 rounded border dark:bg-gray-700 border-gray-500 pl-3"
+              className="ml-4 rounded border px-4 dark:bg-gray-700 dark:text-gray-400 border-gray-500 pl-3"
               type="date"
             />
           </div>
         </div>
         <hr></hr>
+        
 
         <div className="flex w-full mt-3">
           <div className="w-2/4">

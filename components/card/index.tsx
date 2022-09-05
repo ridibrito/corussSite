@@ -3,13 +3,15 @@ import { BiTask } from "react-icons/bi";
 import { useDrag, useDrop } from "react-dnd";
 import React, { useRef, useContext } from "react";
 import BoardContext from "../board/context";
-
+//@ts-ignore
 export default function Card({ data, index, listIndex }) {
   const ref = useRef();
+  //@ts-ignore
   const { move } = useContext(BoardContext);
-
+//@ts-ignore
   const [{ isDragging }, dragRef] = useDrag({
     type: "CARD",
+    //@ts-ignore
     index,
     content: data.content,
     listIndex,
@@ -20,9 +22,10 @@ export default function Card({ data, index, listIndex }) {
   const [, dropRef] = useDrop({
     accept: "CARD",
     hover(item, monitor) {
+      //@ts-ignore
       const draggedListIndex = item.lisIndex;
       const targetListIndex = listIndex;
-
+//@ts-ignore
       const draggedIndex = item.index;
       const targetIndex = index;
 
@@ -32,10 +35,12 @@ export default function Card({ data, index, listIndex }) {
       ) {
         return;
       }
+      //@ts-ignore
       const targetSize = ref.current.getBoundingClientRect();
       const targetCenter = (targetSize.bottom - targetSize.top) / 2;
 
       const draggedOffset = monitor.getClientOffset();
+      //@ts-ignore
       const draggedTop = draggedOffset.y - targetSize.top;
       if (draggedIndex < targetIndex && draggedTop < targetCenter) {
         return;
@@ -44,8 +49,9 @@ export default function Card({ data, index, listIndex }) {
         return;
       }
       move(draggedListIndex, targetListIndex, draggedIndex, targetIndex);
-
+//@ts-ignore
       item.index = targetIndex;
+      //@ts-ignore
       item.listIndex = targetListIndex;
     },
   });
@@ -54,6 +60,7 @@ export default function Card({ data, index, listIndex }) {
     <>
       <div
         isDragging={isDragging}
+        //@ts-ignore
         ref={ref}
         className="bg-white  dark:bg-gray-700 dark:text-gray-300 border-l-4 border-t-2 border-t-gray-100 dark:border-t-gray-700 border-sky-600 border-opacity-80 rounded mb-3 p-5 shadow-md h-28 mr-3 hover:bg-gray-200"
       >

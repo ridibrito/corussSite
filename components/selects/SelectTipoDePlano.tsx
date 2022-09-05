@@ -13,7 +13,7 @@ export default function SelectTipoDePlano() {
     return (
         <Select
         placeholder="Tipo de Plano"
-        className="basic-single ml-2 w-full"
+        className="basic-single ml-2 w-full dark:bg-gray-500"
         closeMenuOnSelect={true}
         classNamePrefix="Tipo de plano"
         options={tipoDePlano}

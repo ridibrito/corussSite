@@ -4,29 +4,27 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import prisma from '../../../lib/prisma'
 
 
-interface Props {
-    clientId: String
-    clientSecret: String
-}
 
 export default NextAuth({
     adapter: PrismaAdapter(prisma),
-  providers: [
+    providers: [
     Auth0Provider({
+      //@ts-ignore
       clientId: process.env.AUTH0_ID,
+      //@ts-ignore
       clientSecret: process.env.AUTH0_SECRET,
-      domain: process.env.AUTH0_DOMAIN,
+      issuer: process.env.AUTH0_ISSUER
     }),
   ],
-//   secret: process.env.SECRET,
+  // secret: process.env.SECRET,
 
-//   session: {
-//     strategy: 'jwt'
+  // session: {
+  //   strategy: 'jwt'
 
-//   },
-//   jwt: {
-//     secret: process.env.SECRET,
-//   },
+  // },
+  // jwt: {
+  //   secret: process.env.SECRET,
+  // },
 
   pages: {
   },

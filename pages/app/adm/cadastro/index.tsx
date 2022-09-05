@@ -3,6 +3,7 @@ import { AiFillHome } from 'react-icons/ai'
 import NavCadastros from '../../../../components/NavCadastros'
 import Filtro from '../../../../components/filtro'
 import Tabela1 from '../../../../components/tabela1'
+import { AiOutlinePlus } from 'react-icons/ai'
 
 import AddCliente from '../../../../components/forms/form+Cliente'
 import { useState } from 'react'
@@ -18,7 +19,10 @@ const handleNewCliente = () => {
 
   return (
     <>
-    
+        <AddCliente  
+            show ={showPopUpCliente}
+            setShow={setShowPopUpCliente}
+          />
       <div className=" h-screen overflow-y-scroll dark:text-gray-400 dark:bg-gray-600 bg-gray-100 pl-60 pt-16 pr-4">
         <div className='flex justify-between mt-1 items-center'>
         <div className="flex items-center py-4">
@@ -42,21 +46,18 @@ const handleNewCliente = () => {
           <h3 className=" ml-3 pt-1 font-normal text-gray-500 dark:text-gray-400 dark:bg-gray-600">
            / Clientes 
           </h3>
-
+      
   
         </div>
         <div>
-        <button onClick={handleNewCliente} className='flex items-center ml-60 bg-sky-600 text-white px-6 py-2 font-normal mr-3 rounded shadow'>Incluir cadastro +</button>
+        <button onClick={handleNewCliente} className='flex items-center ml-60 bg-sky-600 text-white px-6 py-2 font-normal mr-3 rounded shadow'><AiOutlinePlus /></button>
 
         </div>
         </div>
         <hr></hr>
         <div >
           <NavCadastros />
-          <AddCliente  
-            show ={showPopUpCliente}
-            setShow={setShowPopUpCliente}
-          />
+        
           <Filtro />
           
         </div>

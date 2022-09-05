@@ -1,7 +1,13 @@
 import { IoMdCloseCircle } from "react-icons/io";
 
-export default function AddAdministradora({ show, setShow }) {
+interface Props {
+  show: string
+  setShow: string
+}
+
+export default function AddAdministradora({ show, setShow }:Props) {
   const handleClose = () => {
+    //@ts-ignore
     setShow(false);
   };
   return (

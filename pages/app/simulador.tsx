@@ -28,13 +28,7 @@ export default function simulador() {
             <h3 className="ml-3 text-xl font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-400">-</h3>
             <h1 className=" ml-3 pt-1 font-normal text-gray-500 dark:bg-gray-600 dark:text-gray-400 ">Simulador</h1>
           </div>
-          <div className="flex items-center p-2 text-gray-500 font-normal">
-            <label>Filtro por data</label>
-            <input
-              className="ml-4 rounded border border-gray-500 pl-3"
-              type="date"
-            />
-          </div>
+       
         </div>
         <hr></hr>
 
