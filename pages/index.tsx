@@ -1,28 +1,23 @@
 import { NextPage } from "next"
 import { useSession, signIn, signOut } from "next-auth/react"
 import Seo from "../components/Seo"
+import NavbarSite from "../components/site/navbarSite"
+import TabsSite from "../components/site/tabsSite"
+import HeaderSite from "../components/site/headerSite"
 
-const Home: NextPage = () => {
+
+const Home = () => {
+ 
 
   <Seo title="Coruss" description="Bem vindo a liberdade"/>
-  
-  const { data: session } = useSession()
-  if (session) {
-    return (
-      <>
-        Signed in as {session?.user?.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    )
-  }
-  return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn('auth0')}>Sign in</button>
-  
-  </>
-  )
+  return(<><div>
+    <NavbarSite />
+    <HeaderSite />
+    <TabsSite />
+    
+    
+    
+    
+    </div></>)
 }
 export default Home
-
-
