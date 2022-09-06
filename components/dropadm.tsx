@@ -33,7 +33,7 @@ export default function DropAdm() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/adm">
+                <Link href="/app/id-tenant/adm">
                   <a
                     className={classNames(
                       active
@@ -50,7 +50,7 @@ export default function DropAdm() {
                         
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/adm/vendas">
+                <Link href="/app/id-tenant/adm/vendas">
                   <a
                     className={classNames(
                       active
@@ -68,7 +68,7 @@ export default function DropAdm() {
            
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/adm/servicos">
+                <Link href="/app/id-tenant/adm/servicos">
                   <a
                     className={classNames(
                       active
@@ -85,7 +85,7 @@ export default function DropAdm() {
             
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/adm/RelatoriosA">
+                <Link href="/app/id-tenant/adm/RelatoriosA">
                   <a
                     className={classNames(
                       active

@@ -44,6 +44,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  tenants UserOnTenants[]
 }
 
 model VerificationToken {
@@ -54,13 +55,24 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 model Tenant {
-  id        Int      @id @default(autoincrement())
+  id       String  @id @default(cuid())
   name     String   @db.VarChar(255)
   slug     String   @db.VarChar(255)
   plan     String   @db.VarChar(255)
   image     String   @db.VarChar(255)
   createdAt DateTime @default(now()) @db.Timestamp(6)
-  
+  users   UserOnTenants[]   
+}
+
+model UserOnTenants {
+    user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId String
+    tenant   Tenant     @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+    tenantId String
+    assignedAt DateTime @default(now())
+    role String
+    @@id([userId, tenantId])
+
 }
 
 model Client {

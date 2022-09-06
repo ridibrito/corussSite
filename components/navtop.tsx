@@ -2,8 +2,11 @@ import { IoMdNotifications } from "react-icons/io";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "./toggle";
+import { useSession } from "next-auth/react";
 
 export default function Navtop() {
+  const { data: session } = useSession();
+
   return (
     <>
       <nav className="fixed z-10">
@@ -32,11 +35,12 @@ export default function Navtop() {
 
            
               <div className="flex items-center">
-                <div className="flex items-center">
-                  <Image
-                    className="rounded-full"
-                    src="/foto  capa.png"
-                    alt="User"
+                <div className="flex items-center text-sm font-semibold ml-5">
+                  {session?.user?.name}
+                  <img
+                    className="rounded-full ml-2"
+                    src={session?.user?.image}
+                    alt={session?.user?.name}
                     width="50"
                     height="50"
                   />

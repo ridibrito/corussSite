@@ -9,8 +9,13 @@ import { FaBuffer } from "react-icons/fa";
 import DropAdm from "./dropadm";
 import DropFinan from "./dropfinan";
 import LinkMenu from "./LinkMenu";
+import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const router = useRouter()
+  const { data: session } = useSession();
+
   return (
     <>
       <nav className="pt-3 bg-white dark:bg-gray-700 fixed z-20 w-56 min-h-screen shadow-lg mt-0 pl-3 pr-3 overflow-y-auto">
@@ -28,25 +33,25 @@ export default function Navbar() {
             </div>
           </div>
 
-          <LinkMenu href="/app">
+          <LinkMenu href="/app/id-tenant">
             <RiDashboardFill className="w-7 h-7 mr-2" />
             Dashboard
           </LinkMenu>
 
-          <LinkMenu href="/app/crm">
+          <LinkMenu href="/app/id-tenant/crm">
             <MdComputer className="w-7 h-7 mr-2" />
             CRM
           </LinkMenu>
 
-          <LinkMenu href="/app/adm">
+          <LinkMenu href="/app/id-tenant/adm">
             <DropAdm />
           </LinkMenu>
 
-          <LinkMenu href="/app/financeiro">
+          <LinkMenu href="/app/id-tenant/financeiro">
             <DropFinan />
           </LinkMenu>
 
-          <LinkMenu href="/app/email">
+          <LinkMenu href="/app/id-tenant/email">
             <AiFillMail className="w-7 h-7 mr-2" />
             Inbox{" "}
             <span className="flex ml-16 py-1 px-2 leading-none text-center  text-sky-600 text-sm whitespace-nowrap align-baseline font-bold bg-sky-200  rounded ">
@@ -54,7 +59,7 @@ export default function Navbar() {
             </span>
           </LinkMenu>
 
-          <LinkMenu href="/app/whatsapp">
+          <LinkMenu href="/app/id-tenant/whatsapp">
             <IoLogoWhatsapp className="w-7 h-7 mr-2" />
             WhatsApp
             <span className="flex ml-8 py-1 px-2 leading-none text-center  text-white text-sm whitespace-nowrap align-baseline font-bold bg-green-500  rounded-full ">
@@ -62,21 +67,24 @@ export default function Navbar() {
             </span>
           </LinkMenu>
 
-          <LinkMenu href="/app/simulador">
+          <LinkMenu href="/app/id-tenant/simulador">
             <FaBuffer className="w-8 h-8 mr-2" />
             Simulador
           </LinkMenu>
 
           <div className="pt-32">
            
-            <LinkMenu href="/app/config">
+            <LinkMenu href="/app/id-tenant/config">
               <IoIosSettings className="w-8 h-7 mr-2" />
               Configurações
             </LinkMenu>
             
            <button className="flex items-center text-sm pr-4 justify-center mx-auto text-gray-500 hover:text-sky-600 hover:cursor-pointer  rounded-md m-2">
             <RiLogoutCircleRLine className="w-4 h-5 mr-2" />
-            Log out
+            <button onClick={() => {
+              signOut()
+              router.push('/app')
+            }}>Logout</button>
             </button>
            
           </div>

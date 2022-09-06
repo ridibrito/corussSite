@@ -6,6 +6,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 
 
 export default function NavbarSite() {
+  const { data: session } = useSession()
   return (
     <>
     <div className='shadow'>
@@ -47,10 +48,13 @@ export default function NavbarSite() {
             </Link>
           </ul>
         </div>
-
-          <button onClick={() => signIn('auth0')} className="hidden sm:flex bg-sky-600 text-white px-6 py-2 rounded-md font-semibold">
-            Sign in
-          </button>
+       
+      
+        <Link href="/app"><a> <button className="hidden sm:flex bg-sky-600 text-white px-6 py-2 rounded-md font-semibold">
+            Entrar
+          </button></a>
+         
+          </Link>
         </div>
       </div>
       

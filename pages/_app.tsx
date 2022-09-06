@@ -6,7 +6,7 @@ import { SessionProvider } from "next-auth/react";
 import LayoutApp from "../components/layout/LayoutApp";
 import Layoutpublic from "../components/layout/LayoutPublic";
 import LayoutTenant from "../components/layout/LayoutTenant";
-
+import LayoutEmpty from "../components/layout/LayoutEmpty";
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
@@ -20,6 +20,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   }
   if(pathname.indexOf('/[slug]') === 0) {
     Layout = LayoutTenant
+  }
+  if (pathname === '/app'){
+    Layout = LayoutEmpty
   }
   return (
     <>
