@@ -15,7 +15,7 @@ const LinkMenu2 = ({ children, href }: Props) => {
     const selected = pathname === href
 
     return (
-        
+         //@ts-ignore
         <Link href={href}>
             <a className={selected
                 ? "flex dark:text-gray-300  items-center pt-2 pl-2 pb-2 text-sky-600 hover:cursor-pointer  rounded-md m-2"
