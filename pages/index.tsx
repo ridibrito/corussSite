@@ -1,24 +1,30 @@
-import { NextPage } from "next"
-import { useSession, signIn, signOut } from "next-auth/react"
-import Seo from "../components/Seo"
-import NavbarSite from "../components/site/navbarSite"
-import TabsSite from "../components/site/tabsSite"
-import HeaderSite from "../components/site/headerSite"
+import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 
 
-const Home = () => {
- 
+export default function Home(){
+    const { data: session } = useSession()
+    return(
+    <>
+    <ul>
+        <li>
+            <Link href="/app"><a>App</a></Link>
+        </li>
+        <li>
+            <Link href="/coruss"><a>Tenant Coruss</a></Link>
+        </li>
+       
+        <li>
+        
+        <button onClick={() => signIn()}>Sign in</button>
+        </li>
+        <p>
+        Signed in as {session?.user?.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </p>
 
-  <Seo title="Coruss" description="Bem vindo a liberdade"/>
-  return(<><div>
-    <NavbarSite />
-    <HeaderSite />
-    <TabsSite />
-    
-    
-    
-    
-    </div></>)
+    </ul>
+
+    </>
+    )
 }
-export default Home
-

@@ -2,8 +2,11 @@ import NextAuth from "next-auth";
 import Auth0Provider from "next-auth/providers/auth0";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "../../../lib/prisma";
+import { NextAuthOptions } from "next-auth"
 
-export default NextAuth({
+
+export const authOptions: NextAuthOptions = {
+  
   adapter: PrismaAdapter(prisma),
   providers: [
     Auth0Provider({
@@ -28,38 +31,48 @@ export default NextAuth({
 
   callbacks: {
      async session({ session, token, user }) { 
+      console.log('session', { session, token, user })
       //@ts-ignore
+      session.user.id = user.id
+      
       return session 
     
     },
-    //async redirect({ url, baseUrl }) { return baseUrl },
+   // async redirect({ url, baseUrl }) {  return baseUrl    },
      //async signIn({ user, account, profile, email, credentials }) { return true },
-     async jwt({ token, user, isNewUser }) {
+     async jwt({ token, user, isNewUser, tenant }) {
       
       if (isNewUser) {
         const accounts = await prisma.tenant.findFirst({
           where: {
             users: {
               some: {
-                userId: user?.id,
-              },
-            },
-          },
-        });
-        if (!accounts) {
-          await prisma.tenant.create({
-            //@ts-ignore
-            data: {
-              name: "meu tenant",
-              users: {
                 //@ts-ignore
-                userId: user?.id,
+                userId: user.id,
+              }
+            }
+          }
+        })
+
+        if (!accounts) {
+         const tenant = await prisma.tenant.create({
+           
+            data: {
+                name: "meu tenant",
                 image: "",
-                slug: " meu tenant",
+                slug: " meutenant",
                 plan: "free",
-              },
-            },
+
+            }
           });
+          const userOnTenant = await prisma.userOnTenants.create({
+            data: {
+              //@ts-ignore
+              userId: user.id,
+              tenantId: tenant.id,
+              role: 'owner'
+            }
+          })
         }
       }
       return token;
@@ -69,4 +82,5 @@ export default NextAuth({
   events: {},
 
   debug: false,
-});
+}
+export default NextAuth(authOptions)

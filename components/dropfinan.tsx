@@ -33,7 +33,7 @@ export default function DropFinan() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/id-tenant/financeiro">
+                <Link href="/app/financeiro">
                   <a
                     className={classNames(
                       active
@@ -49,7 +49,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/id-tenant/financeiro/ContasaPagar">
+                <Link href="/app/financeiro/ContasaPagar">
                   <a
                     className={classNames(
                       active
@@ -66,7 +66,7 @@ export default function DropFinan() {
             
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/id-tenant/financeiro/ContasaReceber">
+                <Link href="/app/financeiro/ContasaReceber">
                   <a
                     className={classNames(
                       active
@@ -82,7 +82,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/id-tenant/financeiro/Comissoes">
+                <Link href="/app/financeiro/Comissoes">
                   <a
                     className={classNames(
                       active
@@ -98,7 +98,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/id-tenant/financeiro/Bonificacoes">
+                <Link href="/app/financeiro/Bonificacoes">
                   <a
                     className={classNames(
                       active
@@ -114,7 +114,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/id-tenant/financeiro/RelatoriosFinanceiro">
+                <Link href="/app/financeiro/RelatoriosFinanceiro">
                   <a
                     className={classNames(
                       active

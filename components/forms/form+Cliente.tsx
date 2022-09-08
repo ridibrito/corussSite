@@ -3,6 +3,8 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { fetchData } from "next-auth/client/_utils";
+import { useRouter } from "next/router";
 
 
 const clienteSchema = yup.object({
@@ -59,11 +61,18 @@ interface Props {
 }
 
 export default function AddCliente({ show, setShow }: Props) {
+  const router = useRouter()
   const { register, handleSubmit, 
     formState:{ errors } } = useForm<Inputs>({
     resolver: yupResolver(clienteSchema)
   });
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (inputs) => {
+    console.log(inputs)
+    const data = await fetch(`/api/${router?.query?.tenantId}client`,{
+      method: 'POST',
+      body: JSON.stringify(inputs)
+    })
+  }
 
   const handleClose = () => {
     //@ts-ignore

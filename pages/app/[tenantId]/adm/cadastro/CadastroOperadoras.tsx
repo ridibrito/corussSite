@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import NavCadastros from '../../../../../components/NavCadastros'
-import Filtro from '../../../../../components/filtro'
-import Tabela1 from '../../../../components/tabela1'
+import NavCadastros from '../../../../components/NavCadastros'
+import Filtro from '../../../../components/filtro'
 
-import AddOperadoras from '../../../../../components/forms/form+Operadora'
+import AddOperadoras from '../../../../components/forms/form+Operadora'
 import { useState } from 'react'
 
 

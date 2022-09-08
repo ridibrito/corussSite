@@ -7,25 +7,28 @@ import LayoutApp from "../components/layout/LayoutApp";
 import Layoutpublic from "../components/layout/LayoutPublic";
 import LayoutTenant from "../components/layout/LayoutTenant";
 import LayoutEmpty from "../components/layout/LayoutEmpty";
+import Seo from "../components/Seo";
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 
 
   const router = useRouter()
+
   const { pathname }  = router
+
   let Layout = Layoutpublic
+
   if(pathname.indexOf('/app') === 0) {
     Layout = LayoutApp
   }
   if(pathname.indexOf('/[slug]') === 0) {
     Layout = LayoutTenant
   }
-  if (pathname === '/app'){
-    Layout = LayoutEmpty
-  }
+  
   return (
     <>
+    <Seo title={'Coruss'} description={'Bem vindo a liberdade'}/>
       <ThemeProvider attribute="class">
         <SessionProvider session={session}>
           <Layout>

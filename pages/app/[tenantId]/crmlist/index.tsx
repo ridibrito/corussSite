@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { useState } from "react"
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import BoardList from "../../../../components/board/boardList"
-import AddLead from "../../../../components/forms/AddLead"
+import BoardList from "../../../components/board/boardList"
+import AddLead from "../../../components/forms/AddLead"
 
 export default function Crm() {
   const [showPopUpLead,setShowPopUpLead ] = useState(false)
@@ -16,7 +16,7 @@ export default function Crm() {
        <div className="h-screen  bg-gray-100 dark:bg-gray-600 dark:text-gray-200 pl-60 pt-16 pr-4">
         <div className='flex justify-between items-center'>
         <div className="flex items-center py-4">
-          <Link href="/app/id-tenant">
+          <Link href="/app">
             <a>
               <AiFillHome className="text-gray-500 dark:bg-gray-600 dark:text-gray-200 hover:text-sky-600 w-5 h-5" />
             </a>
@@ -40,10 +40,10 @@ export default function Crm() {
         <div className='flex justify-between pt-2  '>
           <h2 className='items-center text-lg text-gray-500 ml-3 pt-1 dark:bg-gray-600 dark:text-gray-200'>Oportunidades</h2>
         <div className='bg-sky-600 text-white p-2 mb-2 rounded shadow-md'>
-        <Link href='/app/id-tenant/crm'>
+        <Link href='/app/crm'>
           <a className='pr-3 pl-3'>CRM</a>
           </Link>|
-          <Link href="/app/id-tenant/crmlist">
+          <Link href="/app/crmlist">
           <a className='pl-3 pr-3'>Lista</a>
           </Link>
         </div>

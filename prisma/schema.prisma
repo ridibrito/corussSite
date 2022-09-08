@@ -9,19 +9,20 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -37,14 +38,14 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String          @id @default(cuid())
   name          String?
-  email         String?   @unique
+  email         String?         @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
-  tenants UserOnTenants[]
+  tenants       UserOnTenants[]
 }
 
 model VerificationToken {
@@ -54,60 +55,57 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
 model Tenant {
-  id       String  @id @default(cuid())
-  name     String   @db.VarChar(255)
-  slug     String   @db.VarChar(255)
-  plan     String   @db.VarChar(255)
-  image     String   @db.VarChar(255)
-  createdAt DateTime @default(now()) @db.Timestamp(6)
-  users   UserOnTenants[]   
+  id        String          @id @default(cuid())
+  name      String          @db.VarChar(255)
+  slug      String          @db.VarChar(255)
+  plan      String          @db.VarChar(255)
+  image     String          @db.VarChar(255)
+  createdAt DateTime        @default(now()) @db.Timestamp(6)
+  users     UserOnTenants[]
 }
 
 model UserOnTenants {
-    user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    userId String
-    tenant   Tenant     @relation(fields: [tenantId], references: [id], onDelete: Cascade)
-    tenantId String
-    assignedAt DateTime @default(now())
-    role String
-    @@id([userId, tenantId])
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String
+  tenant     Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  tenantId   String
+  assignedAt DateTime @default(now())
+  role       String
 
+  @@id([userId, tenantId])
 }
 
 model Client {
-  id        Int      @id @default(autoincrement())
-  name     String   @db.VarChar(255)
-  cpf     String   @db.VarChar(255)
-  telefone     String   @db.VarChar(255)
-  email     String   @db.VarChar(255)
-  dataNascimento DateTime @default(now()) @db.Timestamp(6)
-  sexo String 
-  Nproposta Int
-  dataVenda DateTime @default(now()) @db.Timestamp(6)
-  dataVigencia DateTime @default(now()) @db.Timestamp(6)
-  valor Int 
-  tipoPlano String @db.VarChar(255)
-  administradora String @db.VarChar(255)
-  operadora String @db.VarChar(255)
-  qtsVidas Int
-  comissao String @db.VarChar(255)
-  taxaAdesao String @db.VarChar(255)
-  valorTaxa Int
-  bonificacao String @db.VarChar(255)
+  id               Int      @id @default(autoincrement())
+  name             String   @db.VarChar(255)
+  cpf              String   @db.VarChar(255)
+  telefone         String   @db.VarChar(255)
+  email            String   @db.VarChar(255)
+  dataNascimento   DateTime @default(now()) @db.Timestamp(6)
+  sexo             String
+  Nproposta        Int
+  dataVenda        DateTime @default(now()) @db.Timestamp(6)
+  dataVigencia     DateTime @default(now()) @db.Timestamp(6)
+  valor            Int
+  tipoPlano        String   @db.VarChar(255)
+  administradora   String   @db.VarChar(255)
+  operadora        String   @db.VarChar(255)
+  qtsVidas         Int
+  comissao         String   @db.VarChar(255)
+  taxaAdesao       String   @db.VarChar(255)
+  valorTaxa        Int
+  bonificacao      String   @db.VarChar(255)
   valorBonificacao Int
-
 }
 
 model Lead {
-  id        Int      @id @default(autoincrement())
-  name     String   @db.VarChar(255)
-  telefone     String   @db.VarChar(255)
-  email     String   @db.VarChar(255)
+  id        Int    @id @default(autoincrement())
+  name      String @db.VarChar(255)
+  telefone  String @db.VarChar(255)
+  email     String @db.VarChar(255)
   tipoPlano String @db.VarChar(255)
   operadora String @db.VarChar(255)
-  valor Int 
-
-
-
+  valor     Int
 }

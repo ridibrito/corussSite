@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import AddCliente from '../../../../components/forms/form+Cliente'
+import AddCliente from '../../../components/forms/form+Cliente'
 import { useState } from 'react'
 
 

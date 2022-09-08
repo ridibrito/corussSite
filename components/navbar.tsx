@@ -33,25 +33,25 @@ export default function Navbar() {
             </div>
           </div>
 
-          <LinkMenu href="/app/id-tenant">
+          <LinkMenu href="/app/">
             <RiDashboardFill className="w-7 h-7 mr-2" />
             Dashboard
           </LinkMenu>
 
-          <LinkMenu href="/app/id-tenant/crm">
+          <LinkMenu href="/app/crm">
             <MdComputer className="w-7 h-7 mr-2" />
             CRM
           </LinkMenu>
 
-          <LinkMenu href="/app/id-tenant/adm">
+          <LinkMenu href="/app/adm">
             <DropAdm />
           </LinkMenu>
 
-          <LinkMenu href="/app/id-tenant/financeiro">
+          <LinkMenu href="/app/financeiro">
             <DropFinan />
           </LinkMenu>
 
-          <LinkMenu href="/app/id-tenant/email">
+          <LinkMenu href="/app/email">
             <AiFillMail className="w-7 h-7 mr-2" />
             Inbox{" "}
             <span className="flex ml-16 py-1 px-2 leading-none text-center  text-sky-600 text-sm whitespace-nowrap align-baseline font-bold bg-sky-200  rounded ">
@@ -59,7 +59,7 @@ export default function Navbar() {
             </span>
           </LinkMenu>
 
-          <LinkMenu href="/app/id-tenant/whatsapp">
+          <LinkMenu href="/app/whatsapp">
             <IoLogoWhatsapp className="w-7 h-7 mr-2" />
             WhatsApp
             <span className="flex ml-8 py-1 px-2 leading-none text-center  text-white text-sm whitespace-nowrap align-baseline font-bold bg-green-500  rounded-full ">
@@ -67,14 +67,14 @@ export default function Navbar() {
             </span>
           </LinkMenu>
 
-          <LinkMenu href="/app/id-tenant/simulador">
+          <LinkMenu href="/app/simulador">
             <FaBuffer className="w-8 h-8 mr-2" />
             Simulador
           </LinkMenu>
 
           <div className="pt-32">
            
-            <LinkMenu href="/app/id-tenant/config">
+            <LinkMenu href="/app/config">
               <IoIosSettings className="w-8 h-7 mr-2" />
               Configurações
             </LinkMenu>
@@ -82,7 +82,7 @@ export default function Navbar() {
            <button className="flex items-center text-sm pr-4 justify-center mx-auto text-gray-500 hover:text-sky-600 hover:cursor-pointer  rounded-md m-2">
             <RiLogoutCircleRLine className="w-4 h-5 mr-2" />
             <button onClick={() => {
-              signOut()
+              signOut({ callbackUrl: '/'})
               router.push('/app')
             }}>Logout</button>
             </button>

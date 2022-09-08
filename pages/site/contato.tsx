@@ -1,4 +1,4 @@
-import NavbarSite from '../components/site/navbarSite'
+import NavbarSite from '../../components/site/navbarSite'
 
 export default function Contato() {
   return (

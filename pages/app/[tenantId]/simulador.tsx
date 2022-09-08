@@ -20,7 +20,7 @@ export default function simulador() {
       <div className="h-screen bg-gray-100 dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 pr-4">
         <div className="flex justify-between">
           <div className="flex items-center py-4">
-            <Link href="/app/id-tenant">
+            <Link href="/app">
               <a>
                 <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5 dark:bg-gray-600 dark:text-gray-400" />
               </a>

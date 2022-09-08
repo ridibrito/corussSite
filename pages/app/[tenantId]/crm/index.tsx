@@ -1,10 +1,10 @@
 import Link from "next/link"
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import Board from '../../../../components/board/index'
+import Board from '../../../components/board/index'
 import { DndProvider } from "react-dnd"
 import { HTML5Backend } from "react-dnd-html5-backend"
 import { useState } from "react"
-import AddLead from "../../../../components/forms/AddLead"
+import AddLead from "../../../components/forms/AddLead"
 
 export default function Crm() {
   const [showPopUpLead,setShowPopUpLead ] = useState(false)
@@ -18,7 +18,7 @@ export default function Crm() {
        <div className=" bg-gray-100 dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 pr-4">
         <div className='flex justify-between items-center'>
         <div className="flex items-center py-4">
-          <Link href="/app/id-tenant">
+          <Link href="/app">
             <a>
               <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5 dark:text-gray-400" />
             </a>
@@ -46,7 +46,7 @@ export default function Crm() {
         <Link href='/app/crm'>
           <a className='pr-3 pl-3'>CRM</a>
           </Link>|
-          <Link href="/app/id-tenant/crmlist">
+          <Link href="/app/crmlist">
           <a className='pl-3 pr-3'>Lista</a>
           </Link>
         </div>

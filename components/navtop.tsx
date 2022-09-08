@@ -38,13 +38,14 @@ export default function Navtop() {
                 <div className="flex items-center text-sm font-semibold ml-5">
                   {session?.user?.name}
                   <img
-                    className="rounded-full ml-2"
+                    //@ts-ignore
                     src={session?.user?.image}
+                    //@ts-ignore
                     alt={session?.user?.name}
                     width="50"
                     height="50"
                   />
-                </div>
+                </div> 
               </div>
            
           </div>

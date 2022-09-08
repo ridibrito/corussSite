@@ -19,7 +19,7 @@ return (
     <div className=" h-screen overflow-y-scroll dark:text-gray-300 dark:bg-gray-600 bg-gray-100 pl-60 pt-16 pr-4">
       <div className='flex justify-between mt-1 items-center'>
       <div className="flex items-center py-4">
-        <Link href="/app/id-tenant">
+        <Link href="/app">
           <a>
             <AiFillHome className="dark:text-gray-300 dark:bg-gray-600 hover:text-sky-600 text-gray-500 w-5 h-5" />
           </a>
