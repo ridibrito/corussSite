@@ -16,7 +16,7 @@ export default function Home(){
        
         <li>
         
-        <button onClick={() => signIn()}>Sign in</button>
+        <button onClick={() => signIn('auth0')}>Sign in</button>
         </li>
         <p>
         Signed in as {session?.user?.email} <br />

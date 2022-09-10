@@ -9,10 +9,11 @@ import Chartbar from "../../../components/charts/chartbar";
 import ChartVendedores from "../../../components/charts/chartVendedores";
 import ChartValor from "../../../components/charts/chartValor";
 import Seo from '../../../components/Seo'
+import { useRouter } from "next/router";
 
 
 const AppHome = () => {
-
+const router = useRouter()
   return (
   <>
   <Seo title="Coruss"/>
@@ -22,7 +23,7 @@ const AppHome = () => {
         
         <div className="flex justify-between">
           <div className="flex items-center py-4">
-            <Link href="/app">
+          <Link href={`/app/${router.query.tenantId}`}>
               <a>
                 <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5  dark:bg-gray-600 dark:text-gray-400" />
               </a>

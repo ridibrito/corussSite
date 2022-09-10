@@ -25,7 +25,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   if(pathname.indexOf('/[slug]') === 0) {
     Layout = LayoutTenant
   }
-  
+  if(pathname === '/app'){
+    Layout = LayoutEmpty
+  }
   return (
     <>
     <Seo title={'Coruss'} description={'Bem vindo a liberdade'}/>

@@ -63,8 +63,8 @@ model Tenant {
   plan      String          @db.VarChar(255)
   image     String          @db.VarChar(255)
   createdAt DateTime        @default(now()) @db.Timestamp(6)
-  users     UserOnTenants[]
-}
+  users     UserOnTenants[]  
+  }
 
 model UserOnTenants {
   user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)

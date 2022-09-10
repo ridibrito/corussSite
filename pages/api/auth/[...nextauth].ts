@@ -2,11 +2,10 @@ import NextAuth from "next-auth";
 import Auth0Provider from "next-auth/providers/auth0";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "../../../lib/prisma";
-import { NextAuthOptions } from "next-auth"
-
+import { NextAuthOptions } from "next-auth";
+import Tenant from "../tenants";
 
 export const authOptions: NextAuthOptions = {
-  
   adapter: PrismaAdapter(prisma),
   providers: [
     Auth0Provider({
@@ -19,10 +18,10 @@ export const authOptions: NextAuthOptions = {
   ],
   // secret: process.env.SECRET,
 
-  // session: {
-  //   strategy: 'jwt'
+  session: {
+    strategy: 'jwt'
 
-  // },
+  },
   // jwt: {
   //   secret: process.env.SECRET,
   // },
@@ -30,40 +29,37 @@ export const authOptions: NextAuthOptions = {
   pages: {},
 
   callbacks: {
-     async session({ session, token, user }) { 
-      console.log('session', { session, token, user })
+     async session({ session, token, user }) {
       //@ts-ignore
-      session.user.id = user.id
-      
-      return session 
-    
-    },
-   // async redirect({ url, baseUrl }) {  return baseUrl    },
-     //async signIn({ user, account, profile, email, credentials }) { return true },
-     async jwt({ token, user, isNewUser, tenant }) {
-      
+      session.user.id = token.sub
+      console.log(session)
+      return session
+
+     },
+    // async redirect({ url, baseUrl }) {  return baseUrl    },
+    //async signIn({ user, account, profile, email, credentials }) { return true },
+    async jwt({ token, user, account, profile, isNewUser }) {
       if (isNewUser) {
         const accounts = await prisma.tenant.findFirst({
           where: {
-            users: {
-              some: {
+            users:{
+              some:{
                 //@ts-ignore
                 userId: user.id,
               }
             }
-          }
-        })
-
-        if (!accounts) {
-         const tenant = await prisma.tenant.create({
+            
            
+          },
+        });
+        if (!accounts) {
+        const tenant = await prisma.tenant.create({
             data: {
-                name: "meu tenant",
-                image: "",
-                slug: " meutenant",
-                plan: "free",
-
-            }
+              name: "meu tenant",            
+              image: "",
+              slug: " meutenant",
+              plan: "free",
+            },
           });
           const userOnTenant = await prisma.userOnTenants.create({
             data: {
@@ -76,11 +72,11 @@ export const authOptions: NextAuthOptions = {
         }
       }
       return token;
-    },
+    }
   },
 
   events: {},
 
-  debug: false,
-}
-export default NextAuth(authOptions)
+  debug: true,
+};
+export default NextAuth(authOptions);

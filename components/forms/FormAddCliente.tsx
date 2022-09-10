@@ -67,10 +67,12 @@ export default function AddCliente({ show, setShow }: Props) {
     resolver: yupResolver(clienteSchema)
   });
   const onSubmit: SubmitHandler<Inputs> = async (inputs) => {
-    console.log(inputs)
-    const data = await fetch(`/api/${router?.query?.tenantId}client`,{
+    const data = await fetch(`/api/${router?.query?.tenantId}/client`,{
       method: 'POST',
-      body: JSON.stringify(inputs)
+      body: JSON.stringify(inputs),
+      headers: {
+        'content-Type': 'aplication/json'
+      }
     })
   }
 

@@ -6,14 +6,17 @@ import { AiFillExclamationCircle } from "react-icons/ai";
 import { HiDotsVertical } from "react-icons/hi";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-import EmailComp from "../../components/EmailComp";
+import EmailComp from "../../../components/EmailComp";
+import { useRouter } from "next/router";
+
 
 export default function Email() {
+ const router = useRouter()
   return (
     <>
       <div className=" h-screen bg-gray-100 pl-60 dark:bg-gray-600 dark:text-gray-400 pt-16 pr-4">
         <div className="flex items-center py-4">
-          <Link href="/app">
+        <Link href={`/app/${router.query.tenantId}`}>
             <a>
               <AiFillHome className= " dark:bg-gray-600 dark:text-gray-400 text-gray-500 hover:text-sky-600 w-5 h-5" />
             </a>

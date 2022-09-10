@@ -1,10 +1,12 @@
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { useState } from "react"
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import BoardList from "../../../components/board/boardList"
-import AddLead from "../../../components/forms/AddLead"
+import BoardList from "../../../../components/board/boardList"
+import AddLead from "../../../../components/forms/AddLead"
 
-export default function Crm() {
+export default function CrmList() {
+  const router = useRouter()
   const [showPopUpLead,setShowPopUpLead ] = useState(false)
 
   const handleNewCliente = () => {
@@ -16,7 +18,7 @@ export default function Crm() {
        <div className="h-screen  bg-gray-100 dark:bg-gray-600 dark:text-gray-200 pl-60 pt-16 pr-4">
         <div className='flex justify-between items-center'>
         <div className="flex items-center py-4">
-          <Link href="/app">
+        <Link href={`/app/${router.query.tenantId}`}>
             <a>
               <AiFillHome className="text-gray-500 dark:bg-gray-600 dark:text-gray-200 hover:text-sky-600 w-5 h-5" />
             </a>

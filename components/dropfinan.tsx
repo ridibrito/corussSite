@@ -3,13 +3,15 @@ import { FaMoneyBill } from 'react-icons/fa'
 import { Menu, Transition } from '@headlessui/react'
 import { FaChevronDown } from 'react-icons/fa'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-
+//@ts-ignore
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function DropFinan() {
+  const router = useRouter()
   return (
     <Menu as="div" className="relative inline-block ">
       <div>
@@ -33,8 +35,8 @@ export default function DropFinan() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/financeiro">
-                  <a
+                <Link href={`app/${router.query.tenant}/financeiro`}>
+                <a
                     className={classNames(
                       active
                       ?   ' text-sky-600 dark:text-gray-400 '
@@ -49,8 +51,8 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/financeiro/ContasaPagar">
-                  <a
+                <Link href={`app/${router.query.tenant}/financeiro/ContasApagar`}>
+                <a
                     className={classNames(
                       active
                            ?   ' text-sky-600 dark:text-gray-400 '
@@ -66,8 +68,8 @@ export default function DropFinan() {
             
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/financeiro/ContasaReceber">
-                  <a
+                <Link href={`app/${router.query.tenant}/financeiro/ContasAreceber`}>
+                <a
                     className={classNames(
                       active
                       ?   ' text-sky-600 dark:text-gray-400 '
@@ -82,8 +84,8 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/financeiro/Comissoes">
-                  <a
+                <Link href={`app/${router.query.tenant}/financeiro/Comissoes`}>
+                <a
                     className={classNames(
                       active
                       ?   ' text-sky-600 dark:text-gray-400 '
@@ -98,8 +100,8 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/financeiro/Bonificacoes">
-                  <a
+                <Link href={`app/${router.query.tenant}/financeiro/Bonificacoes`}>
+                <a
                     className={classNames(
                       active
                       ?   ' text-sky-600 dark:text-gray-400 '
@@ -114,8 +116,8 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/financeiro/RelatoriosFinanceiro">
-                  <a
+                <Link href={`app/${router.query.tenant}/financeiro/RelatoriosFinanceiros`}>
+                <a
                     className={classNames(
                       active
                       ?   ' text-sky-600 dark:text-gray-400 '

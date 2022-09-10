@@ -1,5 +1,5 @@
 import List from "../list/index";
-import { loadLists } from "../../pages/services/api";
+import { loadLists } from "../../pages/service/api";
 import { useState } from "react";
 import BoardContext from "./context";
 

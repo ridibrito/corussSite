@@ -33,25 +33,25 @@ export default function Navbar() {
             </div>
           </div>
 
-          <LinkMenu href="/app/">
+          <LinkMenu href={`/app/${router.query.tenantId}`}>
             <RiDashboardFill className="w-7 h-7 mr-2" />
             Dashboard
           </LinkMenu>
 
-          <LinkMenu href="/app/crm">
+          <LinkMenu href={`/app/${router.query.tenantId}/crm`}>
             <MdComputer className="w-7 h-7 mr-2" />
             CRM
           </LinkMenu>
 
-          <LinkMenu href="/app/adm">
+          <LinkMenu href={`/app/${router.query.tenantId}/adm`}>
             <DropAdm />
           </LinkMenu>
 
-          <LinkMenu href="/app/financeiro">
+          <LinkMenu href={`/app/${router.query.tenantId}/financeiro`}>
             <DropFinan />
           </LinkMenu>
 
-          <LinkMenu href="/app/email">
+          <LinkMenu href={`/app/${router.query.tenantId}/email`}>
             <AiFillMail className="w-7 h-7 mr-2" />
             Inbox{" "}
             <span className="flex ml-16 py-1 px-2 leading-none text-center  text-sky-600 text-sm whitespace-nowrap align-baseline font-bold bg-sky-200  rounded ">
@@ -59,7 +59,7 @@ export default function Navbar() {
             </span>
           </LinkMenu>
 
-          <LinkMenu href="/app/whatsapp">
+          <LinkMenu href={`/app/${router.query.tenantId}/whatsapp`}>
             <IoLogoWhatsapp className="w-7 h-7 mr-2" />
             WhatsApp
             <span className="flex ml-8 py-1 px-2 leading-none text-center  text-white text-sm whitespace-nowrap align-baseline font-bold bg-green-500  rounded-full ">
@@ -67,14 +67,14 @@ export default function Navbar() {
             </span>
           </LinkMenu>
 
-          <LinkMenu href="/app/simulador">
+          <LinkMenu href={`/app/${router.query.tenantId}/simulador`}>
             <FaBuffer className="w-8 h-8 mr-2" />
             Simulador
           </LinkMenu>
 
           <div className="pt-32">
            
-            <LinkMenu href="/app/config">
+          <LinkMenu href={`/app/${router.query.tenantId}/config`}>
               <IoIosSettings className="w-8 h-7 mr-2" />
               Configurações
             </LinkMenu>

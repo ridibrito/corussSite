@@ -3,20 +3,22 @@ import { AiFillFileText } from 'react-icons/ai'
 import { Menu, Transition } from '@headlessui/react'
 import { FaChevronDown } from 'react-icons/fa'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-
+//@ts-ignore
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function DropAdm() {
+  const router = useRouter()
   return (
     <Menu as="div" className="relative inline-block ">
       <div>
         <Menu.Button className="flex w-full items-center ">
         <AiFillFileText className="w-7 h-7 mr-2" />
         ADM
-          <FaChevronDown className=" ml-20 h-4 w-4 " aria-hidden="true" />
+          <FaChevronDown className=" ml-20 h-4 w-4 " aria-hidden="true"/>
         </Menu.Button>
       </div>
 
@@ -33,7 +35,7 @@ export default function DropAdm() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/adm">
+                <Link href={`app/${router.query.tenant}/adm`}>
                   <a
                     className={classNames(
                       active
@@ -50,8 +52,8 @@ export default function DropAdm() {
                         
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/adm/vendas">
-                  <a
+                <Link href={`app/${router.query.tenant}/adm/Vendas`}>
+                <a
                     className={classNames(
                       active
                         ?   ' text-sky-600 dark:text-gray-400 '
@@ -64,12 +66,12 @@ export default function DropAdm() {
                 </Link>
               )}
             </Menu.Item>
-            
+           
            
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/adm/servicos">
-                  <a
+                <Link href={`app/${router.query.tenant}/adm/Servicos`}>
+                <a
                     className={classNames(
                       active
                       ?   ' text-sky-600 dark:text-gray-400 '
@@ -85,8 +87,8 @@ export default function DropAdm() {
             
             <Menu.Item>
               {({ active }) => (
-                <Link href="/app/adm/RelatoriosA">
-                  <a
+                <Link href={`app/${router.query.tenant}/adm/RelatoriosA`}>
+                <a
                     className={classNames(
                       active
                       ?   ' text-sky-600 dark:text-gray-400 '

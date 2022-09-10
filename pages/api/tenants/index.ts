@@ -13,23 +13,20 @@ type TenantData = {
   export default async function Tenant(req: NextApiRequest, res:NextApiResponse<TenantData[]>) {
     const session = await unstable_getServerSession(req, res, authOptions)
   
-    if (!session) {
+    if (session) {
       const tenants = await prisma.tenant.findMany({
-        where: {
-          users: {
-            some: {
+        where:{
+          users:{
+            some:{
               //@ts-ignore
               userId: session.user.id
             }
           }
         }
       })
-      
-         //@ts-ignore
-      res.status(401).json({ message: "You must be logged in." });
-      return;
+      console.log(tenants)
+      res.send(tenants)
+    } else {
+      res.send([])
     }
-    console.log(session)
-  //@ts-ignore
-    return res.json()
   }

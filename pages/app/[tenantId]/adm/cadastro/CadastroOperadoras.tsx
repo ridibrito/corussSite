@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import NavCadastros from '../../../../components/NavCadastros'
-import Filtro from '../../../../components/filtro'
+import NavCadastros from '../../../../../components/NavCadastros'
+import Filtro from '../../../../../components/filtro'
 
-import AddOperadoras from '../../../../components/forms/form+Operadora'
+import AddOperadoras from '../../../../../components/forms/form+Operadora'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 
 
-export default function Adm() {
+export default function CadastroOperadora() {
+  const router = useRouter()
   const [showPopUpCliente,setShowPopUpCliente ] = useState(false)
 
 const handleNewCliente = () => {
@@ -21,7 +23,7 @@ const handleNewCliente = () => {
       <div className=" h-screen overflow-y-scroll dark:text-gray-400 dark:bg-gray-600 bg-gray-100 pl-60 pt-16 pr-4">
         <div className='flex justify-between mt-1 items-center'>
         <div className="flex items-center py-4">
-          <Link href="/app">
+        <Link href={`/app/${router.query.tenantId}`}>
             <a>
               <AiFillHome className="dark:text-gray-400 dark:bg-gray-600 hover:text-sky-600 text-gray-500 w-5 h-5" />
             </a>
@@ -34,7 +36,7 @@ const handleNewCliente = () => {
           </h3>
           
           <h3 className=" ml-3 pt-1 font-normal text-gray-500 ">
-            <Link href="/app/adm">
+          <Link href={`/app/${router.query.tenantId}/adm`}>
               <a className="hover:text-sky-600 cursor-pointer dark:text-gray-400 dark:bg-gray-600">/ Cadastros</a>
             </Link>
           </h3>
