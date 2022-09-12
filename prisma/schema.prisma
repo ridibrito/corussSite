@@ -64,6 +64,7 @@ model Tenant {
   image     String          @db.VarChar(255)
   createdAt DateTime        @default(now()) @db.Timestamp(6)
   users     UserOnTenants[]  
+  clients Client[]
   }
 
 model UserOnTenants {
@@ -98,6 +99,9 @@ model Client {
   valorTaxa        Int
   bonificacao      String   @db.VarChar(255)
   valorBonificacao Int
+  createdAt DateTime @default(now())
+  tenant Tenant  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  tenantId String
 }
 
 model Lead {

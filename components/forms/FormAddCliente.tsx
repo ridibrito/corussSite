@@ -3,7 +3,6 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { fetchData } from "next-auth/client/_utils";
 import { useRouter } from "next/router";
 
 
@@ -32,7 +31,7 @@ const clienteSchema = yup.object({
 })
 .required();
 
-type Inputs = {
+interface NewClientForm  {
   nome: string;
   tipo: string;
   cpf: string;
@@ -63,16 +62,15 @@ interface Props {
 export default function AddCliente({ show, setShow }: Props) {
   const router = useRouter()
   const { register, handleSubmit, 
-    formState:{ errors } } = useForm<Inputs>({
+    formState:{ errors } } = useForm<NewClientForm>({
     resolver: yupResolver(clienteSchema)
   });
-  const onSubmit: SubmitHandler<Inputs> = async (inputs) => {
-    const data = await fetch(`/api/${router?.query?.tenantId}/client`,{
+  const submit: SubmitHandler<NewClientForm> = async (inputs) => {
+    console.log(inputs)
+    const data = await fetch(`/api/${router?.query?.tenantId}`,{
       method: 'POST',
       body: JSON.stringify(inputs),
-      headers: {
-        'content-Type': 'aplication/json'
-      }
+     
     })
   }
 
@@ -89,7 +87,7 @@ export default function AddCliente({ show, setShow }: Props) {
         >
           <header className="flex justify-between pb-4 dark:text-gray-400 ">
             <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-400 ">
-              Cadastrar cliente ou fornecedor
+              Cadastrar cliente 
             </h1>
             <span>
               <IoMdCloseCircle
@@ -99,8 +97,9 @@ export default function AddCliente({ show, setShow }: Props) {
             </span>
           </header>
 
-          <body className="dark:bg-gray-700">
-            <form onSubmit={handleSubmit(onSubmit)} className="pt-3 pb-3">
+          <section className="dark:bg-gray-700">
+            
+            <form onSubmit={handleSubmit(submit)} className="pt-3 pb-3">
               <div className="flex items-center mx-2">
                 <div>
                 <input
@@ -253,8 +252,8 @@ export default function AddCliente({ show, setShow }: Props) {
                   placeholder="Qts. Vidas"
                 />
               </div>
-              <></>
-              <div className="mt-2 flex items-center">
+              
+              {/* <div className="mt-2 flex items-center">
                 <select
                   {...register("comissao", { required: true })}
                   className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
@@ -312,7 +311,7 @@ export default function AddCliente({ show, setShow }: Props) {
               <div className="text-red-600 text-sm">
                 {errors.nome?.type === 'required' && "*"}
                 </div>
-              <div className="p-4">
+              <div className="p-4"> */}
 
               <button
               onClick={handleClose}
@@ -320,12 +319,14 @@ export default function AddCliente({ show, setShow }: Props) {
               >
               Cancelar
             </button>
-            <button className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2">
+            <button 
+            type="submit"
+            className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2">
               Salvar
             </button>
-              </div>
+           
             </form>
-          </body>
+          </section>
           
 
         

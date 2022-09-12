@@ -79,13 +79,13 @@ export default function Navbar() {
               Configurações
             </LinkMenu>
             
-           <button className="flex items-center text-sm pr-4 justify-center mx-auto text-gray-500 hover:text-sky-600 hover:cursor-pointer  rounded-md m-2">
+           <span className="flex items-center text-sm pr-4 justify-center mx-auto text-gray-500 hover:text-sky-600 hover:cursor-pointer  rounded-md m-2">
             <RiLogoutCircleRLine className="w-4 h-5 mr-2" />
             <button onClick={() => {
               signOut({ callbackUrl: '/'})
               router.push('/app')
             }}>Logout</button>
-            </button>
+            </span>
            
           </div>
         </div>

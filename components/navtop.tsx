@@ -38,6 +38,7 @@ export default function Navtop() {
                 <div className="flex items-center text-sm font-semibold ml-5">
                   {session?.user?.name}
                   <img
+                  className="border rounded-full"
                     //@ts-ignore
                     src={session?.user?.image}
                     //@ts-ignore

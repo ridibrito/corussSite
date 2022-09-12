@@ -2,16 +2,17 @@ import { useSession } from "next-auth/react"
 import Router, { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import useSWR from "swr"
+import Link from "next/link"
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 const AppIndex = () => {
+    const { data: session } = useSession()
     const router = useRouter()
     const [shouldRedirect, setShouldRedirect] = useState(false)
-    const { data: session } = useSession()
     const { data, error } = useSWR('/api/tenants', fetcher)
     useEffect(() => {
-        if(data && data.length ===1) {
+        if(data && data.length === 1) {
             setShouldRedirect(true)
         }
     },[data])
@@ -28,12 +29,17 @@ const AppIndex = () => {
 
     return(
     <>
+    
     <div className="max-w-3xl text-center mx-auto justify-center mt-12">
-     <img className="rounded-full w-32 h-32 mx-auto" src={session?.user?.image} alt={session?.user?.name} /> 
-     <h1 className="mt-8">{session?.user?.name}</h1>
-    {data && data.length > 1 && data.map((tenant) => (
-        <Link href="{'/app/' +tenant.id}">
-            <a>{tenant.name}</a>
+     <img className="rounded-full border-2 border-sky-600 w-32 h-32 mx-auto" src={session?.user?.image} alt={session?.user?.name}/> 
+     <h1 className="mt-8 font-semibold">{session?.user?.name}</h1>
+     <h2 className="mt-2 mb-4 font-semibold">{session?.user?.email}</h2>
+     
+    {data && data.map((tenant) => (
+        <Link 
+        key={tenant.id}
+        href={"/app/"+tenant.id}>
+            <a className="border-2 px-3 py-2 rounded-lg hover:bg-gray-200">{tenant.name}</a>
     </Link>
        
     ))}

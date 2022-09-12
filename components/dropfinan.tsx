@@ -35,7 +35,7 @@ export default function DropFinan() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/financeiro`}>
+                <Link href={`/app/${router?.query?.tenantId}/financeiro/`}>
                 <a
                     className={classNames(
                       active
@@ -51,7 +51,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/financeiro/ContasApagar`}>
+                <Link href={`/app/${router?.query?.tenantId}/financeiro/ContasaPagar`}>
                 <a
                     className={classNames(
                       active
@@ -68,7 +68,7 @@ export default function DropFinan() {
             
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/financeiro/ContasAreceber`}>
+                <Link href={`/app/${router?.query?.tenantId}/financeiro/ContasaReceber`}>
                 <a
                     className={classNames(
                       active
@@ -84,7 +84,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/financeiro/Comissoes`}>
+                <Link href={`/app/${router?.query?.tenantId}/financeiro/Comissoes`}>
                 <a
                     className={classNames(
                       active
@@ -100,7 +100,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/financeiro/Bonificacoes`}>
+                <Link href={`/app/${router?.query?.tenantId}/financeiro/Bonificacoes`}>
                 <a
                     className={classNames(
                       active
@@ -116,7 +116,7 @@ export default function DropFinan() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/financeiro/RelatoriosFinanceiros`}>
+                <Link href={`/app/${router?.query?.tenantId}/financeiro/RelatoriosFinanceiro`}>
                 <a
                     className={classNames(
                       active

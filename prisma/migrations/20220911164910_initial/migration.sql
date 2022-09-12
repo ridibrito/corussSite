@@ -88,6 +88,8 @@ CREATE TABLE "Client" (
     "valorTaxa" INTEGER NOT NULL,
     "bonificacao" VARCHAR(255) NOT NULL,
     "valorBonificacao" INTEGER NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "tenantId" TEXT NOT NULL,
 
     CONSTRAINT "Client_pkey" PRIMARY KEY ("id")
 );
@@ -131,3 +133,6 @@ ALTER TABLE "UserOnTenants" ADD CONSTRAINT "UserOnTenants_userId_fkey" FOREIGN K
 
 -- AddForeignKey
 ALTER TABLE "UserOnTenants" ADD CONSTRAINT "UserOnTenants_tenantId_fkey" FOREIGN KEY ("tenantId") REFERENCES "Tenant"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Client" ADD CONSTRAINT "Client_tenantId_fkey" FOREIGN KEY ("tenantId") REFERENCES "Tenant"("id") ON DELETE CASCADE ON UPDATE CASCADE;

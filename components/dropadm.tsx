@@ -35,7 +35,7 @@ export default function DropAdm() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/adm`}>
+                <Link href={`/app/${router?.query?.tenantId}/adm`}>
                   <a
                     className={classNames(
                       active
@@ -52,7 +52,7 @@ export default function DropAdm() {
                         
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/adm/Vendas`}>
+                <Link href={`/app/${router?.query?.tenantId}/adm/vendas`}>
                 <a
                     className={classNames(
                       active
@@ -70,7 +70,7 @@ export default function DropAdm() {
            
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/adm/Servicos`}>
+                <Link href={`/app/${router?.query?.tenantId}/adm/servicos`}>
                 <a
                     className={classNames(
                       active
@@ -87,7 +87,7 @@ export default function DropAdm() {
             
             <Menu.Item>
               {({ active }) => (
-                <Link href={`app/${router.query.tenant}/adm/RelatoriosA`}>
+                <Link href={`/app/${router?.query?.tenantId}/adm/RelatoriosA`}>
                 <a
                     className={classNames(
                       active

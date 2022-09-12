@@ -3,7 +3,7 @@ import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
 import NavCadastros from 'components/NavCadastros'
 import Filtro from '../../../../../components/filtro'
 
-import AddAdministradora from '../../../../../components/forms/form+Administradora'
+import AddAdministradora from '../../../../../components/forms/FormAddAdm'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 

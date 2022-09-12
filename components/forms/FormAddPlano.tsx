@@ -1,7 +1,14 @@
 import { IoMdCloseCircle } from "react-icons/io";
 
-export default function AddLocal({ show, setShow }) {
+
+interface Props {
+  show: string
+  setShow: string
+}
+
+export default function AddPlanos({ show, setShow }: Props) {
   const handleClose = () => {
+    //@ts-ignore
     setShow(false);
   };
   return (
@@ -13,7 +20,7 @@ export default function AddLocal({ show, setShow }) {
         >
           <header className="flex justify-between pb-4">
             <h1 className="text-xl font-semibold text-gray-500">
-              Cadastrar Local de entrega
+              Cadastrar Planos
             </h1>
             <span>
               <IoMdCloseCircle

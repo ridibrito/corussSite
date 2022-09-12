@@ -3,7 +3,7 @@ import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
 import NavCadastros from '../../../../../components/NavCadastros'
 import Filtro from '../../../../../components/filtro'
 
-import AddPlanos from '../../../../../components/forms/form+Plano'
+import AddPlanos from '../../../../../components/forms/FormAddPlano'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 

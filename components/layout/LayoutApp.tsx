@@ -11,6 +11,6 @@ export default function LayoutApp({children}: Props) {
       <Navtop/>
       <Navbar/>
       { children }
-      </>);
+      </>)
   }
   

@@ -1,10 +1,9 @@
 import Link from "next/link"
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import Board from '../../../../components/board/index'
 import { DndProvider } from "react-dnd"
 import { HTML5Backend } from "react-dnd-html5-backend"
 import { useState } from "react"
-import AddLead from "../../../../components/forms/AddLead"
+import AddLead from "../../../../components/forms/FormAddLead"
 import { useRouter } from "next/router"
 
 export default function Crm() {
@@ -45,15 +44,15 @@ export default function Crm() {
         <div className='flex justify-between pt-2  '>
           <h2 className='items-center text-lg text-gray-500 ml-3 pt-1 dark:text-gray-400'>Oportunidades</h2>
         <div className='bg-sky-600 text-white p-2 mb-2 rounded shadow-md'>
-        <Link href='/app/crm'>
+        <Link href={`/app/${router?.query?.tenantId}/crm`}>
           <a className='pr-3 pl-3'>CRM</a>
           </Link>|
-          <Link href="/app/crmlist">
+          <Link href={`/app/${router?.query?.tenantId}/crmlist`}>
           <a className='pl-3 pr-3'>Lista</a>
           </Link>
         </div>
         </div>
-        <Board />
+        
        
         
       </div>

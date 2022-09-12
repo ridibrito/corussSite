@@ -1,9 +1,7 @@
-
-
 import { unstable_getServerSession } from "next-auth/next"
 import { authOptions } from "../../auth/[...nextauth]"
 import type { NextApiRequest, NextApiResponse } from 'next'
-import prisma from '../../../../lib/prisma'
+import prisma from 'lib/prisma'
 
 type TenantData = {
     id: string
@@ -12,30 +10,24 @@ type TenantData = {
 
   }
 
-  export default async function Tenant(
-    req: NextApiRequest, 
-    res:NextApiResponse<TenantData[]>) {
+  export default async function Tenant(req: NextApiRequest, res:NextApiResponse<TenantData[]>) {
+    console.log(req.body, req)
     const session = await unstable_getServerSession(req, res, authOptions)
-
-    console.log(req.body, req.query)
   
-    if (!session) {
+    if (session) {
       const tenants = await prisma.tenant.findMany({
-        where: {
-          users: {
-            some: {
+        where:{
+          users:{
+            some:{
               //@ts-ignore
               userId: session.user.id
             }
           }
         }
       })
-      
-         //@ts-ignore
-      res.status(401).json({ message: "You must be logged in." });
-      return;
+      console.log(tenants)
+      res.send(tenants)
+    } else {
+      res.send([])
     }
-    console.log(session)
-  //@ts-ignore
-    return res.json([])
   }

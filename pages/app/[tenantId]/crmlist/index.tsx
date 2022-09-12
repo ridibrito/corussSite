@@ -2,8 +2,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import BoardList from "../../../../components/board/boardList"
-import AddLead from "../../../../components/forms/AddLead"
+import AddLead from "../../../../components/forms/FormAddLead"
 
 export default function CrmList() {
   const router = useRouter()
@@ -42,16 +41,16 @@ export default function CrmList() {
         <div className='flex justify-between pt-2  '>
           <h2 className='items-center text-lg text-gray-500 ml-3 pt-1 dark:bg-gray-600 dark:text-gray-200'>Oportunidades</h2>
         <div className='bg-sky-600 text-white p-2 mb-2 rounded shadow-md'>
-        <Link href='/app/crm'>
+        <Link href={`/app/${router?.query?.tenantId}/crm`}>
           <a className='pr-3 pl-3'>CRM</a>
           </Link>|
-          <Link href="/app/crmlist">
+          <Link href={`/app/${router?.query?.tenantId}/crmlist`}>
           <a className='pl-3 pr-3'>Lista</a>
           </Link>
         </div>
         </div>
         
-        <BoardList />
+        
         
         
       </div>
