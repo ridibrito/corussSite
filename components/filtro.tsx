@@ -4,43 +4,29 @@ export default function Filtro(){
   
       <>
       
-      <div className="flex items-center dark:bg-gray-700 justify-between bg-white p-3 rounded-lg shadow-lg mb-5 mt-5">
+      <div className="flex items-center dark:bg-gray-700 justify-around bg-white p-3 rounded-lg shadow-lg mb-5 mt-5">
+        <p className="w-1/5 font-semibold text-gray-400 ">Filtrar por</p>
+      <input
+                  type="text"
+                  className="rounded-lg w-1/4 flex h-10 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 "
+                  placeholder="Nome"
+                  
+                />
+                <input
+                  type="text"
+                  className="rounded-lg flex h-10 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-1/4  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 "
+                  placeholder="CPF/CNPJ"
+                  
+                />
+
+<input
+                  type="date"
+                  className="rounded-lg flex h-10 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-1/4  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
+                  placeholder="Data da venda"
+                />
   
-      <div className="grid dark:bg-gray-700 sm:grid-cols-3 md:gri-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-        <div className="flex flex-col">
-          <label className="text-sm text-gray-500 font-semibold pl-2 dark:text-gray-400">Nome</label>
-        <input type="search" id="" name="" placeholder="Ex: João Miguel" className="h-11 w-auto rounded dark:bg-gray-700  pl-3 text-sm shadow-sm"></input>
-        </div>
-        <div className="flex flex-col">  
-          <label className="text-sm text-gray-500 dark:bg-gray-60 font-semibold pl-3 dark:text-gray-400">CPF</label>
-        <input type="search" id="" name="" placeholder="000.000.000-00" className="h-11 dark:bg-gray-60 w-auto rounded ml-1 pl-3 text-sm shadow-sm dark:bg-gray-700"></input>
-        </div>
-       
-       <div className="flex flex-col">
-       <label className="text-sm text-gray-500 font-semibold pl-3 dark:text-gray-400">Data</label>
-        <input type="date" id="" name="" placeholder="000.000.000-00" className="h-11 w-auto rounded ml-1 pl-3 text-sm shadow-sm dark:bg-gray-700"></input>
-       </div>
-        
-        
-        <div className="flex p-3">
-          <button className="bg-gray-300 rounded text-white px-3 py-1 font-semibold dark:bg-gray-500 ">Limpar</button>
-        <button className="text-white rounded bg-sky-600 px-4  py-1 ml-2 font-semibold">Buscar</button>
-        </div>
-  
+      
       </div>
-      </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
       </>
     )
     }

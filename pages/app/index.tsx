@@ -1,8 +1,15 @@
 import { useSession } from "next-auth/react"
 import Router, { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import useSWR from "swr"
+import useSWR, { Arguments } from "swr"
 import Link from "next/link"
+
+interface Tenant {
+    id: string
+    name: string
+}
+
+
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -35,7 +42,7 @@ const AppIndex = () => {
      <h1 className="mt-8 font-semibold">{session?.user?.name}</h1>
      <h2 className="mt-2 mb-4 font-semibold">{session?.user?.email}</h2>
      
-    {data && data.map((tenant) => (
+    {data && data.map((tenant:Tenant) => (
         <Link 
         key={tenant.id}
         href={"/app/"+tenant.id}>

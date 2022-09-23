@@ -31,7 +31,7 @@ export default function Example() {
               <Menu.Item>
                 
                 {({ active }) => (
-                  <Link href="/contato"><a><button
+                  <Link href="/site/contato"><a><button
                     className={`${
                       active ? 'bg-gray-100 text-gray-700 font-semibold' : 'text-gray-700'
                     } group flex w-full items-center rounded-md px-3 py-3 text-sm font-semibold`}
@@ -43,7 +43,7 @@ export default function Example() {
               </Menu.Item>
               <Menu.Item>
               {({ active }) => (
-                  <Link href="/docs"><a><button
+                  <Link href="/site/docs"><a><button
                   className={`${
                     active ? 'bg-gray-100 text-gray-700 font-semibold' : 'text-gray-700'
                   } group flex w-full items-center rounded-md px-3 py-3 text-sm font-semibold`}

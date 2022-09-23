@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Tab } from '@headlessui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 //@ts-ignore
@@ -149,11 +150,11 @@ export default function Example() {
         )
       }
     ],
-    Calendário: [
+    Simulador: [
       {
         id: 1,
-        title: 'Calendário integrado ao google calendar/agenda.',
-        subtitle: 'Conect suas tarefas, agende reuniões.',
+        title: 'Simulador integrado ao crm',
+        subtitle: 'Não perca leads de vista',
         lista1: 5,
         lista2: 2,
         lista3: 2,
@@ -174,15 +175,15 @@ export default function Example() {
   })
 
   return (
-    <div className="w-full max-w-8xl px-2 py-10 sm:px-0">
+    <div className="mx-auto sm:max-w-7xl px-2 py-10 sm:px-0">
       <Tab.Group>
-        <Tab.List className="sm:flex space-x-1 rounded-xl bg-gray-200 p-1 text-sky-600">
+        <Tab.List className="sm:flex justify-center text-center rounded bg-gray-200 sm:py-1 text-sky-600">
           {Object.keys(categories).map(category => (
             <Tab
               key={category}
               className={({ selected }) =>
                 classNames(
-                  'w-full rounded-lg py-2.5 mx-2 text-sm  leading-5 text-sky-600 font-semibold',
+                  'w-full rounded py-2.5 sm:mx-2 text-sm  leading-5 text-sky-600 font-semibold',
                   'ring-opacity-60 ring-offset-2 focus:outline-none',
                   selected
                     ? 'bg-sky-600 text-white'
@@ -203,34 +204,37 @@ export default function Example() {
               <ul>
                 {posts.map(post => (
                   <li key={post.id} className="relative rounded-sm p-3">
-                    <h3 className="text-3xl flex justify-center leading-7">
+                    <h3 className="sm:text-3xl text-lg font-semibold flex justify-center leading-7">
                       {post.title}
                     </h3>
-                    <h4 className="text-xl pt-2 flex justify-center">
+                    <h4 className="sm:text-xl pt-2 flex justify-center">
                       {post.subtitle}
                     </h4>
 
                     <div className="sm:flex mt-3 mx-auto ">
-                      <ul className="sm:w-1/2 sm:flex-col text-sm   text-gray-700">
-                        <li className="text-xl">{post.lista1} </li>
+                      <ul className="sm:w-1/2 sm:flex-col text-sm   text-gray-700 pt-2">
+                        <li className="sm:text-xl">{post.lista1} </li>
 
-                        <li className="text-xl">{post.lista2} </li>
+                        <li className="sm:text-xl">{post.lista2} </li>
 
-                        <li className="text-xl">{post.lista3} </li>
+                        <li className="sm:text-xl">{post.lista3} </li>
 
-                        <li className="text-xl">{post.lista4} </li>
+                        <li className="sm:text-xl">{post.lista4} </li>
 
-                        <li className="text-xl">{post.lista5} </li>
+                        <li className="sm:text-xl">{post.lista5} </li>
 
-                        <li className="text-xl">{post.lista6} </li>
+                        <li className="sm:text-xl">{post.lista6} </li>
 
-                        <li className="text-xl">{post.lista7} </li>
+                        <li className="sm:text-xl">{post.lista7} </li>
                       </ul>
-                      <div>{post.img}</div>
+                      <div className="border p-1">{post.img}</div>
                     </div>
                   </li>
                 ))}
               </ul>
+              <Link href="/api/auth/signin"><a><button className="bg-sky-600 w-full py-3 text-white font-semibold max-w-7xl flex mx-auto rounded  justify-center hover:bg-sky-700">
+           Teste grátis
+          </button></a></Link>
             </Tab.Panel>
           ))}
         </Tab.Panels>

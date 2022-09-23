@@ -53,12 +53,12 @@ const handleNewCliente = () => {
         </div>
         <hr></hr>
         <div >
-          <NavCadastros />
+          {/* <NavCadastros />
           <AddPlanos  
             show ={showPopUpCliente}
             setShow={setShowPopUpCliente}
           />
-          <Filtro />
+          <Filtro /> */}
         
         </div>
       </div>

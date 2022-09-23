@@ -1,12 +1,14 @@
 import { FiTrash2 } from 'react-icons/fi'
 import { BsPencilSquare } from 'react-icons/bs'
 
+
+
 export default function TabelaClientes(){
   return(<><div>
 
 <div className="overflow-x-auto relative shadow-lg sm:rounded-lg">
   <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-    <thead className="text-sm text-gray-500  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <thead className="text-gray-500  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th scope="col" className="py-3 px-6">
           Nome
@@ -36,7 +38,7 @@ export default function TabelaClientes(){
       <tr className="bg-white border-b dark:bg-gray-600 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
         <th
           scope="row"
-          className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          className="py-4 px-6  text-gray-700 whitespace-nowrap dark:text-white"
         >
           Ricardo Brito
         </th>

@@ -1,5 +1,4 @@
 
-import { Account } from '@prisma/client'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 
@@ -16,5 +15,6 @@ export default async function handler(
   res: NextApiResponse<Data[]>
 ) {
   const accounts = await prisma.account.findMany()
-  res.status(200).json(accounts)
+  //@ts-ignore
+  res.status(200).json(accouts)
 }

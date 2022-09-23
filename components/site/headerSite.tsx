@@ -18,7 +18,7 @@ export default function HeaderSite() {
           <h1 className="text-gray-700 sm:text-lg pt-2 font-semibold">
              Atendimento, Venda, gerenciamento, Financeiro, relatórios e muito mais...
           </h1>
-          <Link href="/app"><a><button className="bg-sky-600 text-white font-bold py-2 rounded-md mt-3 w-full text-center items-center md:px-32 lg:px-36 xl:px-full">
+          <Link href="/api/auth/signin"><a><button className="bg-sky-600 text-white font-bold py-2 rounded mt-3 w-full text-center items-center md:px-32 lg:px-36 xl:px-full hover:bg-sky-700">
             Teste grátis
           </button></a></Link>
           

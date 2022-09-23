@@ -48,7 +48,7 @@ interface NewClientForm  {
   operadora: string;
   qtsVidas: Number;
   comissao: string;
-  taxaAdesao: Number;
+  taxaAdesao: string;
   valorTaxa: Number;
   bonificacao: string;
   valorBonificacao: Number;
@@ -67,7 +67,7 @@ export default function AddCliente({ show, setShow }: Props) {
   });
   const submit: SubmitHandler<NewClientForm> = async (inputs) => {
     console.log(inputs)
-    const data = await fetch(`/api/${router?.query?.tenantId}`,{
+    const data = await fetch(`/api/${router?.query?.tenantId}/adm`,{
       method: 'POST',
       body: JSON.stringify(inputs),
      
@@ -253,7 +253,7 @@ export default function AddCliente({ show, setShow }: Props) {
                 />
               </div>
               
-              {/* <div className="mt-2 flex items-center">
+               <div className="mt-2 flex items-center">
                 <select
                   {...register("comissao", { required: true })}
                   className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
@@ -311,7 +311,7 @@ export default function AddCliente({ show, setShow }: Props) {
               <div className="text-red-600 text-sm">
                 {errors.nome?.type === 'required' && "*"}
                 </div>
-              <div className="p-4"> */}
+              <div className="p-4">
 
               <button
               onClick={handleClose}
@@ -319,18 +319,20 @@ export default function AddCliente({ show, setShow }: Props) {
               >
               Cancelar
             </button>
-            <button 
+            <input
             type="submit"
-            className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2">
-              Salvar
-            </button>
+            className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2"/>
+              
+            
+            </div>
            
             </form>
           </section>
           
 
         
-        </div>
+          </div> 
+          
       </div>
     </>
   );
