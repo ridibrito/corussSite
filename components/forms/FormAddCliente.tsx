@@ -23,7 +23,7 @@ const clienteSchema = yup.object({
   operadora: yup.string().required(),
   qtsVidas: yup.number(),
   comissao: yup.string().required(),
-  taxaAdesao: yup.number().required(),
+  taxaAdesao: yup.string().required(),
   valorTaxa: yup.number().required(),
   bonificacao: yup.string().required(),
   valorBonificacao: yup.number().required(),
@@ -32,34 +32,31 @@ const clienteSchema = yup.object({
 .required();
 
 interface NewClientForm  {
-  nome: string;
-  tipo: string;
-  cpf: string;
-  telefone: string;
-  email: string;
-  dataNascimento: Date;
-  sexo: string;
-  Nproposta: Number;
-  dataVenda: Date;
-  dataVigencia: Date;
-  valor: Number;
-  tipoPlano: string;
-  administradora: string;
-  operadora: string;
-  qtsVidas: Number;
-  comissao: string;
-  taxaAdesao: string;
-  valorTaxa: Number;
-  bonificacao: string;
-  valorBonificacao: Number;
-};
-
-interface Props {
-  show: string
-  setShow: string
+  nome: string
+  tipo: string
+  cpf: string
+  telefone: string
+  email: string
+  dataNascimento: Date
+  sexo: string
+  Nproposta: string
+  dataVenda: Date
+  dataVigencia: Date
+  valor: Number
+  tipoPlano: string
+  administradora: string
+  operadora: string
+  qtsVidas: Number
+  comissao: string
+  taxaAdesao: string
+  valorTaxa: Number
+  bonificacao: string
+  valorBonificacao: Number
 }
 
-export default function AddCliente({ show, setShow }: Props) {
+
+
+export default function AddCliente({ show, setShow }) {
   const router = useRouter()
   const { register, handleSubmit, 
     formState:{ errors } } = useForm<NewClientForm>({
@@ -67,16 +64,20 @@ export default function AddCliente({ show, setShow }: Props) {
   });
   const submit: SubmitHandler<NewClientForm> = async (inputs) => {
     console.log(inputs)
-    const data = await fetch(`/api/${router?.query?.tenantId}/adm`,{
+    const data = await fetch(`/api/${router?.query?.tenantId}/clients`,{
       method: 'POST',
       body: JSON.stringify(inputs),
+      headers:{
+        'content-type': 'application/json'
+      }
      
     })
-  }
 
+  }
+  
   const handleClose = () => {
-    //@ts-ignore
-    setShow<Props>(false);
+    
+    setShow(false);
   };
   return (
     <>
@@ -164,7 +165,9 @@ export default function AddCliente({ show, setShow }: Props) {
                   placeholder="Data da venda"
                 />
 
-                <select className="rounded-lg flex h-12 mx-2 dark:bg-gray-700 ml-2 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-60 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600">
+                <select 
+                {...register('sexo')}
+                className="rounded-lg flex h-12 mx-2 dark:bg-gray-700 ml-2 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-60 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600">
                   <option>Sexo</option>
                   <option>Masculino</option>
                   <option>Feminino</option>
@@ -175,6 +178,7 @@ export default function AddCliente({ show, setShow }: Props) {
               <div className="flex mx-2 mt-2">
                 <input
                   type="text"
+                  {...register('Nproposta')}
                   className="rounded-lg flex h-12 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-60 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
                   placeholder="Nº da proposta"
                 />
@@ -214,11 +218,14 @@ export default function AddCliente({ show, setShow }: Props) {
                <div 
                {...register("tipoPlano", { required: true })}
                className="flex mb-3 mt-2 ">
-                <select className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600">
+                <select
+                  {...register("tipoPlano", { required: true })}
+                  className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
+                >
                   <option>Tipo de plano</option>
                   <option>Adesão</option>
-                  <option>Individual</option>
                   <option>PME</option>
+                  <option>Individual</option>
                   <option>Familiar</option>
                 </select>
                 <div className="text-red-600 text-sm">
@@ -271,9 +278,12 @@ export default function AddCliente({ show, setShow }: Props) {
                 </p>
               </div>
                 <div 
-                {...register("taxaAdesao", { required: true })}
+                {...register("taxaAdesao")}
                 className="flex mt-2">
-                <select className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600">
+                <select
+                  {...register("taxaAdesao", { required: true })}
+                  className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
+                >
                   <option>Taxa de adesão</option>
                   <option>Sim</option>
                   <option>Não</option>
@@ -284,7 +294,7 @@ export default function AddCliente({ show, setShow }: Props) {
 
                 <input
                   type="currency"
-                  {...register("valorTaxa", { required: true })}
+                  {...register("valorTaxa")}
                   className="rounded-lg flex h-12 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-40 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
                   placeholder="Valor da taxa"
                 />
@@ -321,16 +331,14 @@ export default function AddCliente({ show, setShow }: Props) {
             </button>
             <input
             type="submit"
-            className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2"/>
+            className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2 cursor-pointer"/>
               
             
             </div>
            
             </form>
           </section>
-          
 
-        
           </div> 
           
       </div>

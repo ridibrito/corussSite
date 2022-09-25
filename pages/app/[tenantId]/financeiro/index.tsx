@@ -47,9 +47,9 @@ const handleNewCliente = () => {
         <div >
        
           <AddCliente  
-           //@ts-ignore 
+          //@ts-ignore
             show ={showPopUpCliente}
-             //@ts-ignore 
+            //@ts-ignore
             setShow={setShowPopUpCliente}
           />
           

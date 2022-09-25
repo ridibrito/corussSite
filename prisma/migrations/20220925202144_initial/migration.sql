@@ -68,7 +68,7 @@ CREATE TABLE "UserOnTenants" (
 
 -- CreateTable
 CREATE TABLE "Client" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "name" VARCHAR(255) NOT NULL,
     "cpf" VARCHAR(255) NOT NULL,
     "telefone" VARCHAR(255) NOT NULL,

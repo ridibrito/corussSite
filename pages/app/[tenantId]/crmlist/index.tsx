@@ -31,8 +31,7 @@ export default function CrmList() {
         </div>
         </div>
         <hr></hr>
-        <AddLead  
-        //@ts-ignore
+        <AddLead  //@ts-ignore
             show ={showPopUpLead}
             //@ts-ignore
             setShow={setShowPopUpLead}

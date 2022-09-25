@@ -6,12 +6,13 @@ import { useRouter } from 'next/router'
 
 
 
+
 export default function Relatorios() {
   const router = useRouter()
   const [showPopUpCliente,setShowPopUpCliente ] = useState(false)
 
 const handleNewCliente = () => {
-  setShowPopUpCliente(true);
+  setShowPopUpCliente(true)
 }
 
   return (

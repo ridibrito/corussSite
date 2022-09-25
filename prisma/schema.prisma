@@ -79,7 +79,7 @@ model UserOnTenants {
 }
 
 model Client {
-  id               Int      @id @default(autoincrement())
+  id               String      @id @default(cuid())
   name             String   @db.VarChar(255)
   cpf              String   @db.VarChar(255)
   telefone         String   @db.VarChar(255)

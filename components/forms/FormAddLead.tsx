@@ -15,7 +15,7 @@ export default function AddLead({ show, setShow }:Props) {
     <>
       <div
         style={{ right: show ? 10 : -1000 }}
-        className="bg-white shadow-2xl rounded dark:bg-gray-700  dark:text-gray-400 absolute z-10 flex-col px-8 py-5 right-4 transition-all duration-500"
+        className="bg-white shadow-2xl fixed rounded dark:bg-gray-700  dark:text-gray-400 z-10 flex-col px-8 py-5 right-4 transition-all duration-500"
       > 
         <header className="flex justify-between pb-4">
           <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-400">

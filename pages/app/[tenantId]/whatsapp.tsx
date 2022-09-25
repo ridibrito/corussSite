@@ -36,10 +36,9 @@ return (
       </div>
       <div>
       <button onClick={handleNewCliente} className='flex items-center ml-60 bg-sky-600 text-white px-6 py-1 font-normal mr-3 rounded shadow'>Conectar</button>
-      <ConectWhatsApp 
-      //@ts-ignore 
+      <ConectWhatsApp //@ts-ignore
             show ={showPopUpCliente}
-             //@ts-ignore 
+            //@ts-ignore
             setShow={setShowPopUpCliente}
           />
 

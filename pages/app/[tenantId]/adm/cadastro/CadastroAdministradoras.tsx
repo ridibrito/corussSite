@@ -36,9 +36,7 @@ const handleNewCliente = () => {
           </h3>
           
           <h3 className=" ml-3 pt-1 font-normal text-gray-500 ">
-            <Link href="/app/adm">
-              <a className="hover:text-sky-600 cursor-pointer dark:text-gray-400 dark:bg-gray-600">/ Cadastros</a>
-            </Link>
+          <p className="hover:text-sky-600 cursor-pointer dark:text-gray-400 dark:bg-gray-600">/ Cadastros</p>
           </h3>
           <h3 className=" ml-3 pt-1 font-normal text-gray-500 dark:text-gray-400 dark:bg-gray-600">
            / Administradoras
@@ -54,10 +52,8 @@ const handleNewCliente = () => {
         <hr></hr>
         <div >
           <NavCadastros />
-          <AddAdministradora
-          //@ts-ignore  
-            show ={showPopUpCliente}
-            //@ts-ignore
+          <AddAdministradora //@ts-ignore
+            show ={showPopUpCliente}//@ts-ignore
             setShow={setShowPopUpCliente}
           />
           <Filtro />

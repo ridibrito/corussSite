@@ -4,7 +4,10 @@ import AddCliente from '../../../../components/forms/FormAddCliente'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-
+interface Props {
+  show: string
+  setShow: string
+}
 
 export default function ContasAreceber() {
   const router = useRouter()
@@ -46,8 +49,7 @@ const handleNewCliente = () => {
         <hr></hr>
         <div >
           
-          <AddCliente  
-          //@ts-ignore
+          <AddCliente  //@ts-ignore
             show ={showPopUpCliente}
             //@ts-ignore
             setShow={setShowPopUpCliente}

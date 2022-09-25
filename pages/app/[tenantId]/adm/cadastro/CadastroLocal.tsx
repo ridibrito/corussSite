@@ -36,9 +36,7 @@ const handleNewCliente = () => {
           </h3>
           
           <h3 className=" ml-3 pt-1 font-normal text-gray-500 ">
-          <Link href={`/app/${router.query.tenantId}/adm`}>
-              <a className="hover:text-sky-600 cursor-pointer dark:text-gray-400 dark:bg-gray-600">/ Cadastros</a>
-            </Link>
+          <p className="hover:text-sky-600 cursor-pointer dark:text-gray-400 dark:bg-gray-600">/ Cadastros</p>
           </h3>
           <h3 className=" ml-3 pt-1 font-normal text-gray-500 dark:text-gray-400 dark:bg-gray-600">
            / Locais de entrega
@@ -53,12 +51,12 @@ const handleNewCliente = () => {
         </div>
         <hr></hr>
         <div >
-          {/* <NavCadastros />
-          <AddLocal  
-            show ={showPopUpCliente}
+          <NavCadastros />
+          <AddLocal  //@ts-ignore
+            show ={showPopUpCliente}//@ts-ignore
             setShow={setShowPopUpCliente}
           />
-          <Filtro /> */}
+          <Filtro />
           
         </div>
       </div>
