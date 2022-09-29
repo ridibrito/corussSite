@@ -10,7 +10,7 @@ const adms = [
 export default function SelectAdm() {
     return (
         <Select
-        placeholder="Selecione uma administradora"
+        placeholder="Administradora"
         className="basic-single line w-full"
         closeMenuOnSelect={true}
         classNamePrefix="adm"

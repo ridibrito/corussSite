@@ -1,17 +1,62 @@
 import Link from 'next/link'
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
 import AddCliente from '../../../../components/forms/FormAddCliente'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { TableArea } from '/components/TableArea'
+import { Item } from '../../../../types/item'
+import { Category } from '../../../../types/Category'
+import { categories } from '../../../service/categories'
+import { items } from '../../../service/items'
+import { filterListByMonth, getCurrentMonth } from '../../../../helpers/dateFilter'
+import { InfoArea } from '/components/InfoArea'
+import { InputArea } from '/components/InputArea'
+
+export default function Lancamentos() {
+  const [list, setList] = useState(items)
+  const [filteredList, setFilteredList] = useState<Item[]>([])
+  const [ currentmonth, setCurrentMonth] = useState(getCurrentMonth())
+  const [income, setIncome] = useState(0)
+  const [expense, setExpense] = useState(0)
 
 
-
-export default function ContasEbancos() {
   const router = useRouter()
   const [showPopUpCliente,setShowPopUpCliente ] = useState(false)
 
+  useEffect(()=>{
+    setFilteredList(filterListByMonth(list, currentmonth))
+  },[list, currentmonth])
+
+  useEffect(()=>{
+    let incomeCount = 0
+    let expenseCount = 0
+
+    for(let i in filteredList){
+      if(categories.expense){
+        expenseCount += filteredList[i].value
+      }else{
+        incomeCount += filteredList[i].value
+
+      }
+    }
+    setIncome(incomeCount)
+    setExpense(expenseCount)
+
+  },[filteredList])
+
+
+ const handleMonthChange = (newMonth: string) => {
+  setCurrentMonth(newMonth)
+ }
+
 const handleNewCliente = () => {
   setShowPopUpCliente(true);
+}
+
+const handleAddItem = (items: Item) => {
+  let newList = [...list]
+  newList.push(items)
+  setList(newList)
 }
 
   return (
@@ -33,28 +78,30 @@ const handleNewCliente = () => {
           </h3>
        
           <h3 className=" ml-3 pt-1 font-normal text-gray-500 dark:text-gray-300 dark:bg-gray-600">
-           / Caixas e bancos
+           / Lançamentos
           </h3>
-
-  
-        </div>
-        <div>
-        <button onClick={handleNewCliente} className='flex items-center ml-60 bg-sky-600 text-white px-6 py-2 font-normal mr-3 rounded shadow'><AiOutlinePlus/></button>
-
         </div>
         </div>
         <hr></hr>
-        <div >
+        <div>
        
-          <AddCliente  
-          //@ts-ignore
-            show ={showPopUpCliente}
-            //@ts-ignore
-            setShow={setShowPopUpCliente}
-          />
+          
           
         </div>
+        <InfoArea
+        currentMonth={currentmonth}
+        onMonthChange={handleMonthChange}
+        income={income}
+        expense={expense}
+        />
+        
+        
+        <InputArea onAdd={handleAddItem}/>
+        
+        <TableArea list={filteredList}/>
+
       </div>
+     
     </>
   )
 }

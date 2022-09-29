@@ -7,7 +7,7 @@ const coparticipacao = [
     {value:'Não', label:'Não'}
 ]
 
-export default function SelectReembolso() {
+export default function SelectCoparticipação() {
     return (
         <Select
         placeholder="Coparticipação"

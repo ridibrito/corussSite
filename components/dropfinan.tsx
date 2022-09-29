@@ -44,7 +44,7 @@ export default function DropFinan() {
                       'block px-4 py-2 text-md'
                     )}
                   >
-                  Bancos e caixas
+                  Lançamentos
                   </a>
                 </Link>
               )}

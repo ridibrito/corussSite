@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Image from "next/image";
 import { BsListTask } from "react-icons/bs";
-import { TabItem } from "flowbite-react/lib/esm/components/Tab/TabItem";
 
 const initialItems = [
   { id: "1",
@@ -54,7 +53,7 @@ const initialColumns = [
 
 
 
-const onDragEnd = (result, columns, setColumns) => {
+const onDragEnd = ({result, columns, setColumns}) => {
   if (!result.destination) return;
   const { source, destination } = result;
 
@@ -153,6 +152,8 @@ export default function Crm() {
           </div>
         </div>
         <div className="flex">
+
+
         <DragDropContext
           onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
         >
@@ -164,7 +165,7 @@ export default function Crm() {
                   <div
                   {...provided.droppableProps}
                   ref={provided.innerRef}
-                  className="bg-gray-200 w-80 h-screen mr-4 rounded"
+                  className="bg-gray-200 grow-0 shrink-0 basis-80  h-screen mr-4 rounded"
                   >
                     <h1 className="text font-semibold ml-3 mt-2 text-gray-700">
                       {column.name}

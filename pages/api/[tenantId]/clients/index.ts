@@ -47,9 +47,6 @@ type TenantData = {
         valorBonificacao: req.body.valorBonificacao,
         tenantId
       }
-   
-    
-     
 
 
       const tenants = await prisma.tenant.findMany({

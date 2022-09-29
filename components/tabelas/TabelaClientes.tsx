@@ -57,9 +57,9 @@ export default function TabelaClientes() {
             </thead>
             <tbody>
               {data &&
-                data.map((clients:client) => (
+                data.map((clients:client, index:any) => (
                   <tr
-                    key={clients.id}
+                    key={index}
                     className="bg-white border-b dark:bg-gray-600 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
                   >
                     <th

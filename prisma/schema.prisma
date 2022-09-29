@@ -63,9 +63,9 @@ model Tenant {
   plan      String          @db.VarChar(255)
   image     String          @db.VarChar(255)
   createdAt DateTime        @default(now()) @db.Timestamp(6)
-  users     UserOnTenants[]  
-  clients Client[]
-  }
+  users     UserOnTenants[]
+  clients   Client[]
+}
 
 model UserOnTenants {
   user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -79,7 +79,7 @@ model UserOnTenants {
 }
 
 model Client {
-  id               String      @id @default(cuid())
+  id               String   @id @default(cuid())
   name             String   @db.VarChar(255)
   cpf              String   @db.VarChar(255)
   telefone         String   @db.VarChar(255)
@@ -99,9 +99,9 @@ model Client {
   valorTaxa        Int
   bonificacao      String   @db.VarChar(255)
   valorBonificacao Int
-  createdAt DateTime @default(now())
-  tenant Tenant  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
-  tenantId String
+  createdAt        DateTime @default(now())
+  tenant           Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  tenantId         String
 }
 
 model Lead {
@@ -112,4 +112,29 @@ model Lead {
   tipoPlano String @db.VarChar(255)
   operadora String @db.VarChar(255)
   valor     Int
+}
+
+model TipoPlano {
+  id   String @id @default(cuid())
+  name String @db.VarChar(255)
+}
+
+model Acomodacao {
+  id   String @id @default(cuid())
+  name String @db.VarChar(255)
+}
+
+model Reembolso {
+  id   String @id @default(cuid())
+  name String @db.VarChar(255)
+}
+
+model Abrangencia {
+  id   String @id @default(cuid())
+  name String @db.VarChar(255)
+}
+
+model Coparticipacao {
+  id   String @id @default(cuid())
+  name String @db.VarChar(255)
 }

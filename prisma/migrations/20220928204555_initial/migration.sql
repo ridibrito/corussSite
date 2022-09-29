@@ -107,6 +107,46 @@ CREATE TABLE "Lead" (
     CONSTRAINT "Lead_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "TipoPlano" (
+    "id" SERIAL NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+
+    CONSTRAINT "TipoPlano_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Acomodacao" (
+    "id" SERIAL NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+
+    CONSTRAINT "Acomodacao_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Reembolso" (
+    "id" SERIAL NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+
+    CONSTRAINT "Reembolso_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Abrangencia" (
+    "id" SERIAL NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+
+    CONSTRAINT "Abrangencia_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Coparticipacao" (
+    "id" SERIAL NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+
+    CONSTRAINT "Coparticipacao_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "Account_provider_providerAccountId_key" ON "Account"("provider", "providerAccountId");
 
