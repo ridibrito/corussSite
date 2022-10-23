@@ -54,9 +54,9 @@ const initialColumns = [
 
 
 const onDragEnd = ({result, columns, setColumns}) => {
-  if (!result.destination) return;
-  const { source, destination } = result;
+  if (result.destination) return;
 
+  const { source, destination } = result;
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];
@@ -158,8 +158,8 @@ export default function Crm() {
           onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
         >
 
-             {Object.entries(columns).map(([columnId, column], index) => (
-              <Droppable droppableId={columnId} key={columnId}
+             {Object.entries(columns).map(([columnId, column]) => (
+              <Droppable droppableId={columnId} key={column.name}
               >
                 {(provided) => (
                   <div
