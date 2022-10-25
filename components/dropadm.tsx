@@ -35,7 +35,7 @@ export default function DropAdm() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link href={`/app/${router?.query?.tenantId}/adm`}>
+                <Link href={`/app/${router?.query?.tenantId}/adm/cadastro/CadastroClientes`}>
                   <a
                     className={classNames(
                       active

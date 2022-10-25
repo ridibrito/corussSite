@@ -65,6 +65,7 @@ model Tenant {
   createdAt DateTime        @default(now()) @db.Timestamp(6)
   users     UserOnTenants[]
   clients   Client[]
+  leads     Lead[]
 }
 
 model UserOnTenants {
@@ -105,13 +106,16 @@ model Client {
 }
 
 model Lead {
-  id        Int    @id @default(autoincrement())
+  id        String   @id @default(cuid())
   name      String @db.VarChar(255)
   telefone  String @db.VarChar(255)
   email     String @db.VarChar(255)
   tipoPlano String @db.VarChar(255)
   operadora String @db.VarChar(255)
+  administradora String @db.VarChar(255)
   valor     Int
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  tenantId  String
 }
 
 model TipoPlano {

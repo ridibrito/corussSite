@@ -1,12 +1,58 @@
 import { IoMdCloseCircle } from "react-icons/io";
+import React, { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+import { useRouter } from "next/router";
 
 
+const leadSchema = yup.object({
+  nome: yup.string().required(),
+  telefone: yup.string(),
+  email: yup.string().required(),
+  valor: yup.number().required(),
+  tipoPlano: yup.string().required(),
+  administradora: yup.string().required(),
+  operadora: yup.string().required(),
+
+})
+.required();
+
+
+interface NewLeadForm {
+  nome: string
+  telefone: string
+  email: string
+  valor: Number
+  tipoPlano: string
+  administradora: string
+  operadora: string
+}
 
 interface Props {
   show: string
   setShow: string
 }
 export default function AddLead({ show, setShow }:Props) {
+  const router = useRouter()
+  const { register, handleSubmit, 
+    formState:{ errors } } = useForm<NewLeadForm>({
+    resolver: yupResolver(leadSchema)
+  });
+  const submit: SubmitHandler<NewLeadForm> = async (inputs) => {
+    console.log(inputs)
+    const data = await fetch(`/api/${router?.query?.tenantId}/leads`,{
+      method: 'POST',
+      body: JSON.stringify(inputs),
+      headers:{
+        'content-type': 'application/json'
+      }
+     
+    })
+
+  }
+
+
   const handleClose = () => {
     //@ts-ignore
     setShow(false);
@@ -29,7 +75,7 @@ export default function AddLead({ show, setShow }:Props) {
           </span>
         </header>
         <section>
-          <form className=" mx-auto">
+          <form  onSubmit={handleSubmit(submit)} className=" mx-auto">
             <div className=" bg-gray-100 dark:bg-gray-700 border-t-2 border-sky-400 bg-opacity-5">
               <div className=" mx-auto">
                 <div className="inline-flex items-center "></div>
@@ -42,6 +88,7 @@ export default function AddLead({ show, setShow }:Props) {
                   <div>
                     <div className=" relative ">
                       <input
+                       {...register("nome", { required: true })}
                         type="text"
                         id="user-info-name"
                         className=" rounded-lg flex-1 appearance-none dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 focus:border-transparent"
@@ -52,6 +99,7 @@ export default function AddLead({ show, setShow }:Props) {
                   <div>
                     <div className=" relative ">
                       <input
+                       {...register("telefone", { required: true })}
                         type="text"
                         id="user-info-phone"
                         className=" rounded-lg flex-1 appearance-none dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 focus:border-transparent"
@@ -60,6 +108,7 @@ export default function AddLead({ show, setShow }:Props) {
                     </div>
                     <div className=" relative ">
                       <input
+                        {...register("email", { required: true })}
                         type="email"
                         id="user-info-name"
                         className=" rounded-lg flex-1 appearance-none mt-5 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 focus:border-transparent"
@@ -80,7 +129,9 @@ export default function AddLead({ show, setShow }:Props) {
                   <div>
                   <div>
                     <div>
-                    <select className=" rounded-lg flex-1 appearance-none dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 focus:border-transparent" placeholder="Tipo de Plano">
+                    <select 
+                    {...register("tipoPlano", { required: true })}
+                    className=" rounded-lg flex-1 appearance-none dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 focus:border-transparent" placeholder="Tipo de Plano">
                     <option>Tipo de plano</option>            
                     <option>Adesão</option>
                     <option>PME</option>
@@ -94,14 +145,25 @@ export default function AddLead({ show, setShow }:Props) {
                   <div>
                     <div className=" relative ">
                       <input
+                        {...register("administradora", { required: true })}
                         type="text"
                         id="user-info-phone"
                         className=" rounded-lg flex-1 appearance-none dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 focus:border-transparent"
-                        placeholder="Plano"
+                        placeholder="Administradora"
+                      />
+                    </div>
+                    <div className=" relative mt-3">
+                      <input
+                        {...register("operadora", { required: true })}
+                        type="text"
+                        id="user-info-phone"
+                        className=" rounded-lg flex-1 appearance-none dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 focus:border-transparent"
+                        placeholder="Operadora"
                       />
                     </div>
                     <div className=" relative ">
                       <input
+                        {...register("valor", { required: true })}
                         type="text" 
                         name="price" 
                         id="price"
@@ -123,9 +185,9 @@ export default function AddLead({ show, setShow }:Props) {
           >
             Cancelar
           </button>
-          <button className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2">
-            Salvar
-          </button>
+          <input
+            type="submit"
+            className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2 cursor-pointer"/>
         </footer>
       </div>
     </>

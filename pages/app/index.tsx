@@ -3,13 +3,14 @@ import Router, { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import useSWR, { Arguments } from "swr"
 import Link from "next/link"
+import Image from 'next/image'
 
 interface Tenant {
     id: string
     name: string
 }
 
-
+//@ts-ignore
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -38,7 +39,7 @@ const AppIndex = () => {
     <>
     
     <div className="max-w-3xl text-center mx-auto justify-center mt-12">
-     <img className="rounded-full border-2 border-sky-600 w-32 h-32 mx-auto" src={session?.user?.image} alt={session?.user?.name}/> 
+     <Image  src='/avatar.jpg' alt="avatar" layout="fill"/> 
      <h1 className="mt-8 font-semibold">{session?.user?.name}</h1>
      <h2 className="mt-2 mb-4 font-semibold">{session?.user?.email}</h2>
      

@@ -15,9 +15,9 @@ export default function ConectWhatsApp({ show, setShow }:Props) {
   return (
     <>
       <div>
-        <div
+      <div
           style={{ right: show ? -10 : -1000 }}
-          className="bg-white dark:bg-gray-600 shadow-2xl overflow-y-scroll  rounded  -mt-24 absolute z-30 flex-col px-8 py-5 right-4 transition-all duration-500"
+          className="bg-white shadow-2xl overflow-y-scroll rounded  -mt-24 fixed z-30 flex-col px-8 py-5 right-4 transition-all duration-500"
         >
           <header className="flex justify-between pb-4">
             <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-400">

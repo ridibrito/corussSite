@@ -48,9 +48,9 @@ import {
           />
         </div>
         <div className="flex items-center justify-between mx-20 sm:w-2/3 w-1/2">
-        <ResumeItem title={'Receitas'} value={income.toFixed(2)}/>
-        <ResumeItem title={'Despesas'} value={expense.toFixed(2)}/>
-        <ResumeItem title={'Balanço'} value={(income - expense).toFixed(2)}/>
+        <ResumeItem title={'Receitas'} value={income}/>
+        <ResumeItem title={'Despesas'} value={expense}/>
+        <ResumeItem title={'Balanço'} value={(income - expense)}/>
           
         </div>
       </div>

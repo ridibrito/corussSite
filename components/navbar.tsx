@@ -43,7 +43,7 @@ export default function Navbar() {
             CRM
           </LinkMenu>
 
-          <LinkMenu href={`/app/${router.query.tenantId}/adm`}>
+          <LinkMenu href={`/app/${router.query.tenantId}/adm/cadastro/CadastroClientes`}>
             <DropAdm />
           </LinkMenu>
 

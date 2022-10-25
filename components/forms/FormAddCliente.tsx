@@ -1,5 +1,5 @@
 import { IoMdCloseCircle } from "react-icons/io";
-import React from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -54,9 +54,13 @@ interface NewClientForm  {
   valorBonificacao: Number
 }
 
+interface Props {
+  show: string
+  setShow: string
+}
 
 
-export default function AddCliente({ show, setShow }) {
+export default function AddCliente({ show, setShow }:Props) {
   const router = useRouter()
   const { register, handleSubmit, 
     formState:{ errors } } = useForm<NewClientForm>({
@@ -76,15 +80,16 @@ export default function AddCliente({ show, setShow }) {
   }
   
   const handleClose = () => {
-    
+        //@ts-ignore
+
     setShow(false);
   };
   return (
     <>
       <div>
-        <div
+      <div
           style={{ right: show ? -10 : -1000 }}
-          className="bg-gray-100 dark:bg-gray-700 dark:text-gray-400 shadow-2xl rounded fixed z-30 flex-col px-8 py-5 transition-all duration-500"
+          className="bg-white shadow-2xl overflow-y-scroll  rounded  -mt-24 fixed z-30 flex-col px-8 py-5 right-4 transition-all duration-500"
         >
           <header className="flex justify-between pb-4 dark:text-gray-400 ">
             <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-400 ">

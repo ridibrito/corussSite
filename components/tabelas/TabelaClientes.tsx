@@ -1,10 +1,10 @@
 import { FiTrash2 } from "react-icons/fi";
 import { BsPencilSquare } from "react-icons/bs";
-import useSWR from "swr";
+import useSWR, { Arguments } from "swr";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-
+//@ts-ignore
 
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -57,9 +57,9 @@ export default function TabelaClientes() {
             </thead>
             <tbody>
               {data &&
-                data.map((clients:client, index:any) => (
+                data.map((clients:client) => (
                   <tr
-                    key={index}
+                    key={clients.id}
                     className="bg-white border-b dark:bg-gray-600 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
                   >
                     <th

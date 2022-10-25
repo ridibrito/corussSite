@@ -10,13 +10,12 @@ type TenantData = {
     slug: string
     
   }
-  interface client {
+  interface ILead {
     id: string
     name: string
     tipoPlano: string
     operadora: string
     administradora: string
-    dataVigencia: string
     valor: number
   }
   export default async function Tenant(req: NextApiRequest, res:NextApiResponse<TenantData[]>) {
@@ -25,26 +24,14 @@ type TenantData = {
     if (session) {
       const tenantId = String(req.query.tenantId)
       if(req.method === 'POST'){
-      const clientData = {
+      const leadData = {
         name: req.body.nome,
-        cpf: req.body.cpf,
         telefone: req.body.telefone,
         email: req.body.email,          
-        dataNascimento: req.body.dataNascimento,  
-        sexo: req.body.sexo,             
-        Nproposta: req.body.Nproposta,       
-        dataVenda: req.body.dataVenda,        
-        dataVigencia: req.body.dataVigencia,     
-        valor: req.body.valor,           
         tipoPlano: req.body.tipoPlano,        
         administradora: req.body.administradora,   
         operadora: req.body.operadora,        
-        qtsVidas: req.body.qtsVidas,        
-        comissao: req.body.comissao,         
-        taxaAdesao: req.body.taxaAdesao,       
-        valorTaxa: req.body.valorTaxa,        
-        bonificacao: req.body.bonificacao,      
-        valorBonificacao: req.body.valorBonificacao,
+        valor: req.body.valor,           
         tenantId
       }
 
@@ -59,23 +46,23 @@ type TenantData = {
           }
         }
       })
-      const savedClient = await prisma.client.create({
-        data: clientData
+      const savedLead = await prisma.lead.create({
+        data: leadData
       })
                //@ts-ignore
-      return res.send(savedClient)
+      return res.send(savedLead)
     }
 
-    const clients = await prisma.client.findMany({
+    const leads = await prisma.lead.findMany({
       where:{
         tenantId:{
           equals: tenantId
         }
       }
-    })               //@ts-ignore
+    })               
 
-
-    return res.send(clients)
+//@ts-ignore
+    return res.send(leads)
     } else {
       res.send([])
     }

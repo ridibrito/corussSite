@@ -8,7 +8,7 @@ export default function NavCadastros() {
       <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg mt-2">
         <nav className="font-semibold">
           <ul className="flex items-center justify-around">
-          <LinkMenu2 href={`/app/${router.query.tenantId}/adm`}>
+          <LinkMenu2 href={`/app/${router.query.tenantId}/adm/cadastro/CadastroClientes`}>
             Clientes
           </LinkMenu2>
             <LinkMenu2 href={`/app/${router.query.tenantId}/adm/cadastro/CadastroOperadoras`}>
