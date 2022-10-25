@@ -23,14 +23,7 @@ const AppIndex = () => {
             setShouldRedirect(true)
         }
     },[data])
-    useEffect(() => {
-        if(shouldRedirect){
-        setTimeout(() => {
-            router.push('/app/'+data[0].id)
-        }, 3000)
-        setShouldRedirect(false)
-      }
-    },[shouldRedirect])
+   
 
 
 
@@ -38,7 +31,6 @@ const AppIndex = () => {
     <>
     
     <div className="max-w-3xl text-center mx-auto justify-center mt-12">
-     <img className="rounded-full border-2 border-sky-600 w-32 h-32 mx-auto" src={session?.user?.image} alt={session?.user?.name}/> 
      <h1 className="mt-8 font-semibold">{session?.user?.name}</h1>
      <h2 className="mt-2 mb-4 font-semibold">{session?.user?.email}</h2>
      
