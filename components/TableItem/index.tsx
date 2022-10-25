@@ -1,7 +1,7 @@
 import { formatDate } from "helpers/dateFilter";
 import { BsPen, BsTrash } from "react-icons/bs";
 import { Item } from "../../types/item";
-import { categories } from '../../pages/service/categories'
+import { categories } from '../../service/categories'
 
 type Props ={
     items: Item

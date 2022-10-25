@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react"
 import Router, { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import useSWR, { Arguments } from "swr"
+import useSWR from "swr"
 import Link from "next/link"
 
 interface Tenant {

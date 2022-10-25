@@ -1,4 +1,5 @@
-import { Category } from '../../types/Category';
+import React from 'react';
+import { Category } from '../types/Category';
 
 export const categories: Category = {
     food: { title: 'Alimentação', expense: true },

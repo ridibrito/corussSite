@@ -1,6 +1,6 @@
 import { Item } from '../../types/item'
 import { useState } from 'react'
-import { categories } from '../../pages/service/categories'
+import { categories } from '../../service/categories'
 import { newDateAdjusted } from '../../helpers/dateFilter'
 
 type Props = {
