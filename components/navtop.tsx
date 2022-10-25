@@ -1,6 +1,5 @@
 import { IoMdNotifications } from "react-icons/io";
 import Image from "next/image";
-import Link from "next/link";
 import ThemeToggle from "./toggle";
 import { useSession } from "next-auth/react";
 
@@ -37,7 +36,7 @@ export default function Navtop() {
               <div className="flex items-center">
                 <div className="flex items-center text-sm font-semibold ml-5">
                   {session?.user?.name}
-                  <img
+                  <Image
                   className="border rounded-full"
                     //@ts-ignore
                     src={session?.user?.image}

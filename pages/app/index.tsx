@@ -24,14 +24,7 @@ const AppIndex = () => {
             setShouldRedirect(true)
         }
     },[data])
-    useEffect(() => {
-        if(shouldRedirect){
-        setTimeout(() => {
-            router.push('/app/'+data[0].id)
-        }, 3000)
-        setShouldRedirect(false)
-      }
-    },[shouldRedirect])
+  
 
 
 
