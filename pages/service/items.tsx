@@ -7,3 +7,4 @@ export const items:Item[] = [
     {date: new Date(2022,8,26), category:'food',title: 'Mercado dia-a-dia', value:100.00},
     {date: new Date(2022,9,5), category:'Salary',title: 'Salário DEV',  value:2800},
 ]
+export default items

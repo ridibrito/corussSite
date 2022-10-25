@@ -1,4 +1,4 @@
-export function loadLists() {
+export default function loadLists() {
     return [
       { 
         title: 'Tarefas', 

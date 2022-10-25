@@ -6,3 +6,4 @@ export const categories: Category = {
     rent: {title: 'Aluguel' , expense: true},
     salary:{title: 'Salário' , expense: false}
 }
+export default categories
