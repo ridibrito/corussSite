@@ -5,6 +5,7 @@ import HeaderSite from "../../components/site/headerSite";
 import News from "/components/site/news";
 import Footer from "/components/site/Footer";
 import Diferecas from "/components/site/Diferencas";
+import Tabs from "/components/site/Tabs";
 
 const Home = () => {
   <Seo title="Coruss" description="Bem vindo a liberdade" />;
@@ -13,7 +14,8 @@ const Home = () => {
       <div>
         <NavbarSite />
         <HeaderSite />
-        <TabsSite />   
+        {/* <TabsSite /> */}
+        <Tabs />   
         <Diferecas />    
         <News />
         <Footer />
