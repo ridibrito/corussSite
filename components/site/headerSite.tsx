@@ -1,3 +1,5 @@
+import { HiCursorClick } from 'react-icons/hi'
+
 
 export default function HeaderSite() {
   return (
@@ -20,8 +22,12 @@ export default function HeaderSite() {
             </a>  
         </div>
         
-       
+        
+        <button className='text-2xl text-sky-600 font-bold flex mx-auto border-2 border-sky-600 rounded px-6 py-3'>Aproveite nosso simulador gratuito
+        <HiCursorClick className='w-7 h-7 ml-5 text-sky-600' />    
+        </button>
     </div>
+    
 </section>
     
      
