@@ -14,6 +14,20 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
         data: profissao,
     
     })
+}else if(method === 'POST') {
+
+  const { name } = req.body
+
+  const profissao = await prisma.profissao.create({
+    data: {
+        name,
+    }
+  })
+  return res.status(201).json({
+    data: profissao,
+  })
+
+
 }
 
    return res.status(404).json({message: "Rota inexistente"})

@@ -1,26 +1,26 @@
 -- CreateTable
 CREATE TABLE "Account" (
-    "id" STRING NOT NULL,
-    "userId" STRING NOT NULL,
-    "type" STRING NOT NULL,
-    "provider" STRING NOT NULL,
-    "providerAccountId" STRING NOT NULL,
-    "refresh_token" STRING,
-    "access_token" STRING,
-    "expires_at" INT4,
-    "token_type" STRING,
-    "scope" STRING,
-    "id_token" STRING,
-    "session_state" STRING,
+    "id" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "provider" TEXT NOT NULL,
+    "providerAccountId" TEXT NOT NULL,
+    "refresh_token" TEXT,
+    "access_token" TEXT,
+    "expires_at" INTEGER,
+    "token_type" TEXT,
+    "scope" TEXT,
+    "id_token" TEXT,
+    "session_state" TEXT,
 
     CONSTRAINT "Account_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Session" (
-    "id" STRING NOT NULL,
-    "sessionToken" STRING NOT NULL,
-    "userId" STRING NOT NULL,
+    "id" TEXT NOT NULL,
+    "sessionToken" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
     "expires" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Session_pkey" PRIMARY KEY ("id")
@@ -28,29 +28,29 @@ CREATE TABLE "Session" (
 
 -- CreateTable
 CREATE TABLE "User" (
-    "id" STRING NOT NULL,
-    "name" STRING,
-    "email" STRING,
+    "id" TEXT NOT NULL,
+    "name" TEXT,
+    "email" TEXT,
     "emailVerified" TIMESTAMP(3),
-    "image" STRING,
+    "image" TEXT,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "VerificationToken" (
-    "identifier" STRING NOT NULL,
-    "token" STRING NOT NULL,
+    "identifier" TEXT NOT NULL,
+    "token" TEXT NOT NULL,
     "expires" TIMESTAMP(3) NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "Tenant" (
-    "id" STRING NOT NULL,
-    "name" STRING NOT NULL,
-    "slug" STRING NOT NULL,
-    "plan" STRING NOT NULL,
-    "image" STRING NOT NULL,
+    "id" TEXT NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+    "slug" VARCHAR(255) NOT NULL,
+    "plan" VARCHAR(255) NOT NULL,
+    "image" VARCHAR(255) NOT NULL,
     "createdAt" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Tenant_pkey" PRIMARY KEY ("id")
@@ -58,85 +58,85 @@ CREATE TABLE "Tenant" (
 
 -- CreateTable
 CREATE TABLE "UserOnTenants" (
-    "userId" STRING NOT NULL,
-    "tenantId" STRING NOT NULL,
+    "userId" TEXT NOT NULL,
+    "tenantId" TEXT NOT NULL,
     "assignedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "role" STRING NOT NULL,
+    "role" TEXT NOT NULL,
 
     CONSTRAINT "UserOnTenants_pkey" PRIMARY KEY ("userId","tenantId")
 );
 
 -- CreateTable
 CREATE TABLE "Client" (
-    "id" STRING NOT NULL,
-    "name" STRING NOT NULL,
-    "cpf" STRING NOT NULL,
-    "telefone" STRING NOT NULL,
-    "email" STRING NOT NULL,
+    "id" TEXT NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+    "cpf" VARCHAR(255) NOT NULL,
+    "telefone" VARCHAR(255) NOT NULL,
+    "email" VARCHAR(255) NOT NULL,
     "dataNascimento" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "sexo" STRING NOT NULL,
-    "Nproposta" INT4 NOT NULL,
+    "sexo" TEXT NOT NULL,
+    "Nproposta" INTEGER NOT NULL,
     "dataVenda" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "dataVigencia" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "valor" INT4 NOT NULL,
-    "tipoPlano" STRING NOT NULL,
-    "administradora" STRING NOT NULL,
-    "operadora" STRING NOT NULL,
-    "qtsVidas" INT4 NOT NULL,
-    "comissao" STRING NOT NULL,
-    "taxaAdesao" STRING NOT NULL,
-    "valorTaxa" INT4 NOT NULL,
-    "bonificacao" STRING NOT NULL,
-    "valorBonificacao" INT4 NOT NULL,
+    "valor" INTEGER NOT NULL,
+    "tipoPlano" VARCHAR(255) NOT NULL,
+    "administradora" VARCHAR(255) NOT NULL,
+    "operadora" VARCHAR(255) NOT NULL,
+    "qtsVidas" INTEGER NOT NULL,
+    "comissao" VARCHAR(255) NOT NULL,
+    "taxaAdesao" VARCHAR(255) NOT NULL,
+    "valorTaxa" INTEGER NOT NULL,
+    "bonificacao" VARCHAR(255) NOT NULL,
+    "valorBonificacao" INTEGER NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "tenantId" STRING NOT NULL,
+    "tenantId" TEXT NOT NULL,
 
     CONSTRAINT "Client_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Lead" (
-    "id" STRING NOT NULL,
-    "name" STRING NOT NULL,
-    "telefone" STRING NOT NULL,
-    "email" STRING NOT NULL,
-    "tipoPlano" STRING NOT NULL,
-    "operadora" STRING NOT NULL,
-    "administradora" STRING NOT NULL,
-    "valor" INT4 NOT NULL,
-    "tenantId" STRING NOT NULL,
+    "id" TEXT NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+    "telefone" VARCHAR(255) NOT NULL,
+    "email" VARCHAR(255) NOT NULL,
+    "tipoPlano" VARCHAR(255) NOT NULL,
+    "operadora" VARCHAR(255) NOT NULL,
+    "administradora" VARCHAR(255) NOT NULL,
+    "valor" INTEGER NOT NULL,
+    "tenantId" TEXT NOT NULL,
 
     CONSTRAINT "Lead_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Administradora" (
-    "id" STRING NOT NULL,
-    "name" STRING NOT NULL,
+    "id" TEXT NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
 
     CONSTRAINT "Administradora_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Operadora" (
-    "id" STRING NOT NULL,
-    "name" STRING NOT NULL,
+    "id" TEXT NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
 
     CONSTRAINT "Operadora_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "TipoPlano" (
-    "id" STRING NOT NULL,
-    "name" STRING NOT NULL,
+    "id" TEXT NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
 
     CONSTRAINT "TipoPlano_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Estados" (
-    "id" STRING NOT NULL,
-    "name" STRING NOT NULL,
+    "id" TEXT NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
 
     CONSTRAINT "Estados_pkey" PRIMARY KEY ("id")
 );

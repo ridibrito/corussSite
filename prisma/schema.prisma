@@ -137,3 +137,13 @@ model Estados {
   id   String @id @default(cuid())
   name String @db.VarChar(255)
 }
+
+model Profissao {
+  id   String @id @default(cuid())
+  name String @db.VarChar(255)
+}
+
+model Entidade {
+  id   String @id @default(cuid())
+  name String @db.VarChar(255)
+}

@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
 
-
 const prisma = new PrismaClient()
 
 export default async function handler(req:NextApiRequest , res:NextApiResponse) {
@@ -15,6 +14,20 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
         data: administradora,
     
     })
+}else if(method === 'POST') {
+
+  const { name } = req.body
+
+  const administradora = await prisma.administradora.create({
+    data: {
+        name,
+    }
+  })
+  return res.status(201).json({
+    data: administradora,
+  })
+
+
 }
 
    return res.status(404).json({message: "Rota inexistente"})
