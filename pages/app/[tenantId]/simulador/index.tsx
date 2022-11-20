@@ -4,7 +4,8 @@ import List from '/components/ListSimulador'
 import Navbar from '/components/navbar'
 import SelectAbrangencia from '/components/selects/SelectAbrangencia'
 import SelectAcomodacao from '/components/selects/SelectAcomodacao'
-import SelectAdm from '/components/selects/SelectAdm'
+import SelectAdm from '/components/selects/SelectAdministradora'
+import SelectCidade from '/components/selects/selectCidades'
 import SelectCoparticipacao from '/components/selects/SelectCoparticipacao'
 import SelectEntidade from '/components/selects/SelectEntidade'
 import SelectEstados from '/components/selects/SelectEstados'
@@ -94,15 +95,15 @@ const [nomeLead, setNomeLead] = useState('')
               
             >
               <div className="sm:w-1/3"style={{ display: minus ? 'block' : 'none' }}>
-                <label>UF</label>
-                <SelectEstados />
+                <label className='ml-2'>UF</label>
+                <SelectCidade />
               </div>
               <div className="sm:w-1/3" style={{ display: minus ? 'block' : 'none' }}>
-                <label>Tipo de Produto</label>
+                <label className='ml-2'>Tipo de Produto</label>
                 <SelectTipoProduto />
               </div>
               <div className="sm:w-1/3" style={{ display: minus ? 'block' : 'none' }}>
-                <label>Tipo de Plano</label>
+                <label className='ml-2'>Tipo de Plano</label>
                 <SelectTipoPlano />
               </div>
             </div>
@@ -150,12 +151,12 @@ const [nomeLead, setNomeLead] = useState('')
               </div>
               <div className="sm:w-1/3" style={{ display: minus1 ? 'block' : 'none' }}
 >
-                <label>Entidade</label>
+                <label className='ml-2'>Entidade</label>
                 <SelectEntidade />
               </div>
               <div className="sm:w-1/3" style={{ display: minus1 ? 'block' : 'none' }}
 >
-                <label>Profissão</label>
+                <label className='ml-2'>Profissão</label>
                 <SelectProfissao />
               </div>
             </div>
@@ -194,22 +195,22 @@ const [nomeLead, setNomeLead] = useState('')
             >
               <div className="sm:w-1/4" style={{ display: minus2 ? 'block' : 'none' }}
 >
-                <label>Acomodação</label>
+                <label className='ml-1'>Acomodação</label>
                 <SelectAcomodacao />
               </div>
               <div className="sm:w-1/4" style={{ display: minus2 ? 'block' : 'none' }}
 >
-                <label>Abrangência</label>
+                <label className='ml-2'>Abrangência</label>
                 <SelectAbrangencia />
               </div>
               <div className="sm:w-1/4" style={{ display: minus2 ? 'block' : 'none' }}
 >
-                <label>Reembolso</label>
+                <label className='ml-2'>Reembolso</label>
                 <SelectReembolso />
               </div>
               <div className="sm:w-1/4" style={{ display: minus2 ? 'block' : 'none' }}
 >
-                <label>Coparticipação</label>
+                <label className='ml-2'>Coparticipação</label>
                 <SelectCoparticipacao />
               </div>
             </div>

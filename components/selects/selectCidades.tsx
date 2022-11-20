@@ -1,7 +1,7 @@
 import Select from 'react-select';
 
 
-const cidades = [
+const options = [
         {value:'Brasília', label:'Brasília'},
        
     ]
@@ -13,7 +13,7 @@ export default function SelectCidade() {
         className="basic-single line w-full"
         closeMenuOnSelect={true}
         classNamePrefix="Cidades"
-        options={cidades}
+        options={options}
         isDisabled={true}
       />
     );

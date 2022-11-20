@@ -106,16 +106,26 @@ model Client {
 }
 
 model Lead {
-  id        String   @id @default(cuid())
-  name      String @db.VarChar(255)
-  telefone  String @db.VarChar(255)
-  email     String @db.VarChar(255)
-  tipoPlano String @db.VarChar(255)
-  operadora String @db.VarChar(255)
+  id             String @id @default(cuid())
+  name           String @db.VarChar(255)
+  telefone       String @db.VarChar(255)
+  email          String @db.VarChar(255)
+  tipoPlano      String @db.VarChar(255)
+  operadora      String @db.VarChar(255)
   administradora String @db.VarChar(255)
-  valor     Int
-  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
-  tenantId  String
+  valor          Int
+  tenant         Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  tenantId       String
+}
+
+model Administradora {
+  id   String @id @default(cuid())
+  name String @db.VarChar(255)
+}
+
+model Operadora {
+  id   String @id @default(cuid())
+  name String @db.VarChar(255)
 }
 
 model TipoPlano {
@@ -123,22 +133,7 @@ model TipoPlano {
   name String @db.VarChar(255)
 }
 
-model Acomodacao {
-  id   String @id @default(cuid())
-  name String @db.VarChar(255)
-}
-
-model Reembolso {
-  id   String @id @default(cuid())
-  name String @db.VarChar(255)
-}
-
-model Abrangencia {
-  id   String @id @default(cuid())
-  name String @db.VarChar(255)
-}
-
-model Coparticipacao {
+model Estados {
   id   String @id @default(cuid())
   name String @db.VarChar(255)
 }
