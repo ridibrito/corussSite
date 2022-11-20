@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import ConectWhatsApp from '../../../components/forms/conectWhatsApp'
+import { AiFillHome, AiOutlinePlus, AiOutlineSetting, AiOutlineUserAdd } from 'react-icons/ai'
+import { MdOutlineQueue } from 'react-icons/md'
+import ConectWhatsApp from '/components/forms/conectWhatsApp'
 
 import { useState } from 'react'
 import { useRouter } from 'next/router'
@@ -29,7 +30,7 @@ return (
         <h3 className="ml-3 text-xl font-normal text-gray-500 dark:text-gray-300 dark:bg-gray-600">-</h3>
        
         <h3 className=" ml-3 pt-1 font-normal text-gray-500 dark:text-gray-300 dark:bg-gray-600">
-         WhatsApp
+        CorussZap
         </h3>
 
 
@@ -46,10 +47,23 @@ return (
       </div>
       <hr></hr>
       <div>
-        
-      
-        
-      </div>
+			<nav>
+        <ul className='flex justify-between mt-2'>
+        <li className='flex items-center gap-2 text-white font-semibold bg-sky-600 rounded px-4 py-2 '>
+        <AiOutlineUserAdd />  
+          Usuário
+        </li>
+        <li className='flex items-center gap-2 text-white font-semibold bg-sky-600 rounded px-4 py-2 '>
+          <MdOutlineQueue />
+          Fila
+        </li>
+        <li className='flex items-center gap-2 text-white font-semibold bg-sky-600 rounded px-4 py-2 '>
+        <AiOutlineSetting />
+          Config
+        </li>
+        </ul>
+      </nav>
+		</div>
     </div>
   </>
 )

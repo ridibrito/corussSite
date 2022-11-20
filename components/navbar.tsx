@@ -59,9 +59,9 @@ export default function Navbar() {
             </span>
           </LinkMenu>
 
-          <LinkMenu href={`/app/${router.query.tenantId}/whatsapp`}>
+          <LinkMenu href={`/app/${router.query.tenantId}/corussZap`}>
             <IoLogoWhatsapp className="w-7 h-7 mr-2" />
-            WhatsApp
+            CorussZap
             <span className="flex ml-8 py-1 px-2 leading-none text-center  text-white text-sm whitespace-nowrap align-baseline font-bold bg-green-500  rounded-full ">
               9
             </span>

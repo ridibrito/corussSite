@@ -13,7 +13,7 @@ export default function SelectAcomodacao() {
   useEffect(()=>{
     fetch('/api/Selects/selectAcomodacao')
     .then(res => res.json())
-    .then((data) => setAcomodacao(data))
+    .then(({data}) => setAcomodacao(data))
   },[])
 
 

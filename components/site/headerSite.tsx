@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { HiCursorClick } from 'react-icons/hi'
 
 
@@ -22,10 +23,11 @@ export default function HeaderSite() {
             </a>  
         </div>
         
-        
-        <button className='text-2xl text-sky-600 font-bold flex mx-auto border-2 border-sky-600 rounded px-6 py-3'>Aproveite nosso simulador gratuito
+        <Link  href='https://simulador.coruss.com.br'>
+        <a target='_blank' className='text-2xl text-sky-600 max-w-2xl text-center font-bold flex justify-center mx-auto border-2 border-sky-600 rounded px-6 py-3'>Aproveite nosso simulador gratuito
         <HiCursorClick className='w-7 h-7 ml-5 text-sky-600' />    
-        </button>
+        </a>
+        </Link>
     </div>
     
 </section>
