@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import React, { useState } from 'react'
-import List from '/components/ListSimulador'
+import ListSimulador from '/components/ListSimulador'
 import Navbar from '/components/navbar'
 import SelectAbrangencia from '/components/selects/SelectAbrangencia'
 import SelectAcomodacao from '/components/selects/SelectAcomodacao'
@@ -49,7 +49,9 @@ const Home: NextPage = () => {
 const [faixa, setfaixa] = useState('')
 const [nomeLead, setNomeLead] = useState('')
 
-
+function refreshPage() {
+  window.location.reload(false);
+}
   return (
     <>
       <div className="bg-gray-100 dark:bg-gray-600">
@@ -376,7 +378,7 @@ const [nomeLead, setNomeLead] = useState('')
             
           </div>
           <div className="flex items-center bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded p-3 shadow gap-3 justify-center mb-5">
-          <button className="bg-yellow-500 hover:bg-yellow-600 rounded px-8 py-3 text-white font-semibold">Limpar</button>
+          <button className="bg-yellow-500 hover:bg-yellow-600 rounded px-8 py-3 text-white font-semibold" onClick={refreshPage}>Limpar</button>
           <button className="bg-sky-500 hover:bg-sky-600 rounded px-8 py-3 text-white font-semibold">Buscar</button>
         </div>
         </section>
@@ -386,7 +388,7 @@ const [nomeLead, setNomeLead] = useState('')
           <h2 className='text-gray-700  font-bold'>Selecione uma operadora</h2>
           <h4 className='text-gray-700 font-bold text-sm'>Planos encontrados:qts planos</h4>
           </div>
-          <List />
+          <ListSimulador />
           <div className='text-center flex justify-center my-5'>
           <button className='bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded  w-80 mx-2'>Gerar cotação</button>
           </div>

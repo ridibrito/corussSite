@@ -11,9 +11,10 @@ import DropFinan from "./dropfinan";
 import LinkMenu from "./LinkMenu";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Navbar() {
-  const router = useRouter()
+  const router = useRouter();
   const { data: session } = useSession();
 
   return (
@@ -22,13 +23,15 @@ export default function Navbar() {
         <div className="grid grid-cols-1 items-end">
           <div className="flex">
             <div className="flex">
-              <div className="mt-2 mb-5">
-                <Image
-                  src="/corusslogo.png"
-                  alt="logo alb"
-                  width="180"
-                  height="30"
-                />
+              <div className="mt-2 mb-5 cursor-pointer">
+                <Link href={`/app/${router.query.tenantId}`}>
+                  <Image
+                    src="/corusslogo.png"
+                    alt="logo alb"
+                    width="180"
+                    height="30"
+                  />
+                </Link>
               </div>
             </div>
           </div>
@@ -43,7 +46,9 @@ export default function Navbar() {
             CRM
           </LinkMenu>
 
-          <LinkMenu href={`/app/${router.query.tenantId}/adm/cadastro/CadastroClientes`}>
+          <LinkMenu
+            href={`/app/${router.query.tenantId}/adm/cadastro/CadastroClientes`}
+          >
             <DropAdm />
           </LinkMenu>
 
@@ -73,20 +78,22 @@ export default function Navbar() {
           </LinkMenu>
 
           <div className="pt-32">
-           
-          <LinkMenu href={`/app/${router.query.tenantId}/config`}>
+            <LinkMenu href={`/app/${router.query.tenantId}/config`}>
               <IoIosSettings className="w-8 h-7 mr-2" />
               Configurações
             </LinkMenu>
-            
-           <span className="flex items-center text-sm pr-4 justify-center mx-auto text-gray-500 hover:text-sky-600 hover:cursor-pointer  rounded-md m-2">
-            <RiLogoutCircleRLine className="w-4 h-5 mr-2" />
-            <button onClick={() => {
-              signOut({ callbackUrl: '/'})
-              router.push('/app')
-            }}>Logout</button>
+
+            <span className="flex items-center text-sm pr-4 justify-center mx-auto text-gray-500 hover:text-sky-600 hover:cursor-pointer  rounded-md m-2">
+              <RiLogoutCircleRLine className="w-4 h-5 mr-2" />
+              <button
+                onClick={() => {
+                  signOut({ callbackUrl: "/" });
+                  router.push("/app");
+                }}
+              >
+                Logout
+              </button>
             </span>
-           
           </div>
         </div>
       </nav>

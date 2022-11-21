@@ -1,7 +1,7 @@
 import Image from "next/image"
 import PlanosLine from "./PlanosLine"
 
-export default function List() {
+export default function ListSimulador() {
     return(
         <>
         <div className="mx-2">
