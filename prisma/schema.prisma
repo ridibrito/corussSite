@@ -119,15 +119,15 @@ model Lead {
 }
 
 model Administradora {
-  id   String @id @default(cuid())
-  name String @db.VarChar(255)
-  image String
+  id    String @id @default(cuid())
+  name  String @db.VarChar(255)
+  image String @db.VarChar(255)
 }
 
 model Operadora {
-  id   String @id @default(cuid())
-  name String @db.VarChar(255)
-  image String
+  id    String @id @default(cuid())
+  name  String @db.VarChar(255)
+  image String @db.VarChar(255)
 }
 
 model TipoPlano {
