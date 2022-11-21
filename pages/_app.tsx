@@ -7,7 +7,8 @@ import LayoutApp from "../components/layout/LayoutApp";
 import Layoutpublic from "../components/layout/LayoutPublic";
 import LayoutTenant from "../components/layout/LayoutTenant";
 import LayoutEmpty from "../components/layout/LayoutEmpty";
-import Seo from "../components/Seo";
+import Seo from "/components/Seo";
+import NextNprogress from 'nextjs-progressbar'
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
@@ -32,6 +33,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     <>
     <Seo title={'Coruss'} description={'Bem vindo a liberdade'}/>
       <ThemeProvider attribute="class">
+        <NextNprogress 
+        color='#0069d9'
+        startPosition={0.3}
+        stopDelayMs={200}
+        showOnShallow
+        />
         <SessionProvider session={session}>
           <Layout>
             

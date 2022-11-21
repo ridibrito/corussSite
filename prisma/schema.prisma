@@ -121,11 +121,13 @@ model Lead {
 model Administradora {
   id   String @id @default(cuid())
   name String @db.VarChar(255)
+  image String
 }
 
 model Operadora {
   id   String @id @default(cuid())
   name String @db.VarChar(255)
+  image String
 }
 
 model TipoPlano {
