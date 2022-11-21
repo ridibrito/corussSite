@@ -1,6 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
 
+interface IAdministradora {
+  name: string
+  image: string
+}
+
 const prisma = new PrismaClient()
 
 export default async function handler(req:NextApiRequest , res:NextApiResponse) {
@@ -16,11 +21,12 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
     })
 }else if(method === 'POST') {
 
-  const { name } = req.body
+  const { name, image } = req.body
 
-  const administradora = await prisma.administradora.create({
+  const administradora:IAdministradora = await prisma.administradora.create({
     data: {
         name,
+        image,
     }
   })
   return res.status(201).json({

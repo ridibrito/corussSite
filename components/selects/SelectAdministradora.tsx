@@ -1,32 +1,32 @@
-import Select from "react-select";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import Select from 'react-select';
+
 
 interface IAdministradora {
-  id: string;
-  nome: string;
+  id: string
+  name: string
 }
 
-export default function SelectAdm() {
-  const [administradoras, setAdministradoras] = useState<IAdministradora[]>([]);
+
+export default function SelectEntidade() {
+ const [administradoras, setadministradoras] = useState<IAdministradora[]>([])
 
   const administradoraOptions = administradoras.map((administradora) => ({
     value: administradora.id,
-    label: administradora.nome,
-  }));
+    label: administradora.name,
+  }))
 
   useEffect(() => {
-    fetch("/api/selects/administradora")
-      .then((res) => res.json())
-      .then(({ data }) => setAdministradoras(data));
-  }, []);
+    fetch('/api/selects/administradora').then(res => res.json()).then(({ data }) => setadministradoras(data))
+  },[])
 
-  return (
-    <Select
-      placeholder="Administradora"
-      className="basic-single line w-full"
-      closeMenuOnSelect={true}
-      classNamePrefix="adm"
-      options={administradoraOptions}
-    />
-  );
-}
+    return (
+        <Select
+        placeholder="Selecione uma administradora"
+        className="basic-single ml-2 w-full"
+        closeMenuOnSelect={true}
+        classNamePrefix="administradora"
+        options={administradoraOptions}
+      />
+    );
+  };

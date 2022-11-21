@@ -4,11 +4,10 @@ import List from '/components/ListSimulador'
 import Navbar from '/components/navbar'
 import SelectAbrangencia from '/components/selects/SelectAbrangencia'
 import SelectAcomodacao from '/components/selects/SelectAcomodacao'
-import SelectAdm from '/components/selects/SelectAdministradora'
+import SelectAdministradora from '/components/selects/SelectAdministradora'
 import SelectCidade from '/components/selects/selectCidades'
 import SelectCoparticipacao from '/components/selects/SelectCoparticipacao'
 import SelectEntidade from '/components/selects/SelectEntidade'
-import SelectEstados from '/components/selects/SelectEstados'
 import SelectProfissao from '/components/selects/SelectProfissão'
 import SelectReembolso from '/components/selects/SelectReembolso'
 import SelectTipoPlano from '/components/selects/SelectTipoDePlano'
@@ -147,7 +146,7 @@ const [nomeLead, setNomeLead] = useState('')
               <div className="sm:w-1/3" style={{ display: minus1 ? 'block' : 'none' }}
 >
                 <label>Administradora</label>
-                <SelectAdm />
+                <SelectAdministradora />
               </div>
               <div className="sm:w-1/3" style={{ display: minus1 ? 'block' : 'none' }}
 >
