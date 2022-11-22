@@ -1,28 +1,30 @@
+import React from "react";
 import { Chart } from "react-google-charts";
 
 export const data = [
-  ["Por ano", "Hours per Day"],
-  ["João", 11],
-  ["José", 2],
-  ["Sidney", 2],
-  ["Ricardo", 2],
-  ["Lilian", 7], // CSS-style declaration
+  ["Task", "Hours per Day"],
+  ["Work", 11],
+  ["Eat", 2],
+  ["Commute", 2],
+  ["Watch TV", 2],
+  ["Sleep", 7],
 ];
 
 export const options = {
-  title: "Operadoras por ano",
-  pieHole: 0.4,
-  is3D: false,
+  title: "",
 };
 
-export default function ChartVendedores() {
+export default function App() {
   return (
+    <>
+    <h2 className="px-5 pt-5">Minhas atividades</h2>
     <Chart
       chartType="PieChart"
-      width="100%"
-      height="400px"
       data={data}
       options={options}
-    />
+      width={"100%"}
+      height={"400px"}
+      />
+      </>
   );
 }

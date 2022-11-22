@@ -25,8 +25,8 @@ export const data = [
   
   export const options = {
     chart: {
-      title: "R$ 45.000,00",
-      subtitle: "in millions of dollars (USD)",
+      title: "R$ 5.000,00",
+      subtitle: "Valores em reais (BLR)",
     },
   };
   

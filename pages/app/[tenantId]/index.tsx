@@ -4,13 +4,14 @@ import { FaUser } from "react-icons/fa";
 import { GiBeachBag } from "react-icons/gi";
 import { MdOutlineLeaderboard } from "react-icons/md";
 import { MdOutlineAttachMoney } from "react-icons/md";
-import Seo from "../../../components/Seo";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import Chartbar from "/components/charts/chartbar";
 import Chartline from "/components/charts/chartline";
 import ChartVendedores from "/components/charts/chartVendedores";
+import ChartValor from "/components/charts/chartValor";
+import ChartComparativo from '/components/charts/ChartComparativo'
 
 const AppHome = () => {
   const { data: session } = useSession();
@@ -85,12 +86,12 @@ const AppHome = () => {
               <div className="flex gap-3">
                 <FaUser className="text-sky-500 bg-sky-100  rounded-full p-3 w-12 h-12" />
                 <div>
-                <h4 className="text-3xl font-semibold text-center">60</h4>
-                <h4 className="">Leads</h4>
+                <h4 className="text-3xl font-semibold text-center text-gray-500">60</h4>
+                <h4 className="text-gray-500">Leads</h4>
                 </div>
               </div>
               <div className="">
-                <h4 className="text-3xl font-semibold text-red-500 text-center">48</h4>
+                <h4 className="text-3xl font-semibold text-red-500 text-center ">48</h4>
                 <h4 className="text-red-500">Perdidas</h4>
               </div>
             </div>
@@ -107,8 +108,8 @@ const AppHome = () => {
                 <GiBeachBag className="text-red-500 bg-red-100 rounded-full p-3 w-12 h-12" />
               </div>
               <div>
-                <h4 className="text-3xl font-semibold">12</h4>
-                <h4 className="">Total de vendas</h4>
+                <h4 className="text-3xl font-semibold text-gray-500">12</h4>
+                <h4 className="text-gray-500">Total de vendas</h4>
               </div>
             </div>
             <div className="bg-gray-100 h-1/3">
@@ -124,8 +125,8 @@ const AppHome = () => {
                 <MdOutlineLeaderboard className="text-yellow-500 bg-yellow-100 rounded-full p-3 w-12 h-12" />
               </div>
               <div>
-                <h4 className="text-2xl font-semibold">4.300,00</h4>
-                <h4 className="">Bonificação</h4>
+                <h4 className="text-2xl font-semibold text-gray-500">4.300,00</h4>
+                <h4 className="text-gray-500">Bonificação</h4>
               </div>
             </div>
             <div className="bg-gray-100 h-1/3">
@@ -141,8 +142,8 @@ const AppHome = () => {
                 <MdOutlineAttachMoney className="text-green-500 bg-green-100 rounded-full p-3 w-12 h-12" />
               </div>
               <div>
-                <h4 className="text-2xl font-semibold">8.000,00</h4>
-                <h4 className="">Comissão</h4>
+                <h4 className="text-2xl font-semibold text-gray-500">8.000,00</h4>
+                <h4 className="text-gray-500">Comissão</h4>
               </div>
             </div>
             <div className="bg-gray-100 h-1/3">
@@ -153,12 +154,28 @@ const AppHome = () => {
           </div>
         </div>
         <div className="flex gap-4 mt-5">
-           <div className="bg-white  rounded-lg shadow-lg p-5 pb-1 w-2/3">
-             <Chartbar />
+           <div className="bg-white  rounded-lg shadow-lg p-5 pb-1 w-1/4 ">
+             <Chartline />
             </div>
-            <div className="bg-white rounded-lg shadow-lg pb-1 w-1/3">
+            <div className="bg-white rounded-lg shadow-lg w-1/4">
              <ChartVendedores />
             </div>
+            <div className="bg-white rounded-lg shadow-lg w-1/4">
+             <ChartComparativo />
+            </div>
+            <div className="bg-white rounded-lg shadow-lg w-1/4">
+             <ChartComparativo />
+            </div>
+
+        </div>
+        <div className="flex gap-4 mt-5">
+           <div className="bg-white  rounded-lg shadow-lg p-3 pb-1 w-2/3">
+           <ChartValor />
+            </div>
+            <div className="bg-white rounded-lg shadow-lg p-5 pb-1 w-1/3">
+             <Chartbar />
+            </div>
+            
 
         </div>
       </div>
