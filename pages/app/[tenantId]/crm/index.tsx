@@ -44,7 +44,7 @@ const initialColumns = [
     name: 'Cotação enviada',
     oportunidades: '2',
     valorTotal: 1500.0,
-    items: initialItems,
+    items: '',
   },
   {
     id: '3',

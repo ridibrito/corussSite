@@ -2,17 +2,15 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 export const data = [
-  ["Mês", "Adesão", "PME", "Individual", "Odontológico"],
-  ["2014", 1000, 400, 200, 300],
-  ["2015", 1170, 460, 250, 280],
-  ["2016", 660, 1120, 300, 360],
-  ["2017", 1030, 540, 350, 1060],
+  ["Ano", "Amil", "Bradesco", "SulAmerica", "Unimed", "Ideal saúde"],
+  ["2021", 660, 1120, 300, 360, 200],
+  ["2022", 1030, 540, 350, 1060, 150],
 ];
 
 export const options = {
   chart: {
-    title: "Vendas por operdaora",
-    subtitle: "Valores em reais(BLR)"
+    title: "Vendas por operdaora por ano",
+    subtitle: "Valores em reais(BLR)",
   },
 };
 
