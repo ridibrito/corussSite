@@ -23,7 +23,7 @@ export default async function handler(
   } else if (method === "POST") {
     const { name, image } = req.body;
 
-    const administradora: IAdministradora = await prisma.administradora.create({
+    const administradora = await prisma.administradora.create({
       data: {
         name,
         image,
