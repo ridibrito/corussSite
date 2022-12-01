@@ -26,10 +26,10 @@ export default function Navbar() {
               <div className="mt-2 mb-5 cursor-pointer">
                 <Link href={`/app/${router.query.tenantId}`}>
                   <Image
-                    src="/corusslogo.png"
+                    src="/logosite.png"
                     alt="logo alb"
                     width="180"
-                    height="30"
+                    height="35"
                   />
                 </Link>
               </div>

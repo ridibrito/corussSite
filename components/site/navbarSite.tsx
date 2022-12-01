@@ -25,32 +25,40 @@ export default function NavbarSite() {
         >
           <div className="pt-4 pl-4 flex justify-between items-center pr-2 mb-12">
             <Image
-              src="/branca.png"
+              src="/logobranca.png"
               alt="logo coruss"
               width="160"
-              height="32"
+              height="30"
             />
             <CgClose
               onClick={handleCloseMenu}
               className="w-7 h-7 pr-2 text-white"
             />
           </div>
-          <div className="">
+          <div className="cursor-pointer">
             <ul className="text-center text-white font-bold text-xl space-y-8 mb-12">
               <Link href="/site">
-                <li className="border-b border-sky-100 pb-5 text-2xl mx-3">Home</li>
+                <li className="border-b border-sky-100 pb-5 text-2xl mx-3">
+                  Home
+                </li>
               </Link>
               <Link href="/site/precos">
-              <li className="border-b border-sky-100 pb-5 text-2xl mx-3">Preços</li>
+                <li className="border-b border-sky-100 pb-5 text-2xl mx-3">
+                  Preços
+                </li>
               </Link>
               <Link href="/site/blog">
-              <li className="border-b border-sky-100 pb-5 text-2xl mx-3">log</li>
+                <li className="border-b border-sky-100 pb-5 text-2xl mx-3">
+                  log
+                </li>
               </Link>{" "}
               <Link href="/site/contato">
-              <li className="border-b border-sky-100 pb-5 text-2xl mx-3">Contato</li>
+                <li className="border-b border-sky-100 pb-5 text-2xl mx-3">
+                  Contato
+                </li>
               </Link>
               <Link href="/api/auth/signin">
-              <button className="bg-white text-sky-500 rounded px-6 py-3 ">
+                <button className="bg-white text-sky-500 rounded px-6 py-3 ">
                   Entrar
                 </button>
               </Link>
@@ -62,16 +70,16 @@ export default function NavbarSite() {
             </ul>
           </div>
         </div>
-        <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+        <nav className="bg-white border-gray-200 border-b px-4 lg:px-6 py-2.5 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <Image
-              src="/corusslogo.png"
+              src="/logosite.png"
               alt="logo coruss"
-              width="150"
-              height="25"
+              width="160"
+              height="30"
             />
             <div className="flex items-center lg:order-2">
-            <Link href="/api/auth/signin">
+              <Link href="/api/auth/signin">
                 <a className="hidden lg:flex text-sky-600 hover:text-sky-700 focus:ring-4 focus:ring-gray-300 font-semibold rounded text-sm px-6 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
                   Entrar
                 </a>
