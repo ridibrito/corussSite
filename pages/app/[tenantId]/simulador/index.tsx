@@ -54,21 +54,22 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="bg-gray-100 dark:bg-gray-600">
-        <Navbar />
         <section className="mx-3 pl-60 pt-16 pr-4">
-          <div className="flex items-center bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded p-3 shadow">
-            <h2 className="text-lg font-semibold text-gray-700">
+          <div className="flex items-center bg-white dark:bg-gray-700 mt-4 mx-auto max-w-7xl rounded p-3 shadow">
+            <h2 className="text-lg font-semibold dark:text-gray-500  text-gray-700">
               Nome do lead
             </h2>
             <input
               type="text"
-              className="border h-8 rounded w-full pl-2"
+              className="border h-8 rounded w-full pl-2 dark:bg-gray-700"
               onChange={(e) => setNomeLead(e.target.value)}
             />
           </div>
-          <div className=" bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
+          <div className=" bg-white dark:bg-gray-700 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
             <div className="flex items-center justify-between p-3 border-b ">
-              <h2 className="text-xl font-semibold text-gray-700">Selecione</h2>
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-500 ">
+                Selecione
+              </h2>
               {minus ? (
                 <svg
                   onClick={handleCloseMinus}
@@ -94,7 +95,7 @@ const Home: NextPage = () => {
               )}
             </div>
 
-            <div className="block sm:flex gap-3 max-w-7xl my-4 pb-5 px-3 transition-all ease-in duration-500">
+            <div className="block sm:flex gap-3 max-w-7xl my-4 pb-5 px-3 transition-all ease-in duration-500 dark:text-gray-500 ">
               <div
                 className="sm:w-1/3"
                 style={{ display: minus ? "block" : "none" }}
@@ -119,9 +120,9 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className=" bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
+          <div className=" bg-white dark:bg-gray-700 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
             <div className="flex items-center justify-between p-3 border-b ">
-              <h2 className="text-xl font-semibold text-gray-700">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-500 ">
                 Filtros adesão
               </h2>
               {minus1 ? (
@@ -149,12 +150,12 @@ const Home: NextPage = () => {
               )}
             </div>
 
-            <div className="block sm:flex w-full gap-3 max-w-7xl my-4 pb-5">
+            <div className="block sm:flex w-full gap-3 max-w-7xl my-4 pb-5 dark:text-gray-500 ">
               <div
                 className="sm:w-1/3"
                 style={{ display: minus1 ? "block" : "none" }}
               >
-                <label>Administradora</label>
+                <label className="ml-2">Administradora</label>
                 <SelectAdministradora />
               </div>
               <div
@@ -173,9 +174,11 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className=" bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
+          <div className=" bg-white dark:bg-gray-700 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
             <div className="flex items-center justify-between p-3 border-b ">
-              <h2 className="text-xl font-semibold text-gray-700">Filtros</h2>
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-500 ">
+                Filtros
+              </h2>
               {minus2 ? (
                 <svg
                   onClick={handleCloseMinus2}
@@ -201,7 +204,7 @@ const Home: NextPage = () => {
               )}
             </div>
 
-            <div className="block sm:flex sm:w-full gap-3 sm:max-w-7xl my-4 pb-5">
+            <div className="block sm:flex sm:w-full gap-3 sm:max-w-7xl my-4 pb-5 dark:text-gray-500 ">
               <div
                 className="sm:w-1/4"
                 style={{ display: minus2 ? "block" : "none" }}
@@ -233,9 +236,9 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className=" bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
+          <div className=" bg-white dark:bg-gray-700 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
             <div className="flex items-center justify-between p-3 border-b ">
-              <h2 className="text-xl font-semibold text-gray-700">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-500 ">
                 Faixas etárias
               </h2>
               {minus3 ? (
@@ -267,10 +270,10 @@ const Home: NextPage = () => {
               className="grid-cols-3 sm:grid-cols-5 lg:grid-cols-11 gap-2"
               style={{ display: minus3 ? "grid" : "none" }}
             >
-              <div className="w-full max-w-7xl mt-4 sm:mt-2 text-center">
+              <div className="w-full max-w-7xl mt-4 sm:mt-2 text-center dark:text-gray-500 ">
                 <label className="block text-sm font-semibold">00 a 18</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className="bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -278,10 +281,10 @@ const Home: NextPage = () => {
                   name="faixa1"
                 />
               </div>
-              <div className="w-full max-w-7xl mt-4 sm:mt-2 text-center">
-                <label className="block text-sm font-semibold">19 a 23</label>
+              <div className="dark:text-gray-500  w-full max-w-7xl mt-4 sm:mt-2 text-center">
+                <label className="block text-sm font-semibold ">19 a 23</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className="bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -289,10 +292,10 @@ const Home: NextPage = () => {
                   name="faixa2"
                 />
               </div>
-              <div className="w-full max-w-7xl mt-4 sm:mt-2 text-center">
-                <label className="block text-sm font-semibold">24 a 28</label>
+              <div className="dark:text-gray-500  w-full max-w-7xl mt-4 sm:mt-2 text-center">
+                <label className="block text-sm font-semibold ">24 a 28</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className="bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -300,10 +303,10 @@ const Home: NextPage = () => {
                   name="faixa3"
                 />
               </div>
-              <div className="w-full max-w-7xl sm:mt-2 text-center">
-                <label className="block text-sm font-semibold">29 a 33</label>
+              <div className="dark:text-gray-500  w-full max-w-7xl sm:mt-2 text-center">
+                <label className="block text-sm font-semibold ">29 a 33</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className="bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -311,10 +314,10 @@ const Home: NextPage = () => {
                   name="faixa4"
                 />
               </div>
-              <div className="w-full max-w-7xl sm:mt-2 text-center">
-                <label className="block text-sm font-semibold">34 a 38</label>
+              <div className="dark:text-gray-500 w-full max-w-7xl sm:mt-2 text-center">
+                <label className="block text-sm font-semibold ">34 a 38</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className="bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -322,10 +325,10 @@ const Home: NextPage = () => {
                   name="faixa5"
                 />
               </div>
-              <div className="w-full max-w-7xl sm:mt-2 text-center">
-                <label className="block text-sm font-semibold">39 a 43</label>
+              <div className="dark:text-gray-500  w-full max-w-7xl sm:mt-2 text-center">
+                <label className="block text-sm font-semibold ">39 a 43</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className="bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -333,10 +336,10 @@ const Home: NextPage = () => {
                   name="faixa6"
                 />
               </div>
-              <div className="w-full max-w-7xl sm:mt-2 text-center">
-                <label className="block text-sm font-semibold">44 a 48</label>
+              <div className="dark:text-gray-500  w-full max-w-7xl sm:mt-2 text-center">
+                <label className="block text-sm font-semibold ">44 a 48</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className="bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -344,10 +347,10 @@ const Home: NextPage = () => {
                   name="faixa7"
                 />
               </div>
-              <div className="w-full max-w-7xl sm:mt-2 text-center">
-                <label className="block text-sm font-semibold">49 a 53</label>
+              <div className="dark:text-gray-500  w-full max-w-7xl sm:mt-2 text-center">
+                <label className="block text-sm font-semibold ">49 a 53</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className="bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -355,10 +358,10 @@ const Home: NextPage = () => {
                   name="faixa8"
                 />
               </div>
-              <div className="w-full max-w-7xl sm:mt-2 text-center">
-                <label className="block text-sm font-semibold">54 a 58</label>
+              <div className="dark:text-gray-500 w-full max-w-7xl sm:mt-2 text-center">
+                <label className="block text-sm font-semibold ">54 a 58</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className="bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -366,10 +369,10 @@ const Home: NextPage = () => {
                   name="faixa9"
                 />
               </div>
-              <div className="w-full gap-3 max-w-7xl sm:mt-2 text-center">
-                <label className="block text-sm font-semibold">59 +</label>
+              <div className="dark:text-gray-500 w-full gap-3 max-w-7xl sm:mt-2 text-center">
+                <label className="block text-sm font-semibold ">59 +</label>
                 <input
-                  className="border w-24 rounded text-center h-8"
+                  className=" border w-24 bg-gray-700 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -377,10 +380,10 @@ const Home: NextPage = () => {
                   name="faixa10"
                 />
               </div>
-              <div className="w-full gap-3 max-w-7xl sm:mt-2 text-center mb-4">
-                <label className="block text-sm font-semibold">Total</label>
+              <div className="dark:text-gray-500 w-full gap-3 max-w-7xl sm:mt-2 text-center mb-4">
+                <label className="block text-sm font-semibold ">Total</label>
                 <input
-                  className="border w-24 rounded pl-4 text-center h-8 bg-gray-300"
+                  className=" border w-24 rounded pl-4 text-center h-8 bg-gray-300"
                   type="number"
                   disabled={true}
                   maxLength={2}
@@ -391,7 +394,7 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded p-3 shadow gap-3 justify-center mb-5">
+          <div className="flex items-center bg-white dark:bg-gray-700 mt-4 mx-auto max-w-7xl rounded p-3 shadow gap-3 justify-center mb-5">
             <button
               className="bg-yellow-500 hover:bg-yellow-600 rounded px-8 py-3 text-white font-semibold"
               onClick={refreshPage}
@@ -405,11 +408,11 @@ const Home: NextPage = () => {
         </section>
 
         <section className="block mx-auto pl-60 pt-16">
-          <div className=" flex items-center max-w-7xl mx-auto justify-between bg-gray-300 rounded p-3 mb-2 px-4 ">
-            <h2 className="text-gray-700  font-bold">
+          <div className=" flex items-center max-w-7xl mx-auto justify-between bg-gray-300 rounded p-3 mb-2 px-4 dark:bg-gray-700">
+            <h2 className="text-gray-700  font-bold dark:text-gray-500">
               Selecione uma operadora
             </h2>
-            <h4 className="text-gray-700 font-bold text-sm">
+            <h4 className="text-gray-700 font-bold text-sm dark:text-gray-500">
               Planos encontrados:qts planos
             </h4>
           </div>

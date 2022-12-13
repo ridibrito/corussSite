@@ -37,7 +37,7 @@ const AppHome = () => {
         </div>
         <hr></hr>
 
-        <div className="flex items-center  mx-auto justify-between mt-3 px-8 bg-white rounded-lg shadow p-5">
+        <div className="flex items-center dark:bg-gray-700 dark:text-gray-400   mx-auto justify-between mt-3 px-8 bg-white rounded-lg shadow p-5">
           <div className="flex items-center">
             <Image
               className="rounded-full"
@@ -66,7 +66,7 @@ const AppHome = () => {
           <div className="flex items-center p-2 text-gray-500 font-normal">
             <label className="dark:text-gray-400">De</label>
             <input
-              className="ml-4 dark:bg-gray-700 rounded border dark:text-gray-400 px-4 border-gray-500 pl-3"
+              className="ml-4 dark:bg-gray-700  rounded border dark:text-gray-400 px-4 border-gray-500 pl-3"
               type="date"
             />
             <label className="ml-3 dark:text-gray-400">a</label>
@@ -78,7 +78,7 @@ const AppHome = () => {
         </div>
 
         <div className="flex mt-3 mx-auto">
-          <div className="bg-white rounded-lg h-32 shadow-lg w-1/4">
+          <div className="bg-white dark:bg-gray-700 dark:text-gray-500 rounded-lg h-32 shadow-lg w-1/4">
             <div className="flex items-center h-2/3 justify-around gap-3">
               <div className="flex gap-3">
                 <FaUser className="text-sky-500 bg-sky-100  rounded-full p-3 w-12 h-12" />
@@ -96,14 +96,14 @@ const AppHome = () => {
                 <h4 className="text-red-500">Perdidas</h4>
               </div>
             </div>
-            <div className="bg-gray-100 h-1/3">
+            <div className="bg-gray-100 dark:bg-gray-700 dark:text-gray-500 rounded-lg shadow h-1/3">
               <Link href="">
                 <p className="text-sm  text-sky-600 p-3">Ver mais</p>
               </Link>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg h-32 shadow-lg w-1/4 ml-4">
+          <div className="bg-white dark:bg-gray-700 dark:text-gray-500  rounded-lg h-32 shadow-lg w-1/4 ml-4">
             <div className="flex items-center h-2/3 justify-center gap-3">
               <div>
                 <GiBeachBag className="text-red-500 bg-red-100 rounded-full p-3 w-12 h-12" />
@@ -113,14 +113,14 @@ const AppHome = () => {
                 <h4 className="text-gray-500">Total de vendas</h4>
               </div>
             </div>
-            <div className="bg-gray-100 h-1/3">
+            <div className="bg-gray-100 dark:bg-gray-700 dark:text-gray-500 rounded-lg shadow h-1/3">
               <Link href="">
                 <p className="text-sm  text-sky-600 p-3">Ver mais</p>
               </Link>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg h-32 shadow-lg w-1/4 ml-4">
+          <div className="bg-white dark:bg-gray-700 dark:text-gray-500  rounded-lg h-32 shadow-lg w-1/4 ml-4">
             <div className="flex items-center h-2/3 justify-center gap-3">
               <div>
                 <MdOutlineLeaderboard className="text-yellow-500 bg-yellow-100 rounded-full p-3 w-12 h-12" />
@@ -132,14 +132,14 @@ const AppHome = () => {
                 <h4 className="text-gray-500">Bonificação</h4>
               </div>
             </div>
-            <div className="bg-gray-100 h-1/3">
+            <div className="bg-gray-100 dark:bg-gray-700 dark:text-gray-500 rounded-lg shadow h-1/3">
               <Link href="">
                 <p className="text-sm  text-sky-600 p-3">Ver mais</p>
               </Link>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg h-32 shadow-lg w-1/4 ml-4">
+          <div className="bg-white dark:bg-gray-700 dark:text-gray-500  rounded-lg h-32 shadow-lg w-1/4 ml-4">
             <div className="flex items-center h-2/3 justify-center gap-3">
               <div>
                 <MdOutlineAttachMoney className="text-green-500 bg-green-100 rounded-full p-3 w-12 h-12" />
@@ -151,7 +151,7 @@ const AppHome = () => {
                 <h4 className="text-gray-500">Comissão</h4>
               </div>
             </div>
-            <div className="bg-gray-100 h-1/3">
+            <div className="bg-gray-100 dark:bg-gray-700 dark:text-gray-500 rounded-lg shadow h-1/3">
               <Link href="">
                 <p className="text-sm  text-sky-600 p-3">Ver mais</p>
               </Link>

@@ -27,7 +27,7 @@ export default function Config() {
         <hr></hr>
 
         <div>
-          <div className="sm:flex items-center justify-around bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded-lg shadow-lg p-3">
+          <div className="sm:flex items-center justify-around bg-white dark:bg-gray-700 mt-4 mx-auto max-w-7xl rounded-lg shadow-lg p-3">
             <h3 className="sm:w-1/5 text-center text-gray-500">
               Capricha na foto, ela vai aparecer em suas cotações
             </h3>
@@ -55,13 +55,13 @@ export default function Config() {
               </div>
             </form>
             <div>
-              <h1 className="font-semibold sm:mr-5 text-center bg-gray-200 p-2 rounded">
+              <h1 className="font-semibold sm:mr-5 text-center dark:bg-gray-700 bg-gray-200 p-2 rounded">
                 Ricardo Albuquerque
               </h1>
             </div>
           </div>
 
-          <div className="items-center justify-around bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded-lg p-3 shadow-lg">
+          <div className="items-center justify-around bg-white dark:bg-gray-700 mt-4 mx-auto max-w-7xl rounded-lg p-3 shadow-lg">
             <form>
               <div className="mb-4">
                 <label

@@ -56,22 +56,6 @@ export default function Navbar() {
             <DropFinan />
           </LinkMenu>
 
-          <LinkMenu href={`/app/${router.query.tenantId}/email`}>
-            <AiFillMail className="w-7 h-7 mr-2" />
-            Inbox{" "}
-            <span className="flex ml-16 py-1 px-2 leading-none text-center  text-sky-600 text-sm whitespace-nowrap align-baseline font-bold bg-sky-200  rounded ">
-              7
-            </span>
-          </LinkMenu>
-
-          <LinkMenu href={`/app/${router.query.tenantId}/corussZap`}>
-            <IoLogoWhatsapp className="w-7 h-7 mr-2" />
-            CorussZap
-            <span className="flex ml-8 py-1 px-2 leading-none text-center  text-white text-sm whitespace-nowrap align-baseline font-bold bg-green-500  rounded-full ">
-              9
-            </span>
-          </LinkMenu>
-
           <LinkMenu href={`/app/${router.query.tenantId}/simulador`}>
             <FaBuffer className="w-8 h-8 mr-2" />
             Simulador

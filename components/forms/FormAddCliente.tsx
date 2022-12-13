@@ -1,99 +1,99 @@
 import { IoMdCloseCircle } from "react-icons/io";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/router";
 
+const clienteSchema = yup
+  .object({
+    nome: yup.string().required(),
+    tipo: yup.string().required(),
+    cpf: yup.string().required(),
+    telefone: yup.string(),
+    email: yup.string().required(),
+    dataNascimento: yup.date(),
+    sexo: yup.string(),
+    Nproposta: yup.number(),
+    dataVenda: yup.date(),
+    dataVigencia: yup.date(),
+    valor: yup.number().required(),
+    tipoPlano: yup.string().required(),
+    administradora: yup.string().required(),
+    operadora: yup.string().required(),
+    qtsVidas: yup.number(),
+    comissao: yup.string().required(),
+    taxaAdesao: yup.string().required(),
+    valorTaxa: yup.number().required(),
+    bonificacao: yup.string().required(),
+    valorBonificacao: yup.number().required(),
+  })
+  .required();
 
-const clienteSchema = yup.object({
-  nome: yup.string().required(),
-  tipo: yup.string().required(),
-  cpf: yup.string().required(),
-  telefone: yup.string(),
-  email: yup.string().required(),
-  dataNascimento: yup.date(),
-  sexo: yup.string(),
-  Nproposta: yup.number(),
-  dataVenda: yup.date(),
-  dataVigencia: yup.date(),
-  valor: yup.number().required(),
-  tipoPlano: yup.string().required(),
-  administradora: yup.string().required(),
-  operadora: yup.string().required(),
-  qtsVidas: yup.number(),
-  comissao: yup.string().required(),
-  taxaAdesao: yup.string().required(),
-  valorTaxa: yup.number().required(),
-  bonificacao: yup.string().required(),
-  valorBonificacao: yup.number().required(),
-
-})
-.required();
-
-interface NewClientForm  {
-  nome: string
-  tipo: string
-  cpf: string
-  telefone: string
-  email: string
-  dataNascimento: Date
-  sexo: string
-  Nproposta: string
-  dataVenda: Date
-  dataVigencia: Date
-  valor: Number
-  tipoPlano: string
-  administradora: string
-  operadora: string
-  qtsVidas: Number
-  comissao: string
-  taxaAdesao: string
-  valorTaxa: Number
-  bonificacao: string
-  valorBonificacao: Number
+interface NewClientForm {
+  nome: string;
+  tipo: string;
+  cpf: string;
+  telefone: string;
+  email: string;
+  dataNascimento: Date;
+  sexo: string;
+  Nproposta: string;
+  dataVenda: Date;
+  dataVigencia: Date;
+  valor: Number;
+  tipoPlano: string;
+  administradora: string;
+  operadora: string;
+  qtsVidas: Number;
+  comissao: string;
+  taxaAdesao: string;
+  valorTaxa: Number;
+  bonificacao: string;
+  valorBonificacao: Number;
 }
 
 interface Props {
-  show: string
-  setShow: string
+  show: string;
+  setShow: string;
 }
 
-
-export default function AddCliente({ show, setShow }:Props) {
-  const router = useRouter()
-  const { register, handleSubmit, 
-    formState:{ errors } } = useForm<NewClientForm>({
-    resolver: yupResolver(clienteSchema)
+export default function AddCliente({ show, setShow }: Props) {
+  const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<NewClientForm>({
+    resolver: yupResolver(clienteSchema),
   });
   const submit: SubmitHandler<NewClientForm> = async (inputs) => {
-    console.log(inputs)
-    const data = await fetch(`/api/${router?.query?.tenantId}/clients`,{
-      method: 'POST',
+    console.log(inputs);
+    const data = await fetch(`/api/${router?.query?.tenantId}/clients`, {
+      method: "POST",
       body: JSON.stringify(inputs),
-      headers:{
-        'content-type': 'application/json'
-      }
-     
-    })
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+  };
 
-  }
-  
   const handleClose = () => {
-        //@ts-ignore
+    //@ts-ignore
 
     setShow(false);
   };
+
   return (
     <>
       <div>
-      <div
-          style={{ right: show ? -10 : -1000 }}
-          className="bg-white shadow-2xl overflow-y-scroll  rounded  -mt-24 fixed z-30 flex-col px-8 py-5 right-4 transition-all duration-500"
+        <div
+          style={{ right: show ? -10 : -1010 }}
+          className="bg-white dark:bg-gray-700 shadow-2xl overflow-y-scroll  rounded  -mt-24 fixed z-30 flex-col px-8 py-5 right-4 transition-all duration-500"
         >
-          <header className="flex justify-between pb-4 dark:text-gray-400 ">
+          <header className="flex dark:text-gray-400 dark:bg-gray-700 justify-between pb-4">
             <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-400 ">
-              Cadastrar cliente 
+              Cadastrar cliente
             </h1>
             <span>
               <IoMdCloseCircle
@@ -104,21 +104,18 @@ export default function AddCliente({ show, setShow }:Props) {
           </header>
 
           <section className="dark:bg-gray-700">
-            
             <form onSubmit={handleSubmit(submit)} className="pt-3 pb-3">
               <div className="flex items-center mx-2">
                 <div>
-                <input
-                  {...register("nome", { required: true })}
-                  type="text"
-                  className="rounded-lg flex h-12 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-60 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 "
-                  placeholder="Nome"
-                  
-                />
-                <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*Obrigatório"}
-                </div>
-
+                  <input
+                    {...register("nome", { required: true })}
+                    type="text"
+                    className="rounded-lg flex h-12 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-60 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600 "
+                    placeholder="Nome"
+                  />
+                  <div className="text-red-600 text-sm">
+                    {errors.nome?.type === "required" && "*Obrigatório"}
+                  </div>
                 </div>
                 <select
                   {...register("tipo", { required: true })}
@@ -135,7 +132,7 @@ export default function AddCliente({ show, setShow }:Props) {
                   </option>
                 </select>
                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                  {errors.nome?.type === "required" && "*"}
                 </div>
                 <input
                   type="text"
@@ -143,8 +140,8 @@ export default function AddCliente({ show, setShow }:Props) {
                   className="rounded-lg flex h-12 ml-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-60 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
                   placeholder="CPF/CNPJ"
                 />
-                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                <div className="text-red-600 text-sm">
+                  {errors.nome?.type === "required" && "*"}
                 </div>
                 <input
                   type="text"
@@ -170,9 +167,10 @@ export default function AddCliente({ show, setShow }:Props) {
                   placeholder="Data da venda"
                 />
 
-                <select 
-                {...register('sexo')}
-                className="rounded-lg flex h-12 mx-2 dark:bg-gray-700 ml-2 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-60 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600">
+                <select
+                  {...register("sexo")}
+                  className="rounded-lg flex h-12 mx-2 dark:bg-gray-700 ml-2 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-60 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
+                >
                   <option>Sexo</option>
                   <option>Masculino</option>
                   <option>Feminino</option>
@@ -183,7 +181,7 @@ export default function AddCliente({ show, setShow }:Props) {
               <div className="flex mx-2 mt-2">
                 <input
                   type="text"
-                  {...register('Nproposta')}
+                  {...register("Nproposta")}
                   className="rounded-lg flex h-12 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-60 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
                   placeholder="Nº da proposta"
                 />
@@ -195,8 +193,8 @@ export default function AddCliente({ show, setShow }:Props) {
                   className="rounded-lg flex h-12 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-40 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
                   placeholder="Data da venda"
                 />
-                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                <div className="text-red-600 text-sm">
+                  {errors.nome?.type === "required" && "*"}
                 </div>
                 <p className="w-20 ml-2 dark:text-gray-400 ">
                   Data da vigência:
@@ -207,8 +205,8 @@ export default function AddCliente({ show, setShow }:Props) {
                   className="rounded-lg flex h-12 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-40 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
                   placeholder="Data da venda"
                 />
-                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                <div className="text-red-600 text-sm">
+                  {errors.nome?.type === "required" && "*"}
                 </div>
                 <input
                   type="currency"
@@ -216,13 +214,14 @@ export default function AddCliente({ show, setShow }:Props) {
                   className="rounded-lg flex h-12 ml-3 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-40 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
                   placeholder="Valor"
                 />
-                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                <div className="text-red-600 text-sm">
+                  {errors.nome?.type === "required" && "*"}
                 </div>
               </div>
-               <div 
-               {...register("tipoPlano", { required: true })}
-               className="flex mb-3 mt-2 ">
+              <div
+                {...register("tipoPlano", { required: true })}
+                className="flex mb-3 mt-2 "
+              >
                 <select
                   {...register("tipoPlano", { required: true })}
                   className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
@@ -234,7 +233,7 @@ export default function AddCliente({ show, setShow }:Props) {
                   <option>Familiar</option>
                 </select>
                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                  {errors.nome?.type === "required" && "*"}
                 </div>
                 <select
                   {...register("administradora", { required: true })}
@@ -246,7 +245,7 @@ export default function AddCliente({ show, setShow }:Props) {
                   <option>Affix</option>
                 </select>
                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                  {errors.nome?.type === "required" && "*"}
                 </div>
                 <select
                   {...register("operadora", { required: true })}
@@ -264,8 +263,8 @@ export default function AddCliente({ show, setShow }:Props) {
                   placeholder="Qts. Vidas"
                 />
               </div>
-              
-               <div className="mt-2 flex items-center">
+
+              <div className="mt-2 flex items-center">
                 <select
                   {...register("comissao", { required: true })}
                   className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
@@ -276,15 +275,13 @@ export default function AddCliente({ show, setShow }:Props) {
                   <option>Superior</option>
                 </select>
                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                  {errors.nome?.type === "required" && "*"}
                 </div>
                 <p className="text-gray-500">
                   100% + 30% confirmação + bonificação
                 </p>
               </div>
-                <div 
-                {...register("taxaAdesao")}
-                className="flex mt-2">
+              <div {...register("taxaAdesao")} className="flex mt-2">
                 <select
                   {...register("taxaAdesao", { required: true })}
                   className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
@@ -294,7 +291,7 @@ export default function AddCliente({ show, setShow }:Props) {
                   <option>Não</option>
                 </select>
                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                  {errors.nome?.type === "required" && "*"}
                 </div>
 
                 <input
@@ -303,18 +300,19 @@ export default function AddCliente({ show, setShow }:Props) {
                   className="rounded-lg flex h-12 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 w-40 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
                   placeholder="Valor da taxa"
                 />
- <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                <div className="text-red-600 text-sm">
+                  {errors.nome?.type === "required" && "*"}
                 </div>
                 <select
-                {...register("bonificacao", { required: true })} 
-                className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600">
+                  {...register("bonificacao", { required: true })}
+                  className="rounded-lg w-60 flex h-12 mx-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-300 dark:border-gray-600 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-gray-600"
+                >
                   <option>Sem bonificação</option>
                   <option>Por vida</option>
                   <option>Por contrato</option>
                 </select>
                 <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
+                  {errors.nome?.type === "required" && "*"}
                 </div>
                 <input
                   type="currency"
@@ -324,28 +322,23 @@ export default function AddCliente({ show, setShow }:Props) {
                 />
               </div>
               <div className="text-red-600 text-sm">
-                {errors.nome?.type === 'required' && "*"}
-                </div>
+                {errors.nome?.type === "required" && "*"}
+              </div>
               <div className="p-4">
-
-              <button
-              onClick={handleClose}
-              className="border shadow border-sky-600 font-normal px-6 py-2 rounded text-sky-600 hover:bg-blue-50 dark:hover:bg-gray-600"
-              >
-              Cancelar
-            </button>
-            <input
-            type="submit"
-            className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2 cursor-pointer"/>
-              
-            
-            </div>
-           
+                <button
+                  onClick={handleClose}
+                  className="border shadow border-sky-600 font-normal px-6 py-2 rounded text-sky-600 hover:bg-blue-50 dark:hover:bg-gray-600"
+                >
+                  Cancelar
+                </button>
+                <input
+                  type="submit"
+                  className="bg-sky-600 shadow text-white font-normal px-8 rounded ml-5 py-2 cursor-pointer"
+                />
+              </div>
             </form>
           </section>
-
-          </div> 
-          
+        </div>
       </div>
     </>
   );

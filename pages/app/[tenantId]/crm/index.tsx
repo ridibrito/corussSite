@@ -1,108 +1,108 @@
-import Link from 'next/link'
-import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
-import { useCallback, useState } from 'react'
-import AddLead from '../../../../components/forms/FormAddLead'
-import { useRouter } from 'next/router'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import Image from 'next/image'
-import { BsListTask } from 'react-icons/bs'
-import useSWR from 'swr'
+import Link from "next/link";
+import { AiFillHome, AiOutlinePlus } from "react-icons/ai";
+import { useCallback, useState } from "react";
+import AddLead from "../../../../components/forms/FormAddLead";
+import { useRouter } from "next/router";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import Image from "next/image";
+import { FiEdit } from "react-icons/fi";
+import useSWR from "swr";
 
 //@ts-ignore
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json())
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const initialItems = [
   {
-    id: '1',
-    nome: 'Ricardo',
-    tipoPlano: 'adesão',
-    operadora: 'Amil',
-    administradora: 'Allcare',
+    id: "1",
+    nome: "Ricardo Albuquerque",
+    tipoPlano: "adesão",
+    operadora: "Amil",
+    administradora: "Allcare",
     valor: 155.2,
   },
   {
-    id: '2',
-    nome: 'Lilian',
-    tipoPlano: 'adesão',
-    operadora: 'Bradesco',
-    administradora: 'Qualicorp',
-    valor: 852.10,
+    id: "2",
+    nome: "Lilian",
+    tipoPlano: "adesão",
+    operadora: "Bradesco",
+    administradora: "Qualicorp",
+    valor: 852.1,
   },
-]
+];
 
 const initialColumns = [
   {
-    id: '1',
-    name: 'leads',
-    oportunidades: '2',
+    id: "1",
+    name: "leads",
+    oportunidades: "2",
     valorTotal: 1500.0,
     items: initialItems,
   },
   {
-    id: '2',
-    name: 'Cotação enviada',
-    oportunidades: '2',
+    id: "2",
+    name: "Cotação enviada",
+    oportunidades: "2",
     valorTotal: 1500.0,
-    items: '',
+    items: "",
   },
   {
-    id: '3',
-    name: 'Identificação de interesse',
-    oportunidades: '2',
+    id: "3",
+    name: "Identificação de interesse",
+    oportunidades: "2",
     valorTotal: 1500.0,
-    items: '',
+    items: "",
   },
   {
-    id: '4',
-    name: 'Vendidas',
-    oportunidades: '2',
+    id: "4",
+    name: "Vendidas",
+    oportunidades: "2",
     valorTotal: 1500.0,
-    items: '',
+    items: "",
   },
   {
-    id: '5',
-    name: 'Perdidas',
-    oportunidades: '2',
+    id: "5",
+    name: "Perdidas",
+    oportunidades: "2",
     valorTotal: 1500.0,
-    items: '',
+    items: "",
   },
-]
+];
 interface IItem {
-  id: number
-  nome: string
-  tipoPlano: string
-  valor: number
-  operadora: string
-  administradora: string
+  id: number;
+  nome: string;
+  tipoPlano: string;
+  valor: number;
+  operadora: string;
+  administradora: string;
 }
 
 export default function Crm() {
-  const router = useRouter()
-  const { data } = useSWR(`/api/${router?.query?.tenantId}/leads`, fetcher)
-  const [showPopUpLead, setShowPopUpLead] = useState(false)
+  const router = useRouter();
+  const { data } = useSWR(`/api/${router?.query?.tenantId}/leads`, fetcher);
+  const [showPopUpLead, setShowPopUpLead] = useState(false);
+  const LeadId = router.query.LeadId;
 
   const onBeforeCapture = useCallback(() => {
     /*...*/
-  }, [])
+  }, []);
   const onBeforeDragStart = useCallback(() => {
     /*...*/
-  }, [])
+  }, []);
   const onDragStart = useCallback(() => {
     /*...*/
-  }, [])
+  }, []);
   const onDragUpdate = useCallback(() => {
     /*...*/
-  }, [])
+  }, []);
   const onDragEnd = useCallback(() => {
     // the only one that is required
-  }, [])
+  }, []);
 
   const handleNewLead = () => {
-    setShowPopUpLead(true)
-  }
+    setShowPopUpLead(true);
+  };
 
- 
   return (
     <>
       <div className=" bg-gray-100 dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 pr-4">
@@ -165,9 +165,9 @@ export default function Crm() {
                   <div
                     {...provided.droppableProps}
                     ref={provided.innerRef}
-                    className="bg-gray-200 grow-0 shrink-0 basis-80  h-screen mr-4 rounded"
+                    className="bg-gray-200 dark:bg-gray-700 dark:text-gray-500  shadow grow-0 shrink-0 basis-80  h-screen mr-4 rounded-lg"
                   >
-                    <h1 className="text font-semibold ml-3 mt-2 text-gray-700">
+                    <h1 className="text font-semibold dark:text-gray-500  ml-3 mt-2 text-gray-700">
                       {column.name}
                     </h1>
                     <div className="flex justify-between mx-3">
@@ -179,7 +179,8 @@ export default function Crm() {
                         R$ {column.valorTotal}
                       </p>
                     </div>
-                    {initialItems && initialItems.map((lead) => (
+                    {initialItems &&
+                      initialItems.map((lead) => (
                         <Draggable
                           key={lead.id}
                           draggableId={lead.nome}
@@ -190,21 +191,34 @@ export default function Crm() {
                               ref={provided.innerRef}
                               {...provided.draggableProps}
                               {...provided.dragHandleProps}
-                              className={`bg-white hover:bg-sky-50 rounded w-11/12 h-32 mx-auto mt-3 shadow-lg border-l-4 border-sky-600 border-opacity-60 ${provided.draggableProps.style} `}
+                              className={`bg-white dark:text-gray-500 dark:bg-gray-600 hover:bg-sky-50 rounded-r-lg rounded w-11/12 h-32 mx-auto mt-3 shadow-lg border-l-4 border-sky-600 border-opacity-60 ${provided.draggableProps.style} `}
                             >
-                              <Link href="#">
-                                <a>
-                                  <h2 className="p-3 hover:text-sky-600 text-gray-700 font-semibold">
-                                    {lead.nome}
-                                  </h2>
-                                </a>
-                              </Link>
-
+                              <div className="flex items-center  dark:text-gray-500 justify-between">
+                                <h2 className="px-3 pt-3 hover:text-sky-600 text-gray-700 dark:text-gray-400  font-semibold">
+                                  {lead.nome}
+                                </h2>
+                                <Link
+                                  href={`/app/${router?.query?.tenantId}/crm/[leadId]/${LeadId} `}
+                                >
+                                  <FiEdit className="text-sky-600 dark:text-gray-500  mt-3 mr-3 w-5 h-5" />
+                                </Link>
+                              </div>
+                              <h2 className="pl-3 pb-2 dark:text-gray-500  text-gray-700">
+                                Company
+                              </h2>
                               <div className="flex justify-between items-center -mt-2">
-                                <p className="text-gray-700 text-sm ml-3 font-semibold">
+                                <p className="text-gray-700 dark:text-gray-500  text-sm mt-2 ml-3 -mb-2 font-semibold">
                                   {lead.tipoPlano}
                                 </p>
-                                <div className="mr-3">
+                              </div>
+
+                              <div className="mr-2 flex items-center justify-between">
+                                <div className=" flex justify-between items-center">
+                                  <p className="text-gray-700 dark:text-gray-400  text-sm ml-3 font-semibold">
+                                    R$ {lead.valor}
+                                  </p>
+                                </div>
+                                <div className="">
                                   <Image
                                     src="/amil.png"
                                     alt="amil"
@@ -221,16 +235,6 @@ export default function Crm() {
                                   />
                                 </div>
                               </div>
-                              <div className="mt-2 flex justify-between items-center">
-                                <p className="text-gray-700 text-sm ml-3 font-semibold">
-                                  R$ {lead.valor}
-                                </p>
-
-                                <div className="flex justify-center items-center">
-                                  <BsListTask className="text-sky-600 mr-3 w-5 h-5" />
-                                  <span className="w-3 h-3 bg-sky-600 rounded-full mr-6"></span>
-                                </div>
-                              </div>
                             </div>
                           )}
                         </Draggable>
@@ -244,5 +248,5 @@ export default function Crm() {
         </div>
       </div>
     </>
-  )
+  );
 }

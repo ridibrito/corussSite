@@ -16,7 +16,7 @@ export default function Seo({ title, description }: Props) {
             name="description"
             content="Gestão completa para o corretor de planos de saúde"
           />
-          <link rel="shortcut icon" href="/icone.svg" />
+          <link rel="shortcut icon" href="/icone - azul.png" />
         </Head>
       </div>
     </>
