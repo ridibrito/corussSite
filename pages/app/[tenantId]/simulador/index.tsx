@@ -273,7 +273,7 @@ const Home: NextPage = () => {
               <div className="w-full max-w-7xl mt-4 sm:mt-2 text-center dark:text-gray-500 ">
                 <label className="block text-sm font-semibold">00 a 18</label>
                 <input
-                  className="bg-gray-700 border w-24 rounded text-center h-8"
+                  className="dark:bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -284,7 +284,7 @@ const Home: NextPage = () => {
               <div className="dark:text-gray-500  w-full max-w-7xl mt-4 sm:mt-2 text-center">
                 <label className="block text-sm font-semibold ">19 a 23</label>
                 <input
-                  className="bg-gray-700 border w-24 rounded text-center h-8"
+                  className="dark:bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -295,7 +295,7 @@ const Home: NextPage = () => {
               <div className="dark:text-gray-500  w-full max-w-7xl mt-4 sm:mt-2 text-center">
                 <label className="block text-sm font-semibold ">24 a 28</label>
                 <input
-                  className="bg-gray-700 border w-24 rounded text-center h-8"
+                  className="dark:bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -306,7 +306,7 @@ const Home: NextPage = () => {
               <div className="dark:text-gray-500  w-full max-w-7xl sm:mt-2 text-center">
                 <label className="block text-sm font-semibold ">29 a 33</label>
                 <input
-                  className="bg-gray-700 border w-24 rounded text-center h-8"
+                  className="dark:bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -317,7 +317,7 @@ const Home: NextPage = () => {
               <div className="dark:text-gray-500 w-full max-w-7xl sm:mt-2 text-center">
                 <label className="block text-sm font-semibold ">34 a 38</label>
                 <input
-                  className="bg-gray-700 border w-24 rounded text-center h-8"
+                  className="dark:bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -328,7 +328,7 @@ const Home: NextPage = () => {
               <div className="dark:text-gray-500  w-full max-w-7xl sm:mt-2 text-center">
                 <label className="block text-sm font-semibold ">39 a 43</label>
                 <input
-                  className="bg-gray-700 border w-24 rounded text-center h-8"
+                  className="dark:bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -339,7 +339,7 @@ const Home: NextPage = () => {
               <div className="dark:text-gray-500  w-full max-w-7xl sm:mt-2 text-center">
                 <label className="block text-sm font-semibold ">44 a 48</label>
                 <input
-                  className="bg-gray-700 border w-24 rounded text-center h-8"
+                  className="dark:bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -350,7 +350,7 @@ const Home: NextPage = () => {
               <div className="dark:text-gray-500  w-full max-w-7xl sm:mt-2 text-center">
                 <label className="block text-sm font-semibold ">49 a 53</label>
                 <input
-                  className="bg-gray-700 border w-24 rounded text-center h-8"
+                  className="dark:bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -361,7 +361,7 @@ const Home: NextPage = () => {
               <div className="dark:text-gray-500 w-full max-w-7xl sm:mt-2 text-center">
                 <label className="block text-sm font-semibold ">54 a 58</label>
                 <input
-                  className="bg-gray-700 border w-24 rounded text-center h-8"
+                  className="dark:bg-gray-700 border w-24 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
@@ -372,7 +372,7 @@ const Home: NextPage = () => {
               <div className="dark:text-gray-500 w-full gap-3 max-w-7xl sm:mt-2 text-center">
                 <label className="block text-sm font-semibold ">59 +</label>
                 <input
-                  className=" border w-24 bg-gray-700 rounded text-center h-8"
+                  className=" border w-24 dark:bg-gray-700 rounded text-center h-8"
                   type="number"
                   maxLength={2}
                   onChange={(e) => setfaixa(e.target.value)}
