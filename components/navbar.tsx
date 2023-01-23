@@ -11,7 +11,6 @@ import DropFinan from "./dropfinan";
 import LinkMenu from "./LinkMenu";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 export default function Navbar() {
   const router = useRouter();
@@ -19,23 +18,8 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="pt-3 bg-white dark:bg-gray-700 fixed z-20 w-56 min-h-screen shadow-lg mt-0 pl-3 pr-3 overflow-y-auto">
+      <nav className="pt-3 bg-white dark:bg-gray-700 fixed w-56 min-h-screen shadow-lg mt-16 pl-3 pr-3 overflow-y-auto">
         <div className="grid grid-cols-1 items-end">
-          <div className="flex">
-            <div className="flex">
-              <div className="mt-2 mb-5 cursor-pointer">
-                <Link href={`/app/${router.query.tenantId}`}>
-                  <Image
-                    src="/logosite.png"
-                    alt="logo alb"
-                    width="180"
-                    height="35"
-                  />
-                </Link>
-              </div>
-            </div>
-          </div>
-
           <LinkMenu href={`/app/${router.query.tenantId}`}>
             <RiDashboardFill className="w-7 h-7 mr-2" />
             Dashboard
