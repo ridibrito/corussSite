@@ -105,7 +105,7 @@ export default function Crm() {
 
   return (
     <>
-      <div className=" bg-gray-100 dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 pr-4">
+      <div className=" bg-gray-100 dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 pr-4 ">
         <div className="flex justify-between items-center">
           <div className="flex items-center py-4">
             <Link href={`/app/${router.query.tenantId}`}>
@@ -137,7 +137,7 @@ export default function Crm() {
           setShow={setShowPopUpLead}
         />
 
-        <div className="flex justify-between pt-2">
+        <div className="flex justify-between pt-2 max-w-7xl mx-auto">
           <h2 className="items-center text-lg text-gray-500 ml-3 pt-1 dark:text-gray-400">
             Oportunidades
           </h2>
@@ -151,7 +151,7 @@ export default function Crm() {
             </Link>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex max-w-7xl">
           <DragDropContext
             onBeforeCapture={onBeforeCapture}
             onBeforeDragStart={onBeforeDragStart}

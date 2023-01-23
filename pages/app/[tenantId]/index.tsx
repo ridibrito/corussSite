@@ -19,8 +19,8 @@ const AppHome = () => {
   const router = useRouter();
   return (
     <>
-      <div className="h-full bg-gray-100 dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 p-4">
-        <div className="flex justify-between">
+      <div className="h-full bg-gray-100 dark:bg-gray-600 dark:text-gray-400 pl-60 pt-16 p-4 ">
+        <div className="flex justify-between ">
           <div className="flex items-center py-4">
             <Link href={`/app/${router.query.tenantId}`}>
               <a>
@@ -37,7 +37,7 @@ const AppHome = () => {
         </div>
         <hr></hr>
 
-        <div className="flex items-center dark:bg-gray-700 dark:text-gray-400   mx-auto justify-between mt-3 px-8 bg-white rounded-lg shadow p-5">
+        <div className="flex items-center dark:bg-gray-700 dark:text-gray-400   mx-auto justify-between mt-3 px-8 bg-white rounded-lg shadow p-5 max-w-7xl">
           <div className="flex items-center">
             <Image
               className="rounded-full"
@@ -61,7 +61,7 @@ const AppHome = () => {
             </a>
           </Link>
         </div>
-        <div className="mt-4 flex items-center max-w-7xl mx-auto justify-between">
+        <div className="mt-4 flex items-center max-w-7xl mx-auto justify-between ">
           <h4 className="font-semibold">Visão geral</h4>
           <div className="flex items-center p-2 text-gray-500 font-normal">
             <label className="dark:text-gray-400">De</label>
@@ -77,7 +77,7 @@ const AppHome = () => {
           </div>
         </div>
 
-        <div className="flex mt-3 mx-auto">
+        <div className="flex mt-3 mx-auto max-w-7xl">
           <div className="bg-white dark:bg-gray-700 dark:text-gray-500 rounded-lg h-32 shadow-lg w-1/4">
             <div className="flex items-center h-2/3 justify-around gap-3">
               <div className="flex gap-3">
@@ -158,7 +158,7 @@ const AppHome = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-4 mt-5">
+        <div className="flex gap-4 mt-5 max-w-7xl mx-auto">
           <div className="bg-white  rounded-lg shadow-lg p-5 pb-1 w-1/3 ">
             <Chartline />
           </div>
@@ -169,7 +169,7 @@ const AppHome = () => {
             <ChartComparativo />
           </div>
         </div>
-        <div className="flex gap-4 mt-5">
+        <div className="flex gap-4 mt-5 max-w-7xl mx-auto">
           <div className="bg-white  rounded-lg shadow-lg p-3 pb-1 w-2/3">
             <ChartValor />
           </div>

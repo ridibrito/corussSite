@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
+
 import ListSimulador from "/components/ListSimulador";
-import Navbar from "/components/navbar";
+import Link from "next/link";
+import { AiFillHome, AiOutlinePlus } from "react-icons/ai";
 import SelectAbrangencia from "/components/selects/SelectAbrangencia";
 import SelectAcomodacao from "/components/selects/SelectAcomodacao";
 import SelectAdministradora from "/components/selects/SelectAdministradora";
@@ -18,6 +21,7 @@ const Home: NextPage = () => {
   const [minus1, setMinus1] = useState(true);
   const [minus2, setMinus2] = useState(true);
   const [minus3, setMinus3] = useState(true);
+  const router = useRouter();
 
   const handleCloseMinus = () => {
     return setMinus(false);
@@ -53,8 +57,24 @@ const Home: NextPage = () => {
   }
   return (
     <>
-      <div className="bg-gray-100 dark:bg-gray-600">
-        <section className="mx-3 pl-60 pt-16 pr-4">
+      <div className="bg-gray-100 dark:bg-gray-600 ml-60 pt-16">
+        <div className="flex justify-between items-center ">
+          <div className="flex items-center py-4">
+            <Link href={`/app/${router.query.tenantId}`}>
+              <a>
+                <AiFillHome className="text-gray-500 hover:text-sky-600 w-5 h-5 dark:text-gray-400" />
+              </a>
+            </Link>
+            <h3 className="ml-3 text-xl font-normal text-gray-500 dark:text-gray-400">
+              -
+            </h3>
+            <h1 className=" ml-3 pt-1 font-normal text-gray-500 dark:text-gray-400">
+              Simulador
+            </h1>
+          </div>
+        </div>
+        <hr></hr>
+        <section className="mx-3 pr-4">
           <div className="flex items-center bg-white dark:bg-gray-700 mt-4 mx-auto max-w-7xl rounded p-3 shadow">
             <h2 className="text-lg font-semibold dark:text-gray-500  text-gray-700">
               Nome do lead
@@ -407,7 +427,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className="block mx-auto pl-60 pt-16">
+        <section className="block mx-auto ">
           <div className=" flex items-center max-w-7xl mx-auto justify-between bg-gray-300 rounded p-3 mb-2 px-4 dark:bg-gray-700">
             <h2 className="text-gray-700  font-bold dark:text-gray-500">
               Selecione uma operadora
