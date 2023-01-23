@@ -28,7 +28,6 @@ export default function Navtop() {
               </div>
             </div>
           </div>
-          <div className="w-1/3"></div>
           <ThemeToggle />
           <div className="flex mr-3">
             <IoMdNotifications
