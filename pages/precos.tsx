@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HiCursorClick } from "react-icons/hi";
-import NavbarSite from "../../components/site/navbarSite";
+import NavbarSite from "../components/site/navbarSite";
 import Faq from "/components/site/Faq";
 import Footer from "/components/site/Footer";
 import News from "/components/site/news";

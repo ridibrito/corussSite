@@ -1,4 +1,4 @@
-import NavbarSite from "../../components/site/navbarSite";
+import NavbarSite from "../components/site/navbarSite";
 import Footer from "/components/site/Footer";
 import News from "/components/site/news";
 import PrecosSite from "/components/site/PrecosSite";

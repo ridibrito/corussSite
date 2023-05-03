@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import MydropdownSite from "./mydropdownSite";
-import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { CgClose } from "react-icons/cg";
 
@@ -24,12 +22,15 @@ export default function NavbarSite() {
           style={{ display: showMenu ? "initial" : "none" }}
         >
           <div className="pt-4 pl-4 flex justify-between items-center pr-2 mb-12">
-            <Image
-              src="/logobranca.png"
-              alt="logo coruss"
-              width="160"
-              height="30"
-            />
+            <Link href="/">
+              <Image
+                src="/logobranca.png"
+                alt="logo coruss"
+                width="160"
+                height="30"
+                className="cursor-pointer"
+              />
+            </Link>
             <CgClose
               onClick={handleCloseMenu}
               className="w-7 h-7 pr-2 text-white"
@@ -37,22 +38,22 @@ export default function NavbarSite() {
           </div>
           <div className="cursor-pointer">
             <ul className="text-center text-white font-bold text-xl space-y-8 mb-12">
-              <Link href="/site">
+              <Link href="/">
                 <li className="border-b border-sky-100 pb-5 text-2xl mx-3">
                   Home
                 </li>
               </Link>
-              <Link href="/site/precos">
+              <Link href="/precos">
                 <li className="border-b border-sky-100 pb-5 text-2xl mx-3">
                   Preços
                 </li>
               </Link>
-              <Link href="/site/blog">
+              <Link href="/blog">
                 <li className="border-b border-sky-100 pb-5 text-2xl mx-3">
                   log
                 </li>
               </Link>{" "}
-              <Link href="/site/contato">
+              <Link href="/contato">
                 <li className="border-b border-sky-100 pb-5 text-2xl mx-3">
                   Contato
                 </li>
@@ -72,12 +73,15 @@ export default function NavbarSite() {
         </div>
         <nav className="bg-white border-gray-200 border-b px-4 lg:px-6 py-2.5 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <Image
-              src="/logosite.png"
-              alt="logo coruss"
-              width="160"
-              height="30"
-            />
+            <Link href="/">
+              <Image
+                src="/logosite.png"
+                alt="logo coruss"
+                width="160"
+                height="30"
+                className="cursor-pointer"
+              />
+            </Link>
             <div className="flex items-center lg:order-2">
               <Link href="/api/auth/signin">
                 <a className="hidden lg:flex text-sky-600 hover:text-sky-700 focus:ring-4 focus:ring-gray-300 font-semibold rounded text-sm px-6 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
@@ -112,7 +116,7 @@ export default function NavbarSite() {
             <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
               <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                 <li>
-                  <Link href="/site">
+                  <Link href="/">
                     <a
                       className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                       aria-current="page"
@@ -122,7 +126,7 @@ export default function NavbarSite() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/site/precos">
+                  <Link href="/precos">
                     <a
                       className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                       aria-current="page"
@@ -132,7 +136,7 @@ export default function NavbarSite() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/site/blog">
+                  <Link href="/blog">
                     <a
                       className="block py-2 pr-4 pl-3 text-gray-700 font-semibold  rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                       aria-current="page"
@@ -142,7 +146,7 @@ export default function NavbarSite() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/site/contato">
+                  <Link href="/contato">
                     <a
                       className="block py-2 pr-4 pl-3 text-gray-700 font-semibold  rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                       aria-current="page"

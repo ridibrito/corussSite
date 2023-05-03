@@ -1,30 +1,24 @@
-import { signIn, signOut, useSession } from "next-auth/react";
-import Link from "next/link";
+import Seo from "../components/Seo";
+import NavbarSite from "../components/site/navbarSite";
+import HeaderSite from "../components/site/headerSite";
+import News from "/components/site/news";
+import Footer from "/components/site/Footer";
+import Diferecas from "/components/site/Diferencas";
+import Tabs from "/components/site/Tabs";
 
-
-export default function Home(){
-    const { data: session } = useSession()
-    return(
+const Home = () => {
+  <Seo title="Coruss" description="Bem vindo a liberdade" />;
+  return (
     <>
-    <ul>
-        <li>
-            <Link href="/app"><a>App</a></Link>
-        </li>
-        <li>
-            <Link href="/coruss"><a>Tenant Coruss</a></Link>
-        </li>
-       
-        <li>
-        
-        <button onClick={() => signIn('auth0', { callbackUrl: '/app'})}>Sign in</button>
-        </li>
-        <p>
-        Signed in as {session?.user?.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </p>
-
-    </ul>
-
+      <div>
+        <NavbarSite />
+        <HeaderSite />
+        <Tabs />
+        <Diferecas />
+        <News />
+        <Footer />
+      </div>
     </>
-    )
-}
+  );
+};
+export default Home;
