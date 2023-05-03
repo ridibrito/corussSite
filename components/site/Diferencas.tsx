@@ -28,7 +28,7 @@ export default function Diferecas() {
                   Substitui todas as soluções atuais
                 </span>
               </li>
-         
+
               <li className="flex items-center space-x-3 mb-2">
                 <svg
                   className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
@@ -43,7 +43,8 @@ export default function Diferecas() {
                   ></path>
                 </svg>
                 <span className="font-bold">
-                  Desenvolvido para o consultor/corretor de planos de saúde. (sem adaptações)
+                  Desenvolvido para o consultor/corretor de planos de saúde.
+                  (sem adaptações)
                 </span>
               </li>
               <li className="flex items-center space-x-3 mb-2">
@@ -59,7 +60,9 @@ export default function Diferecas() {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span className="font-bold">Simulador gratuito para sempre </span>
+                <span className="font-bold">
+                  Simulador gratuito para sempre{" "}
+                </span>
               </li>
               <li className="flex items-center space-x-3 mb-2">
                 <svg
@@ -77,9 +80,9 @@ export default function Diferecas() {
                 <span className="font-bold">Recursos premium incriveis</span>
               </li>
             </ul>
-            <Link href="/site/precos">
+            <Link href="/precos">
               <a className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-               Planos e preços
+                Planos e preços
                 <svg
                   className="w-5 h-5 ml-2 -mr-1"
                   fill="currentColor"

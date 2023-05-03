@@ -9,14 +9,14 @@ export default function Footer() {
         <div className="mx-auto max-w-screen-xl">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
-              <a href="https://flowbite.com" className="flex items-center">
+              <p className="flex items-center">
                 <Image
                   src="/logosite.png"
                   alt="coruss Logo"
                   width="150"
                   height="30"
                 />
-              </a>
+              </p>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
@@ -25,18 +25,18 @@ export default function Footer() {
                 </h2>
                 <ul className="text-gray-600 dark:text-gray-400">
                   <li className="mb-4">
-                    <Link href="/site">
+                    <Link href="/">
                       <a className="hover:underline ">Home</a>
                     </Link>
                   </li>
 
                   <li className="mb-4">
-                    <Link href="/site/precos">
+                    <Link href="/precos">
                       <a className="hover:underline ">Preços</a>
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="/site/blog">
+                    <Link href="/blog">
                       <a className="hover:underline ">Blog</a>
                     </Link>
                   </li>
@@ -48,12 +48,12 @@ export default function Footer() {
                 </h2>
                 <ul className="text-gray-600 dark:text-gray-400">
                   <li className="mb-4">
-                    <Link href="/site/contato">
+                    <Link href="/contato">
                       <a className="hover:underline ">Contato</a>
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="/site/docs">
+                    <Link href="/docs">
                       <a className="hover:underline ">Documentação</a>
                     </Link>
                   </li>
@@ -65,13 +65,13 @@ export default function Footer() {
                 </h2>
                 <ul className="text-gray-600 dark:text-gray-400">
                   <li className="mb-4">
-                    <Link href="/site/politica">
+                    <Link href="/politica">
                       <a className="hover:underline ">
                         Política de privacidade
                       </a>
                     </Link>
                   </li>
-                  <Link href="/site/termo">
+                  <Link href="/termo">
                     <a className="hover:underline ">Termos de uso</a>
                   </Link>
                 </ul>
@@ -81,14 +81,11 @@ export default function Footer() {
           <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-              © 2022{" "}
-              <a href="https://flowbite.com" className="hover:underline">
-                coruss
-              </a>
-              . Todos od direitos reservados.
+              © 2022 <p className="hover:underline">coruss</p>. Todos od
+              direitos reservados.
             </span>
             <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-              <Link href="http://facebook.com">
+              <Link href="http://facebook.com/corusscrm">
                 <a
                   target="_blank"
                   className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
@@ -107,7 +104,7 @@ export default function Footer() {
                   </svg>
                 </a>
               </Link>
-              <Link href="http://instagram.com">
+              <Link href="http://instagram.com/coruss.crm">
                 <a
                   target="_blank"
                   className="text-gray-500 hover:text-gray-900 dark:hover:text-white"

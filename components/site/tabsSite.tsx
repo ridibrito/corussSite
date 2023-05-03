@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import { Tab } from '@headlessui/react'
-import Image from 'next/image'
-import Link from 'next/link'
-
+import { useState } from "react";
+import { Tab } from "@headlessui/react";
+import Image from "next/image";
+import Link from "next/link";
 
 //@ts-ignore
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
@@ -15,16 +14,17 @@ export default function Example() {
       {
         id: 1,
         title:
-          'Analise e gerencie todos os número da empresa em um painel completo',
+          "Analise e gerencie todos os número da empresa em um painel completo",
         subtitle:
-          'coruss 360º é uma ferramenta completa de GESTÃO para pequenas e médias empresas que buscam controle total dos processos',
-        lista1: '• Analise gráfica, para rápida tomada de decisão.',
-        lista2: '• Filtros por periodo, produto, Adm, vendedor, operadora e etc...',
-        lista3: ' ',
-        lista4: ' ',
-        lista5: '',
-        lista6: '',
-        lista7: '',
+          "coruss 360º é uma ferramenta completa de GESTÃO para pequenas e médias empresas que buscam controle total dos processos",
+        lista1: "• Analise gráfica, para rápida tomada de decisão.",
+        lista2:
+          "• Filtros por periodo, produto, Adm, vendedor, operadora e etc...",
+        lista3: " ",
+        lista4: " ",
+        lista5: "",
+        lista6: "",
+        lista7: "",
         img: (
           <Image
             src="/dashboardcoruss.png"
@@ -32,15 +32,15 @@ export default function Example() {
             width="700"
             height="400"
           />
-        )
-      }
+        ),
+      },
     ],
     CRM: [
       {
         id: 1,
-        title: 'Gerencie leads, separado dos seus atuais clientes. ',
+        title: "Gerencie leads, separado dos seus atuais clientes. ",
         subtitle:
-          'Com o CRM Alb 360º fica fácil separar quem já é um cliente ativo, de quem ainda é um LEAD.',
+          "Com o CRM Alb 360º fica fácil separar quem já é um cliente ativo, de quem ainda é um LEAD.",
         lista1: 5,
         lista2: 2,
         lista3: 2,
@@ -55,15 +55,15 @@ export default function Example() {
             width="700"
             height="400"
           />
-        )
-      }
+        ),
+      },
     ],
     ADM: [
       {
         id: 1,
-        title: 'A ferramenta administrativa que sua empresa esperava.',
+        title: "A ferramenta administrativa que sua empresa esperava.",
         subtitle:
-          'Acesso suas vendas, clientes, produtos, fornecedores em um espaço diferenciado',
+          "Acesso suas vendas, clientes, produtos, fornecedores em um espaço diferenciado",
         lista1: 5,
         lista2: 2,
         lista3: 2,
@@ -78,15 +78,15 @@ export default function Example() {
             width="700"
             height="400"
           />
-        )
-      }
+        ),
+      },
     ],
     Financeiro: [
       {
         id: 1,
-        title: 'Simplifique a gestão financeira da sua empresa.',
+        title: "Simplifique a gestão financeira da sua empresa.",
         subtitle:
-          'Com a ferramenta financeira sua empresa conecta financeiro, fiscal e cobrança.',
+          "Com a ferramenta financeira sua empresa conecta financeiro, fiscal e cobrança.",
         lista1: 5,
         lista2: 2,
         lista3: 2,
@@ -101,15 +101,15 @@ export default function Example() {
             width="700"
             height="400"
           />
-        )
-      }
+        ),
+      },
     ],
     Inbox: [
       {
         id: 1,
-        title: 'Caixa de entrada de e-mail',
+        title: "Caixa de entrada de e-mail",
         subtitle:
-          'Conecte seus e-mails de preferência e não perca o foco no que importa!',
+          "Conecte seus e-mails de preferência e não perca o foco no que importa!",
         lista1: 5,
         lista2: 2,
         lista3: 2,
@@ -124,15 +124,15 @@ export default function Example() {
             width="700"
             height="400"
           />
-        )
-      }
+        ),
+      },
     ],
     WhatsApp: [
       {
         id: 1,
-        title: 'Ferramenta conectada a API do WhatsApp.',
+        title: "Ferramenta conectada a API do WhatsApp.",
         subtitle:
-          'Ele faz parte do dia a dia do seu cliente, tenha acesso fácil.',
+          "Ele faz parte do dia a dia do seu cliente, tenha acesso fácil.",
         lista1: 5,
         lista2: 2,
         lista3: 2,
@@ -147,14 +147,14 @@ export default function Example() {
             width="700"
             height="400"
           />
-        )
-      }
+        ),
+      },
     ],
     Simulador: [
       {
         id: 1,
-        title: 'Simulador integrado ao crm',
-        subtitle: 'Não perca leads de vista',
+        title: "Simulador integrado ao crm",
+        subtitle: "Não perca leads de vista",
         lista1: 5,
         lista2: 2,
         lista3: 2,
@@ -169,25 +169,25 @@ export default function Example() {
             width="700"
             height="400"
           />
-        )
-      }
-    ]
-  })
+        ),
+      },
+    ],
+  });
 
   return (
     <div className="mx-auto sm:max-w-7xl px-2 py-10 sm:px-0">
       <Tab.Group>
         <Tab.List className="sm:flex justify-center text-center rounded bg-gray-200 sm:py-1 text-sky-600">
-          {Object.keys(categories).map(category => (
+          {Object.keys(categories).map((category) => (
             <Tab
               key={category}
               className={({ selected }) =>
                 classNames(
-                  'w-full rounded py-2.5 sm:mx-2 text-sm  leading-5 text-sky-600 font-semibold',
-                  'ring-opacity-60 ring-offset-2 focus:outline-none',
+                  "w-full rounded py-2.5 sm:mx-2 text-sm  leading-5 text-sky-600 font-semibold",
+                  "ring-opacity-60 ring-offset-2 focus:outline-none",
                   selected
-                    ? 'bg-sky-600 text-white'
-                    : 'text-sky-600 hover:bg-white hover:text-sky-600'
+                    ? "bg-sky-600 text-white"
+                    : "text-sky-600 hover:bg-white hover:text-sky-600"
                 )
               }
             >
@@ -199,10 +199,10 @@ export default function Example() {
           {Object.values(categories).map((posts, idx) => (
             <Tab.Panel
               key={idx}
-              className={classNames('rounded-xl bg-white p-3')}
+              className={classNames("rounded-xl bg-white p-3")}
             >
               <ul>
-                {posts.map(post => (
+                {posts.map((post) => (
                   <li key={post.id} className="relative rounded-sm p-3">
                     <h3 className="sm:text-3xl text-lg font-semibold flex justify-center leading-7">
                       {post.title}
@@ -232,13 +232,17 @@ export default function Example() {
                   </li>
                 ))}
               </ul>
-              <Link href="/api/auth/signin"><a><button className="bg-sky-600 w-full py-3 text-white font-semibold max-w-7xl flex mx-auto rounded  justify-center hover:bg-sky-700">
-           Teste grátis
-          </button></a></Link>
+              <Link href="/api/auth/signin">
+                <a>
+                  <button className="bg-sky-600 w-full py-3 text-white font-semibold max-w-7xl flex mx-auto rounded  justify-center hover:bg-sky-700">
+                    Teste grátis
+                  </button>
+                </a>
+              </Link>
             </Tab.Panel>
           ))}
         </Tab.Panels>
       </Tab.Group>
     </div>
-  )
+  );
 }
